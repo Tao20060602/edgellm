@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "seed": 20261003,
+  "content_token_targets": [2048, 8192, 32768],
+  "needle_positions": [0.1, 0.5, 0.9],
+  "passcodes": ["731942", "284615", "596831", "842759", "163428", "925174", "472683", "318596", "654237"],
+  "filler": "The archive contains routine notes about weather, books, garden plants, train schedules, and office supplies. These ordinary notes do not contain any access code.\n",
+  "question": "What is the six-digit access code for record ORCHID? Reply with only the six digits. /no_think",
+  "needle": "IMPORTANT RECORD: The six-digit access code for record ORCHID is {code}. Remember this exact code.\n",
+  "baseline_min_correct": 8,
+  "allowed_extra_failures": 1,
+  "max_generation_tokens": 64,
+  "temperature": 0,
+  "thinking_enabled": false,
+  "ttft_content_token_target": 2048,
+  "ttft_repetitions": 3,
+  "ttft_question": "List three practical ways to save memory when running a small language model. /no_think",
+  "scope": "Synthetic single-record retrieval diagnostic; not LongBench, multi-needle, or general long-context quality. TTFT measures warm localhost requests with prompt cache disabled."
+}

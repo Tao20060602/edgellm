@@ -19,11 +19,13 @@ def main():
     parser.add_argument("--cuda-arch", default="86", help="Use target device compute capability")
     parser.add_argument("--cuda-compiler", help="Optional full path to nvcc")
     parser.add_argument("--fetch-only", action="store_true")
+    parser.add_argument("--source-dir", type=Path, default=ROOT / "external/llama.cpp")
+    parser.add_argument("--targets", nargs="+", choices=["llama-bench", "llama-perplexity", "llama-server"], default=["llama-bench"])
     args = parser.parse_args()
     if args.jobs < 1:
         parser.error("--jobs must be positive")
     lock = json.loads((ROOT / "locks/upstream.json").read_text(encoding="utf-8"))
-    source = ROOT / "external/llama.cpp"
+    source = args.source_dir.expanduser().resolve()
     source.parent.mkdir(parents=True, exist_ok=True)
     if not source.exists():
         run("git", "init", source)
@@ -40,13 +42,14 @@ def main():
     command = ["cmake", "-S", source, "-B", build, "-DCMAKE_BUILD_TYPE=Release",
                "-DGGML_CUDA=" + ("ON" if args.backend == "cuda" else "OFF"),
                "-DLLAMA_BUILD_TESTS=OFF", "-DLLAMA_BUILD_EXAMPLES=OFF",
-               "-DLLAMA_BUILD_SERVER=OFF", "-DLLAMA_BUILD_MTMD=OFF"]
+               "-DLLAMA_BUILD_SERVER=" + ("ON" if "llama-server" in args.targets else "OFF"),
+               "-DLLAMA_BUILD_MTMD=" + ("ON" if "llama-server" in args.targets else "OFF")]
     if args.backend == "cuda":
         command += ["-DCMAKE_CUDA_ARCHITECTURES=" + args.cuda_arch]
         if args.cuda_compiler:
             command += ["-DCMAKE_CUDA_COMPILER=" + args.cuda_compiler]
     run(*command)
-    run("cmake", "--build", build, "--config", "Release", "--target", "llama-bench", "-j", args.jobs)
+    run("cmake", "--build", build, "--config", "Release", "--target", *args.targets, "-j", args.jobs)
 
 
 if __name__ == "__main__":
