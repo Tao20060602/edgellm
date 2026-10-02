@@ -26,6 +26,8 @@ Upstream CPU Release build succeeded under Linux with existing CMake 3.28.3/G++1
 
 No runtime/kernel code modified, no mobile experiment, no CUDA inference baseline, no TTFT/quality/RSS/VRAM measurement yet. `llama-bench` synthetic token data cannot demonstrate model quality or end-to-end latency. A throughput difference in a small smoke run is not an optimization result.
 
+Remote recovery verification: freshly cloned public GitHub commit `32ee4bcbf6ffa643d5f200b79e7fb743f7317f3e` into an independent Linux directory. Six tests passed; all 49 files listed in the two SHA256SUMS verified unchanged after GitHub round trip; bootstrap `--fetch-only` fetched and checked out the exact locked upstream without using the original source clone. Full second build/model redownload was not repeated. All four CI jobs passed (Ubuntu/Windows x Python3.11/3.13) for this implementation commit: https://github.com/Tao20060602/edgellm/actions/runs/37031818499 . Later handoff-only commits do not change tested scripts or evidence.
+
 ## Important findings for the next agent
 
 - CUDA already has quantized-KV FA paths, including in-kernel V dequant. Do not implement the proposed generic dequant+FA fusion as if absent.

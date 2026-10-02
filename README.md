@@ -15,6 +15,7 @@ Memory-Efficient LLM Inference on Resource-Constrained Devices
 - 实验规划、源码地图、质量门槛、决策记录与跨系统交接均在仓库内。
 - 已完成六种配置的真实 CPU smoke，每种三次重复；保存了两组原始记录。512 token 深度的 KV allocation 从 F16 的84.00 MiB降到Q8的44.62、Q4的23.62 MiB，吞吐波动较大，尚不能证明提速。见 [实测报告](results/cpu-smoke-20261002-003/report.md)。
 - 已验证状态、运行数据和失败记录以 [HANDOFF.md](HANDOFF.md) 为准。
+- GitHub 全新克隆的测试、49份证据校验与锁定源码拉取已通过；[Ubuntu/Windows 四组 CI](https://github.com/Tao20060602/edgellm/actions/runs/37031818499) 全部通过。下一步由 [Issue #1](https://github.com/Tao20060602/edgellm/issues/1) 跟踪。
 
 ## 从另一台系统接手
 

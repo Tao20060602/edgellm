@@ -37,3 +37,7 @@ Saved two six-case runs 002 and 003 after provenance improvements; both match th
 Raw upstream logs contain trailing spaces and CMakeCache contains a blank EOF; initial full diff whitespace check reported these. Kept raw evidence bytes unchanged, marked raw streams binary and disabled whitespace lint for captured results only. Authored scripts/docs remain whitespace-checked.
 
 Created own-repository Issue #1 for the next M1 task; a first body-file attempt used the wrong relative path and failed before issue creation, then was corrected. No upstream maintainer issue/comment/PR was created.
+
+Initial commit `32ee4bcbf6ffa643d5f200b79e7fb743f7317f3e` pushed to public main and remote HEAD verified. Fresh GitHub clone in a separate Linux directory passed all six tests, verified all49 evidence hashes and fetched locked upstream with bootstrap.py --fetch-only. Original source/model paths were not needed for this recovery check. Full rebuild/redownload was not repeated. GitHub Actions checks Ubuntu/Windows on Python3.11/3.13; see HANDOFF for the run link.
+
+GitHub Actions run37031818499 completed successfully: four matrix jobs (Ubuntu/Windows x Python3.11/3.13), each passing the six harness tests. Session closure updates only handoff/log text; tested implementation and raw evidence are unchanged. M0 bring-up/recovery is complete; M1 quality/CUDA/memory/TTFT work remains open in Issue#1.
