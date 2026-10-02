@@ -1,0 +1,11 @@
+external/
+models/
+results/local/
+.venv/
+__pycache__/
+*.pyc
+*.gguf
+*.safetensors
+*.part
+.env
+work/

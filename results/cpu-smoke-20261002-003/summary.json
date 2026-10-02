@@ -1,0 +1,166 @@
+{
+  "completed_at": "2026-10-02T16:02:55.325573Z",
+  "measurement_count": 6,
+  "measurements": [
+    {
+      "avg_ts": 55.059464,
+      "case_file": "cases/case-0001.json",
+      "case_id": "case-0001",
+      "depth": 0,
+      "kv_runtime_mib": [
+        {
+          "mib": 28.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =    28.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 0,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 1.845318
+    },
+    {
+      "avg_ts": 38.963322,
+      "case_file": "cases/case-0002.json",
+      "case_id": "case-0002",
+      "depth": 512,
+      "kv_runtime_mib": [
+        {
+          "mib": 84.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =    84.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 512,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 4.366288
+    },
+    {
+      "avg_ts": 35.949594,
+      "case_file": "cases/case-0003.json",
+      "case_id": "case-0003",
+      "depth": 512,
+      "kv_runtime_mib": [
+        {
+          "mib": 44.62,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =    44.62 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 512,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 5.514649
+    },
+    {
+      "avg_ts": 54.891218,
+      "case_file": "cases/case-0004.json",
+      "case_id": "case-0004",
+      "depth": 0,
+      "kv_runtime_mib": [
+        {
+          "mib": 7.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =     7.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 0,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 2.046473
+    },
+    {
+      "avg_ts": 41.517284,
+      "case_file": "cases/case-0005.json",
+      "case_id": "case-0005",
+      "depth": 512,
+      "kv_runtime_mib": [
+        {
+          "mib": 23.62,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =    23.62 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 512,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 0.262088
+    },
+    {
+      "avg_ts": 53.801713,
+      "case_file": "cases/case-0006.json",
+      "case_id": "case-0006",
+      "depth": 0,
+      "kv_runtime_mib": [
+        {
+          "mib": 14.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:        CPU KV buffer size =    14.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "selected_settings": {
+        "backends": "CPU",
+        "flash_attn": 1,
+        "n_depth": 0,
+        "n_gen": 32,
+        "n_gpu_layers": 0,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 1.302688
+    }
+  ],
+  "planning_only": false,
+  "schema_version": 1,
+  "seed": 20261002,
+  "status": "success"
+}

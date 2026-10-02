@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/ggml-org/llama.cpp.git",
+  "commit": "46ca246de9bb1c35269722a6240d37d9dfd79cad",
+  "observed_date": "2026-10-02",
+  "note": "Pinned research baseline; upgrades require a new baseline."
+}

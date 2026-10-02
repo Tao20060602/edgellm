@@ -1,0 +1,19 @@
+test_dry_run_does_not_require_binary_or_model_and_marks_plan_only (test_bench.BenchHarnessTests.test_dry_run_does_not_require_binary_or_model_and_marks_plan_only) ... ok
+test_existing_output_path_is_rejected_without_modifying_it (test_bench.BenchHarnessTests.test_existing_output_path_is_rejected_without_modifying_it) ... output path already exists; refusing to overwrite: /tmp/tmpzn8gpz53/already-there
+ok
+test_invalid_json_fails_closed_and_preserves_stderr (test_bench.BenchHarnessTests.test_invalid_json_fails_closed_and_preserves_stderr) ... benchmark failed during case: invalid_json: Expecting value: line 1 column 1 (char 0)
+ok
+test_success_preserves_raw_output_provenance_and_exact_command (test_bench.BenchHarnessTests.test_success_preserves_raw_output_provenance_and_exact_command) ... ok
+test_timeout_fails_closed_and_keeps_partial_raw_output (test_bench.BenchHarnessTests.test_timeout_fails_closed_and_keeps_partial_raw_output) ... benchmark failed during case: timeout_after_seconds: 1
+ok
+test_wrong_result_fields_and_nonpositive_rate_fail_closed (test_bench.BenchHarnessTests.test_wrong_result_fields_and_nonpositive_rate_fail_closed) ... benchmark failed during case: field_mismatch: n_depth expected integer 0, got 1
+benchmark failed during case: field_mismatch: flash_attn expected integer 1, got -1
+benchmark failed during case: field_mismatch: avg_ts expected finite positive number, got 0
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.788s
+
+OK
+planning-only manifest written: /tmp/tmp73_fisdt/plan-only
+benchmark completed: /tmp/tmpp3hyazgh/run
