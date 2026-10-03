@@ -28,7 +28,7 @@ def main():
         for kv in ("f16", "q4_0"):
             out = args.out / kv
             out.mkdir()
-            argv = [args.nsys, "profile", "--trace=cuda,nvtx", "--sample=none", "--cpuctxsw=none",
+            argv = [args.nsys, "profile", "--trace=cuda,nvtx", "--cuda-graph-trace=node", "--sample=none", "--cpuctxsw=none",
                     "--output", str(out / "capture"), str(args.binary),
                     "-m", str(args.model), "-p", "0", "-n", "32", "-d", "8192",
                     "-b", "512", "-ub", "512", "-ctk", kv, "-ctv", kv,
