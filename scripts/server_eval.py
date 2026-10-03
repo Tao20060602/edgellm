@@ -174,6 +174,7 @@ def main():
                 "binary_sha256": sha256_file(args.binary), "model_sha256": sha256_file(args.model),
                 "harness_sha256": sha256_file(Path(__file__)), "suite_sha256": sha256_file(args.suite),
                 "build": cmake_cache_info(args.binary), "libraries": shared_library_info(args.binary),
+                "cache_ram_mib": 0,
                 "limits": ["warm localhost requests; no model-load latency", "synthetic single-needle diagnostic"]}
     write_json(args.out / "metadata.json", metadata)
     write_json(args.out / "suite.json", spec)
@@ -193,7 +194,7 @@ def main():
             base = f"http://127.0.0.1:{port}"
             argv = [str(args.binary), "-v", "-m", str(args.model), "-c", str(args.ctx), "-ngl", "99", "-fa", "on",
                     "-ctk", kv, "-ctv", kv, "-b", "512", "-ub", "512", "-t", "4", "-np", "1",
-                    "--host", "127.0.0.1", "--port", str(port), "--no-context-shift",
+                    "--host", "127.0.0.1", "--port", str(port), "--no-context-shift", "--cache-ram", "0",
                     "--chat-template-kwargs", '{"enable_thinking":false}', "--reasoning-budget", "0"]
             write_json(kv_dir / "launch.json", {"argv": argv, "cwd": str(args.upstream), "device_before": device_snapshot()})
             with (kv_dir / "server.stdout.bin").open("wb") as stdout, (kv_dir / "server.stderr.bin").open("wb") as stderr:
@@ -213,6 +214,8 @@ def main():
                 offloads = re.findall(r"offloaded\s+(\d+)/(\d+)\s+layers", log)
                 if not offloads or int(offloads[-1][0]) == 0 or offloads[-1][0] != offloads[-1][1] or not re.search(r"CUDA\d+\s+KV buffer", log):
                     raise ValueError("missing full CUDA offload/KV allocation proof")
+                if "prompt cache is disabled" not in log:
+                    raise ValueError("missing proof that server RAM prompt cache is disabled")
                 warm = http_json(base, "/completion", {"prompt": "Say hello. /no_think", "n_predict": 8, "cache_prompt": False, "temperature": 0}, timeout=args.timeout)
                 write_json(kv_dir / "warmup.json", warm)
                 latency_prompt, latency_tokens = prompt_for(base, spec, spec["ttft_content_token_target"], 0.5)
