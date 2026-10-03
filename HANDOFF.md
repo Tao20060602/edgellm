@@ -33,9 +33,11 @@ M1a small-model CUDA baseline is complete: 90 formal case processes/450 internal
 
 Explicitly disabling the server's separate RAM cache lowered observed F16 host VmHWM from about8.5GiB to930MiB with the same suite; this is a configuration effect. No upstream runtime/kernel code was changed. No mobile or4B result exists. Process GPU peak is unavailable under this WSL PID reporting; never substitute whole-device snapshots. Synthetic bench is not quality or request-latency evidence.
 
-Remote recovery verification: freshly cloned public GitHub commit `32ee4bcbf6ffa643d5f200b79e7fb743f7317f3e` into an independent Linux directory. Six tests passed; all 49 files listed in the two SHA256SUMS verified unchanged after GitHub round trip; bootstrap `--fetch-only` fetched and checked out the exact locked upstream without using the original source clone. Full second build/model redownload was not repeated. All four CI jobs passed (Ubuntu/Windows x Python3.11/3.13) for this implementation commit: https://github.com/Tao20060602/edgellm/actions/runs/37031818499 . Later handoff-only commits do not change tested scripts or evidence.
+Historical M0 recovery: fresh GitHub clone at `32ee4bcbf6ffa643d5f200b79e7fb743f7317f3e` passed6 tests and all49 CPU evidence hashes. Bootstrap --fetch-only fetched the locked upstream independently. All four [M0 CI jobs](https://github.com/Tao20060602/edgellm/actions/runs/37031818499) passed. No second build/model download. This is historical M0 evidence; current M1 recovery is recorded below.
 
 ## Important findings for the next agent
+
+M1 remote recovery: freshly cloned public commit `d86793e0bade2236c32ac4254bcf0e28bb0bf08f` into a separate Linux directory. All22 tests passed in1.697s; all729 M1 evidence hashes passed. Recomputed all30 mode/depth/KV distributions from the remote files with identical means/medians. Current server/quality/fetch/bench/matrix script bytes and quality locks match the executed hashes; historical M0 evidence also stays unchanged. All four [CI jobs](https://github.com/Tao20060602/edgellm/actions/runs/37095631337) passed at this commit. A second CUDA rebuild/model download was not repeated. Final handoff-only commits do not alter those tested scripts/evidence.
 
 - CUDA already has quantized-KV FA paths, including in-kernel V dequant. Do not implement the proposed generic dequant+FA fusion as if absent.
 - F16/Q8/Q4 KV comparison uses explicit FA on. Quantized V requires FA in the pinned version.
@@ -68,7 +70,7 @@ Use a new output directory for every run. This rebuilds procedure/source/model i
 
 ## Next concrete task: M2 path isolation
 
-Completed baseline task: [Issue #1](https://github.com/Tao20060602/edgellm/issues/1). Read M1_REPORT and [M1_RUNBOOK](docs/M1_RUNBOOK.md) for the complete CUDA, quality, TTFT and profiler procedure. Read ROADMAP/EXPERIMENTS/SOURCE_MAP before changing an experiment. The command below is only short bring-up:
+Completed baseline task: [Issue #1](https://github.com/Tao20060602/edgellm/issues/1). Active next task: [Issue #2](https://github.com/Tao20060602/edgellm/issues/2). Read M1_REPORT and [M1_RUNBOOK](docs/M1_RUNBOOK.md) for the complete CUDA, quality, TTFT and profiler procedure. Read ROADMAP/EXPERIMENTS/SOURCE_MAP before changing an experiment. The command below is only short bring-up:
 
 ```bash
 python3 scripts/bootstrap.py --backend cuda --cuda-arch 86 --jobs 4

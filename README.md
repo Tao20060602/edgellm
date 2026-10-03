@@ -19,6 +19,7 @@ Memory-Efficient LLM Inference on Resource-Constrained Devices
 - 检索screen为F16/Q8各9/9、Q4 2/9，Q4性能只作诊断。Profiler确认量化单token路径与大query的FP16转换路径不同。详见 [M1实测报告](docs/M1_REPORT.md)。
 - 实测发现请求禁用prompt reuse仍保留默认8GiB RAM缓存；显式关闭后F16 server进程VmHWM从约8.5GiB降到930MiB，题目和阈值不变。这是配置效果，尚不是自研kernel优化。
 - [跨系统M1复现命令](docs/M1_RUNBOOK.md)与[4B候选预算](docs/DENSE_MODEL_PLAN.md)已记录。4B、手机和自研优化仍待验证；当前CI见 [GitHub Actions](https://github.com/Tao20060602/edgellm/actions)。
+- GitHub全新克隆已通过22项测试、729份M1证据校验和30组分布重新汇总。下一步由 [Issue #2](https://github.com/Tao20060602/edgellm/issues/2) 跟踪；接手无需原聊天或本地记忆。
 
 ## 从另一台系统接手
 

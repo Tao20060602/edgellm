@@ -14,7 +14,7 @@ Scripts save new directories and preserve invalid execution separately from thre
 
 1. quality-001 expected a total token-count log that this version does not output; PPL itself completed but the run was invalidated. Input token count now remainsnull, scored targets derive from actual chunks and pinned source. Default verbosity also omitted runtime proof; enabledverbose.
 2. quality-002's verbose logs contained two initializations: common_params_fit creates a no-allocation sizing context, then the real context. Parser's one-offload assumption failed. Source verified; new parser retains consistent full-offload records and validates the final materialized context's KV type/nonzero CUDA allocation. Device-count banner also absent; it is not fabricated.
-3. server-001 lacked placement logs; verbose fixed this. Complete server-002 then revealed that request cache_prompt=false still leaves global8192MiB RAM prompt snapshots enabled. Added --cache-ram0 (CLI spelling: `--cache-ram 0`) for server-003, kept requests/thresholds unchanged, reran all cases. Host VmHWM drops markedly; retrieval result remains identical.
+3. server-001 lacked placement logs; verbose fixed this. Complete server-002 then revealed that request cache_prompt=false still leaves global8192MiB RAM prompt snapshots enabled. Added `--cache-ram 0` for server-003, kept requests/thresholds unchanged, reran all cases. Host VmHWM drops markedly; retrieval result remains identical.
 4. profile-001 default graph-level tracing omitted CUDA graph replay nodes. profile-002 collected nodes but stats stopped on SQLite export timestamp checks. profile-003 explicitly refreshes the derived export in its new owned directory and completes. profile-004 adds an exploratory Q8 trace after the performance data; it is not a new confirmatory performance trial.
 
 The intended quality-first workflow was interrupted by parser errors: the retrieval screen completed before the formal matrix, then the final corrected PPL screen completed afterward. Thresholds/prompts were unchanged throughout; all Q4 performance is diagnostic, not selection of a quality-equivalent configuration. This order is recorded rather than silently presented as a clean first attempt.
@@ -29,7 +29,7 @@ M1a is a0.6B desktop baseline. Independent4B identity/context/memory plan is pre
 
 ### Verification
 
-Linux full suite has22 tests, with real fake-subprocess execution. Quality parser additionally parsed preserved real F16 logs offline; source identifies thefitprobe. Ubuntu/Windows × Python3.11/3.13 CI checks portable tools, not native Windows inference. Final GitHub round-trip/evidence verification is recorded in HANDOFF after publication.
+Linux full suite has22 tests, with real fake-subprocess execution. Quality parser additionally parsed preserved real F16 logs offline; source identifies thefitprobe. Fresh GitHub clone atd86793e passed22 tests, all729 M1 hashes, historical M0 hashes, executed harness/lock byte checks and recalculation of all30 distributions. All four CI jobs passed at https://github.com/Tao20060602/edgellm/actions/runs/37095631337 . CI is portable-tool validation, not native Windows inference. A second full CUDA build/model download was not repeated. Exact limits and next Issue#2 are recorded in HANDOFF.
 
 ## 2026-10-02 - Repository bring-up
 
