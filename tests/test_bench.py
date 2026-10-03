@@ -36,9 +36,11 @@ if mode == "invalid_json":
     raise SystemExit(0)
 
 row = {
-    "n_prompt": 0,
+    "n_prompt": int(option("-p")),
     "n_gen": int(option("-n")),
     "n_depth": int(option("-d")),
+    "n_batch": int(option("-b")),
+    "n_ubatch": int(option("-ub")),
     "type_k": option("-ctk"),
     "type_v": option("-ctv"),
     "n_gpu_layers": int(option("-ngl")),
@@ -47,7 +49,8 @@ row = {
     "backends": "CPU",
     "avg_ts": 42.5,
     "stddev_ts": 0.25,
-    "samples_ts": [42.25, 42.75],
+    "samples_ts": [42.25, 42.75][:int(option("-r"))],
+    "samples_ns": [1000000, 1100000][:int(option("-r"))],
 }
 if mode == "wrong_depth":
     row["n_depth"] += 1
@@ -55,6 +58,14 @@ elif mode == "wrong_flash_attn":
     row["flash_attn"] = -1
 elif mode == "zero_avg":
     row["avg_ts"] = 0
+elif mode == "wrong_prefill":
+    row.update(n_prompt=int(option("-d")), n_gen=0, n_depth=0)
+elif mode == "wrong_decode":
+    row.update(n_prompt=0, n_gen=8, n_depth=int(option("-p")))
+elif mode == "short_samples":
+    row["samples_ts"] = row["samples_ts"][:-1]
+elif mode == "cuda_without_evidence":
+    row["backends"] = "CUDA"
 
 print(json.dumps([row]))
 print("llama_kv_cache: CPU KV buffer size = 12.50 MiB", file=sys.stderr)
@@ -100,9 +111,11 @@ class BenchHarnessTests(unittest.TestCase):
             return command[command.index(name) + 1]
 
         row = {
-            "n_prompt": 0,
+            "n_prompt": int(option("-p")),
             "n_gen": int(option("-n")),
             "n_depth": int(option("-d")),
+            "n_batch": int(option("-b")),
+            "n_ubatch": int(option("-ub")),
             "type_k": option("-ctk"),
             "type_v": option("-ctv"),
             "n_gpu_layers": int(option("-ngl")),
@@ -111,7 +124,8 @@ class BenchHarnessTests(unittest.TestCase):
             "backends": "CPU",
             "avg_ts": 42.5,
             "stddev_ts": 0.25,
-            "samples_ts": [42.25, 42.75],
+            "samples_ts": [42.25, 42.75][:int(option("-r"))],
+            "samples_ns": [1000000, 1100000][:int(option("-r"))],
         }
         if mode == "wrong_depth":
             row["n_depth"] += 1
@@ -119,6 +133,14 @@ class BenchHarnessTests(unittest.TestCase):
             row["flash_attn"] = -1
         elif mode == "zero_avg":
             row["avg_ts"] = 0
+        elif mode == "wrong_prefill":
+            row.update(n_prompt=int(option("-d")), n_gen=0, n_depth=0)
+        elif mode == "wrong_decode":
+            row.update(n_prompt=0, n_gen=8, n_depth=int(option("-p")))
+        elif mode == "short_samples":
+            row["samples_ts"] = row["samples_ts"][:-1]
+        elif mode == "cuda_without_evidence":
+            row["backends"] = "CUDA"
         return subprocess.CompletedProcess(
             command,
             0,
@@ -126,7 +148,19 @@ class BenchHarnessTests(unittest.TestCase):
             b"llama_kv_cache: CPU KV buffer size = 12.50 MiB\n",
         )
 
-    def run_harness(self, out, mode="success", *, dry_run=False, depths="0", kv_types="f16", timeout="2"):
+    def run_harness(
+        self,
+        out,
+        mode="success",
+        *,
+        dry_run=False,
+        depths="0",
+        kv_types="f16",
+        timeout="2",
+        benchmark_mode="decode",
+        require_backend="any",
+        monitor_memory=False,
+    ):
         argv = [
             "--binary", str(self.binary),
             "--model", str(self.model),
@@ -140,7 +174,13 @@ class BenchHarnessTests(unittest.TestCase):
             "--gen", "8",
             "--timeout", timeout,
             "--seed", "123",
+            "--mode", benchmark_mode,
+            "--batch", "512",
+            "--ubatch", "512",
+            "--require-backend", require_backend,
         ]
+        if monitor_memory:
+            argv.append("--monitor-memory")
         if dry_run:
             argv.append("--dry-run")
         with patch.dict(os.environ, {"FAKE_BENCH_MODE": mode}):
@@ -168,6 +208,8 @@ class BenchHarnessTests(unittest.TestCase):
         command = plan["randomized_order"][0]["argv"]
         self.assertEqual(command[0], str(self.binary.resolve()))
         self.assertEqual(command[command.index("-p") + 1], "0")
+        self.assertEqual(command[command.index("-b") + 1], "512")
+        self.assertEqual(command[command.index("-ub") + 1], "512")
         self.assertEqual(command[command.index("-fa") + 1], "on")
         self.assertIn("-v", command)
         self.assertEqual(command[command.index("-o") + 1], "json")
@@ -224,13 +266,72 @@ class BenchHarnessTests(unittest.TestCase):
         self.assertFalse((out / "summary.json").exists())
 
     def test_wrong_result_fields_and_nonpositive_rate_fail_closed(self):
-        for mode in ("wrong_depth", "wrong_flash_attn", "zero_avg"):
+        for mode in ("wrong_depth", "wrong_flash_attn", "zero_avg", "short_samples"):
             with self.subTest(mode=mode):
                 out = self.root / mode
                 self.assertEqual(self.run_harness(out, mode=mode), 1)
                 failure = json.loads((out / "failure.json").read_text(encoding="utf-8"))
-                self.assertIn("field_mismatch", failure["reason"])
+                self.assertIn("mismatch", failure["reason"])
                 self.assertFalse((out / "summary.json").exists())
+
+    def test_prefill_command_and_result_use_prompt_tokens(self):
+        out = self.root / "prefill"
+        self.assertEqual(self.run_harness(out, depths="16", benchmark_mode="prefill"), 0)
+        plan = json.loads((out / "plan.json").read_text(encoding="utf-8"))
+        summary = json.loads((out / "summary.json").read_text(encoding="utf-8"))
+        command = plan["randomized_order"][0]["argv"]
+        row = json.loads((out / "cases" / "case-0001.stdout.bin").read_bytes())[0]
+        self.assertEqual(command[command.index("-p") + 1], "16")
+        self.assertEqual(command[command.index("-n") + 1], "0")
+        self.assertEqual(command[command.index("-d") + 1], "0")
+        self.assertEqual((row["n_prompt"], row["n_gen"], row["n_depth"]), (16, 0, 0))
+        self.assertEqual(summary["measurements"][0]["prompt_tokens"], 16)
+
+    def test_opposite_mode_fields_and_cpu_backend_fallback_are_rejected(self):
+        cases = (
+            ("decode-prefill-shaped", "wrong_prefill", "decode", "any", "field_mismatch"),
+            ("prefill-decode-shaped", "wrong_decode", "prefill", "any", "field_mismatch"),
+            ("cuda-cpu-fallback", "success", "decode", "cuda", "backend_mismatch"),
+            ("cuda-without-offload-proof", "cuda_without_evidence", "decode", "cuda", "cuda_evidence_missing"),
+        )
+        for name, fake_mode, mode, backend, expected in cases:
+            with self.subTest(name=name):
+                out = self.root / name
+                depths = "16" if mode == "prefill" or fake_mode == "wrong_prefill" else "0"
+                self.assertEqual(
+                    self.run_harness(out, mode=fake_mode, depths=depths, benchmark_mode=mode, require_backend=backend),
+                    1,
+                )
+                failure = json.loads((out / "failure.json").read_text(encoding="utf-8"))
+                self.assertIn(expected, failure["reason"])
+                self.assertFalse((out / "summary.json").exists())
+
+    def test_proc_memory_parser_preserves_missing_values_and_scope(self):
+        parsed = bench.parse_proc_memory_status(
+            "Name:\tllama-bench\nVmHWM:\t4096 kB\nVmRSS:\t3072 kB\nThreads:\t4\n"
+        )
+        self.assertEqual(parsed, {"rss_kib": 3072, "vmhwm_kib": 4096})
+        missing = bench.parse_proc_memory_status("Name:\tfinished\n")
+        self.assertEqual(missing, {"rss_kib": None, "vmhwm_kib": None})
+        monitor = bench.summarize_memory_monitor(
+            type("Args", (), {"sample_interval_ms": 100})(),
+            [{"rss_kib": None, "vmhwm_kib": None, "status": "process_disappeared"}],
+            [],
+        )
+        self.assertIsNone(monitor["sampled_peak_vmrss_kib"])
+        self.assertIsNone(monitor["max_observed_vmhwm_kib"])
+        self.assertIn("not a process-tree peak", monitor["process_scope"])
+        self.assertIn("not KV-specific", monitor["interpretation"])
+
+    def test_cuda_stderr_parsers_capture_device_kv_and_full_offload(self):
+        stderr = (
+            b"ggml_cuda_init: Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 8192 MiB\n"
+            b"llama_model_load: offloaded 29/29 layers to GPU\n"
+            b"llama_kv_cache: CUDA0 KV buffer size = 128.00 MiB\n"
+        )
+        self.assertEqual(bench.parse_cuda_device_info(stderr)["compute_capability"], "8.6")
+        self.assertEqual(bench.parse_cuda_kv_allocation(stderr), 128.0)
+        self.assertEqual(bench.parse_offloaded_layers(stderr), [{"offloaded": 29, "total": 29}])
 
     def test_existing_output_path_is_rejected_without_modifying_it(self):
         out = self.root / "already-there"
