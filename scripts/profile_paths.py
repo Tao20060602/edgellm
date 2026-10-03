@@ -41,7 +41,7 @@ def main():
             record["trace_sha256"] = sha256_file(out / "capture.nsys-rep")
             record["reports"] = []
             for report in ("cuda_gpu_kern_sum", "cuda_api_sum", "cuda_gpu_mem_time_sum"):
-                command = [args.nsys, "stats", "--report", report, "--format", "csv",
+                command = [args.nsys, "stats", "--force-export=true", "--report", report, "--format", "csv",
                            str(out / "capture.nsys-rep")]
                 with (out / (report + ".csv")).open("wb") as stdout, (out / (report + ".stderr.bin")).open("wb") as stderr:
                     subprocess.run(command, stdout=stdout, stderr=stderr, check=True, timeout=180)
