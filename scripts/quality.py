@@ -27,7 +27,6 @@ UPSTREAM_LOCK = ROOT / "locks" / "upstream.json"
 SCHEMA_VERSION = 1
 FLOAT = r"([+-]?(?:(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?|nan|inf(?:inity)?))"
 PPL_RE = re.compile(r"Final estimate:\s*PPL\s*=\s*" + FLOAT + r"\s*\+/-\s*" + FLOAT, re.IGNORECASE)
-TOKEN_RE = re.compile(r"\bhave\s+(\d+)\s+tokens\b", re.IGNORECASE)
 CHUNK_RE = re.compile(
     r"\b(?:calculating|computing)\s+(?:perplexity\s+)?over\s+(\d+)\s+chunks\s*,\s*"
     r"n_ctx\s*=\s*(\d+)\s*,\s*batch_size\s*=\s*(\d+)",
@@ -95,6 +94,7 @@ def command_for(binary: Path, model: Path, dataset: Path, args: argparse.Namespa
         "-t", str(args.threads),
         "-b", str(fixed["batch_tokens"]),
         "-ub", str(fixed["ubatch_tokens"]),
+        "-v",
     ]
 
 
@@ -199,13 +199,6 @@ def parse_runtime(stdout: bytes, stderr: bytes, args: argparse.Namespace, kv_typ
     if not math.isfinite(ppl) or ppl <= 0 or not math.isfinite(uncertainty) or uncertainty < 0:
         return None, f"non_finite_or_invalid_ppl: ppl={ppl!r}, uncertainty={uncertainty!r}"
 
-    token_matches = [int(match.group(1)) for match in TOKEN_RE.finditer(combined)]
-    if len(token_matches) != 1:
-        return None, f"token_count_parse_error: expected one input token count, found {len(token_matches)}"
-    actual_tokens = token_matches[0]
-    if actual_tokens < args.ctx * args.chunks:
-        return None, f"insufficient_dataset_tokens: expected at least {args.ctx * args.chunks}, got {actual_tokens}"
-
     chunk_matches = list(CHUNK_RE.finditer(combined))
     if len(chunk_matches) != 1:
         return None, f"chunk_count_parse_error: expected one chunks/context/batch log, found {len(chunk_matches)}"
@@ -237,16 +230,21 @@ def parse_runtime(stdout: bytes, stderr: bytes, args: argparse.Namespace, kv_typ
     elif offloaded != 0:
         return None, f"field_mismatch: requested CPU-only, runtime offloaded {offloaded}/{total_layers} layers"
 
-    scored_tokens = actual_chunks * (args.ctx // 2 - 1)
+    # The pinned upstream log reports the actual chunk count, but not the full
+    # tokenized input length or scored-target count. In perplexity.cpp, each
+    # completed chunk increments count by n_ctx - n_ctx/2 - 1.
+    scored_tokens = actual_chunks * (args.ctx - args.ctx // 2 - 1)
     return {
         "ppl": ppl,
         "uncertainty_absolute": uncertainty,
         "ppl_source_stream": ppl_source,
-        "input_token_count": actual_tokens,
+        "input_token_count": None,
+        "input_token_count_status": "not_reported_by_pinned_upstream",
         "chunk_count": actual_chunks,
         "context_tokens": actual_ctx,
         "batch_tokens": actual_batch,
         "scored_next_token_targets": scored_tokens,
+        "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
         "runtime_kv_types": [{"key": key_type, "value": value_type, "source_line": line[:500]} for key_type, value_type, line in kv_pairs],
         "cuda_device_count_logs": cuda_device_matches,
         "gpu_layer_offload": {"offloaded": offloaded, "total": total_layers, "requested": args.gpu_layers},
@@ -348,7 +346,9 @@ def make_summary(cases: list[dict[str, Any]], lock: dict[str, Any]) -> dict[str,
             "context_tokens": cases[0]["parsed"]["context_tokens"],
             "chunk_count": cases[0]["parsed"]["chunk_count"],
             "input_token_count": cases[0]["parsed"]["input_token_count"],
+            "input_token_count_status": cases[0]["parsed"]["input_token_count_status"],
             "scored_next_token_targets": cases[0]["parsed"]["scored_next_token_targets"],
+            "scored_token_count_basis": cases[0]["parsed"]["scored_token_count_basis"],
             "dataset_coverage": "only first configured context chunks; not full test-set or 32K quality",
         },
         "cases": [
@@ -358,8 +358,10 @@ def make_summary(cases: list[dict[str, Any]], lock: dict[str, Any]) -> dict[str,
                 "ppl": case["parsed"]["ppl"],
                 "uncertainty_absolute": case["parsed"]["uncertainty_absolute"],
                 "input_token_count": case["parsed"]["input_token_count"],
+                "input_token_count_status": case["parsed"]["input_token_count_status"],
                 "chunk_count": case["parsed"]["chunk_count"],
                 "scored_next_token_targets": case["parsed"]["scored_next_token_targets"],
+                "scored_token_count_basis": case["parsed"]["scored_token_count_basis"],
                 "runtime_kv_types": case["parsed"]["runtime_kv_types"],
                 "gpu_layer_offload": case["parsed"]["gpu_layer_offload"],
                 "stdout_sha256": case["stdout_sha256"],
@@ -430,9 +432,6 @@ def run(args: argparse.Namespace) -> int:
         bench.write_json(paths["out"] / "metadata.json", metadata)
         if error:
             return fail_invalid(paths["out"], metadata, error, "case", detail["case_id"])
-        if index > 1 and detail["parsed"]["input_token_count"] != completed[0]["parsed"]["input_token_count"]:
-            return fail_invalid(paths["out"], metadata, "tokenizer_input_count_mismatch_across_KV_cases", "case", detail["case_id"])
-
     summary = make_summary(completed, lock)
     bench.write_json(paths["out"] / "summary.json", summary)
     metadata["finished_at"] = summary["completed_at"]

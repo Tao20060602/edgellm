@@ -4,7 +4,7 @@ This gate checks the quality impact of K/V cache storage precision for one fixed
 
 ## Predeclared experiment
 
-The fixed matrix uses one unchanged model and runs K and V at the same type: `f16/f16`, `q8_0/q8_0`, and `q4_0/q4_0`. Every case enables Flash Attention, requests 99 GPU layers, uses context 2048, 8 chunks, batch and ubatch 512, and 4 threads. The runner verifies the reported model PPL, uncertainty, tokenized input count, actual chunk count, CUDA offload, and runtime K/V types. It saves exact argv and raw stdout/stderr with hashes for every case.
+The fixed matrix uses one unchanged model and runs K and V at the same type: `f16/f16`, `q8_0/q8_0`, and `q4_0/q4_0`. Every case enables Flash Attention, requests 99 GPU layers, uses context 2048, 8 chunks, batch and ubatch 512, 4 threads, and `-v` so backend/offload/KV logs are retained. The runner verifies the reported model PPL and uncertainty, plus the actual chunk/context/batch log, CUDA offload, and runtime K/V types. The pinned upstream logs tokenization activity but do not report the full tokenized input length, so the runner records `input_token_count: null` with an explicit status. It saves exact argv and raw stdout/stderr with hashes for every case.
 
 The measured gate is the point-estimate relative increase over the same-run F16/F16 baseline:
 
@@ -14,7 +14,7 @@ Q8_0 must be at most 2.0%; Q4_0 must be at most 10.0%. The upstream absolute PPL
 
 ## Scope and limits
 
-At context 2048, the pinned upstream implementation scores 1023 next-token targets per chunk. Eight chunks therefore score 8184 targets. The program tokenizes the full supplied file but only evaluates its first 8 context chunks. This is a short quality smoke gate and does not establish quality over a 32K context or the complete test set. Long-context quality remains pending. No logits-dump file is written; upstream documents such files at multi-GiB scale.
+At context 2048, the pinned upstream implementation scores 1023 next-token targets per completed chunk: `count += n_ctx - first - 1`, with `first = n_ctx/2`. The tool derives the scored-target total from the runtime-reported chunk count, not from the requested plan. The preserved CUDA run log reports `calculating perplexity over 8 chunks, n_ctx=2048, batch_size=512`; it does not report total tokenized input length, so that value remains unavailable rather than inferred. Eight completed chunks imply 8184 scored targets under this pinned source path. The program tokenizes the supplied file but only evaluates the first 8 context chunks. This is a short quality smoke gate and does not establish quality over a 32K context or the complete test set. Long-context quality remains pending. No logits-dump file is written; upstream documents such files at multi-GiB scale.
 
 The baseline is within-run and uses the same model, dataset bytes, binary, source revision, flags, and machine. This isolates KV cache type for this harness but says nothing about differences between tokenizers/models, backends, drivers, or devices. The standard output and error, invocation, hashes, parsed values, and provenance are retained for review.
 

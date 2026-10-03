@@ -48,7 +48,6 @@ print("llama_model_loader: loaded model", file=sys.stderr)
 print("ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8192 MiB)", file=sys.stderr)
 print("llama_model_load: offloaded 29/29 layers to GPU", file=sys.stderr)
 print("llama_kv_cache: size = 20.00 MiB (  256 cells,  28 layers,  1/1 seqs), K (%s): 10.00 MiB, V (%s): 10.00 MiB" % (log_kv, log_kv), file=sys.stderr)
-print("perplexity_v2: have 40000 tokens. Calculation chunk = 2048", file=sys.stderr)
 print("perplexity: calculating perplexity over %d chunks, n_ctx=2048, batch_size=512, n_seq=1" % chunks, file=sys.stderr)
 print("Final estimate: PPL = %s +/- 0.02000" % ppl_text, file=sys.stderr)
 '''
@@ -92,7 +91,6 @@ class QualityHarnessTests(unittest.TestCase):
             "ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8192 MiB)\n"
             "llama_model_load: offloaded 29/29 layers to GPU\n"
             f"llama_kv_cache: size = 20.00 MiB, K ({log_kv}): 10.00 MiB, V ({log_kv}): 10.00 MiB\n"
-            "perplexity_v2: have 40000 tokens. Calculation chunk = 2048\n"
             f"perplexity: calculating perplexity over {chunks} chunks, n_ctx=2048, batch_size=512, n_seq=1\n"
             f"Final estimate: PPL = {ppl_text} +/- 0.02000\n"
         )
@@ -147,10 +145,12 @@ class QualityHarnessTests(unittest.TestCase):
         self.assertEqual(first["argv"][first["argv"].index("--chunks") + 1], "8")
         self.assertEqual(first["argv"][first["argv"].index("-fa") + 1], "on")
         self.assertEqual(first["argv"][first["argv"].index("-b") + 1], "512")
+        self.assertIn("-v", first["argv"])
         self.assertEqual(summary["measurement_scope"]["scored_next_token_targets"], 8184)
         self.assertAlmostEqual(summary["gate"]["q8_0"]["relative_ppl_increase_percent"], 1.0)
         case = json.loads((output / "cases" / "case-01-f16.json").read_text(encoding="utf-8"))
-        self.assertEqual(case["parsed"]["input_token_count"], 40000)
+        self.assertIsNone(case["parsed"]["input_token_count"])
+        self.assertEqual(case["parsed"]["input_token_count_status"], "not_reported_by_pinned_upstream")
         self.assertEqual(case["parsed"]["chunk_count"], 8)
         self.assertEqual(case["parsed"]["gpu_layer_offload"]["offloaded"], 29)
         self.assertEqual(case["parsed"]["runtime_kv_types"][0]["key"], "f16")
