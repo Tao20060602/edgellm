@@ -1,0 +1,4884 @@
+{
+  "group_count": 30,
+  "groups": [
+    {
+      "depth": 2048,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 248.611574,
+      "median_of_run_means_tps": 238.639654,
+      "min_run_mean_tps": 111.211561,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        111.211561,
+        238.639654,
+        248.611574
+      ],
+      "runs": [
+        {
+          "avg_ts": 111.211561,
+          "case_id": "case-0015",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947644,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.678499,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 947644,
+          "samples_ns": [
+            209084986,
+            306455849,
+            311444485,
+            319319615,
+            334622104
+          ],
+          "samples_ts": [
+            153.048,
+            104.42,
+            102.747,
+            100.213,
+            95.6303
+          ]
+        },
+        {
+          "avg_ts": 238.639654,
+          "case_id": "case-0014",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 946984,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.317521,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 788340,
+          "samples_ns": [
+            133733600,
+            127810631,
+            150620247,
+            128153795,
+            132564806
+          ],
+          "samples_ts": [
+            239.282,
+            250.37,
+            212.455,
+            249.7,
+            241.391
+          ]
+        },
+        {
+          "avg_ts": 248.611574,
+          "case_id": "case-0008",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947320,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.33649,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 947320,
+          "samples_ns": [
+            155335946,
+            134791354,
+            118629408,
+            117902757,
+            123795376
+          ],
+          "samples_ts": [
+            206.005,
+            237.404,
+            269.748,
+            271.41,
+            258.491
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.43359375,
+        769.86328125,
+        925.1171875
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        252.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          252.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.7890625,
+        925.43359375
+      ],
+      "vmhwm_mib_values": [
+        925.43359375,
+        924.7890625,
+        925.1171875
+      ]
+    },
+    {
+      "depth": 2048,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 269.607506,
+      "median_of_run_means_tps": 261.513543,
+      "min_run_mean_tps": 252.791464,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        252.791464,
+        261.513543,
+        269.607506
+      ],
+      "runs": [
+        {
+          "avg_ts": 252.791464,
+          "case_id": "case-0008",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947268,
+          "mode": "decode",
+          "process_elapsed_seconds": 1.68718,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 947268,
+          "samples_ns": [
+            135330136,
+            122774376,
+            133845828,
+            126655783,
+            116311404
+          ],
+          "samples_ts": [
+            236.459,
+            260.641,
+            239.081,
+            252.653,
+            275.123
+          ]
+        },
+        {
+          "avg_ts": 261.513543,
+          "case_id": "case-0005",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947300,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.013422,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 947300,
+          "samples_ns": [
+            137770160,
+            124538094,
+            116103315,
+            114358418,
+            121715242
+          ],
+          "samples_ts": [
+            232.271,
+            256.949,
+            275.617,
+            279.822,
+            262.909
+          ]
+        },
+        {
+          "avg_ts": 269.607506,
+          "case_id": "case-0010",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947156,
+          "mode": "decode",
+          "process_elapsed_seconds": 1.831913,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 947156,
+          "samples_ns": [
+            135198384,
+            116213915,
+            114996241,
+            114869702,
+            114634714
+          ],
+          "samples_ts": [
+            236.689,
+            275.354,
+            278.27,
+            278.577,
+            279.148
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.06640625,
+        925.09765625,
+        924.95703125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        133.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          133.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.95703125,
+        925.09765625
+      ],
+      "vmhwm_mib_values": [
+        925.06640625,
+        925.09765625,
+        924.95703125
+      ]
+    },
+    {
+      "depth": 2048,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 272.493657,
+      "median_of_run_means_tps": 267.30571,
+      "min_run_mean_tps": 238.60004,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        272.493657,
+        238.60004,
+        267.30571
+      ],
+      "runs": [
+        {
+          "avg_ts": 272.493657,
+          "case_id": "case-0011",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 70.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    70.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947176,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.045626,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 947176,
+          "samples_ns": [
+            141121890,
+            113345500,
+            112186057,
+            112714018,
+            112578331
+          ],
+          "samples_ts": [
+            226.754,
+            282.323,
+            285.24,
+            283.904,
+            284.247
+          ]
+        },
+        {
+          "avg_ts": 238.60004,
+          "case_id": "case-0015",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 70.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    70.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947628,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.380455,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 947628,
+          "samples_ns": [
+            147544241,
+            132555422,
+            128260294,
+            132879513,
+            130935398
+          ],
+          "samples_ts": [
+            216.884,
+            241.408,
+            249.493,
+            240.82,
+            244.395
+          ]
+        },
+        {
+          "avg_ts": 267.30571,
+          "case_id": "case-0011",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 70.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    70.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947012,
+          "mode": "decode",
+          "process_elapsed_seconds": 1.659642,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 946984,
+          "samples_ns": [
+            130666316,
+            121420912,
+            117141767,
+            115937729,
+            114736305
+          ],
+          "samples_ts": [
+            244.899,
+            263.546,
+            273.173,
+            276.01,
+            278.9
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.9765625,
+        925.41796875,
+        924.7890625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        70.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          70.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.81640625,
+        925.41796875
+      ],
+      "vmhwm_mib_values": [
+        924.9765625,
+        925.41796875,
+        924.81640625
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 244.485703,
+      "median_of_run_means_tps": 231.826017,
+      "min_run_mean_tps": 103.104217,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        244.485703,
+        231.826017,
+        103.104217
+      ],
+      "runs": [
+        {
+          "avg_ts": 244.485703,
+          "case_id": "case-0006",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1020640,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.293527,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1020640,
+          "samples_ns": [
+            136799769,
+            130011918,
+            129519863,
+            129163625,
+            129259197
+          ],
+          "samples_ts": [
+            233.919,
+            246.131,
+            247.066,
+            247.748,
+            247.565
+          ]
+        },
+        {
+          "avg_ts": 231.826017,
+          "case_id": "case-0008",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1020600,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.516578,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1020600,
+          "samples_ns": [
+            142525741,
+            131975710,
+            131165037,
+            132133088,
+            155345189
+          ],
+          "samples_ts": [
+            224.521,
+            242.469,
+            243.967,
+            242.18,
+            205.993
+          ]
+        },
+        {
+          "avg_ts": 103.104217,
+          "case_id": "case-0003",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1020756,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.654587,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1020756,
+          "samples_ns": [
+            337561565,
+            283671330,
+            310210274,
+            314792590,
+            310357547
+          ],
+          "samples_ts": [
+            94.7975,
+            112.807,
+            103.156,
+            101.654,
+            103.107
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        996.71875,
+        996.6796875,
+        996.83203125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        476.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          476.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        996.6796875,
+        996.83203125
+      ],
+      "vmhwm_mib_values": [
+        996.71875,
+        996.6796875,
+        996.83203125
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 244.211193,
+      "median_of_run_means_tps": 234.682275,
+      "min_run_mean_tps": 224.050123,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        244.211193,
+        234.682275,
+        224.050123
+      ],
+      "runs": [
+        {
+          "avg_ts": 244.211193,
+          "case_id": "case-0009",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947068,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.084309,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 805472,
+          "samples_ns": [
+            141921363,
+            128908219,
+            128831848,
+            128657331,
+            127881398
+          ],
+          "samples_ts": [
+            225.477,
+            248.239,
+            248.386,
+            248.723,
+            250.232
+          ]
+        },
+        {
+          "avg_ts": 234.682275,
+          "case_id": "case-0012",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947312,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.312269,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 947312,
+          "samples_ns": [
+            145675355,
+            131756840,
+            133876772,
+            132032342,
+            139444148
+          ],
+          "samples_ts": [
+            219.667,
+            242.872,
+            239.026,
+            242.365,
+            229.483
+          ]
+        },
+        {
+          "avg_ts": 224.050123,
+          "case_id": "case-0015",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947152,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.341991,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 947152,
+          "samples_ns": [
+            163534439,
+            138552574,
+            137675118,
+            142378382,
+            135346932
+          ],
+          "samples_ts": [
+            195.677,
+            230.959,
+            232.431,
+            224.753,
+            236.429
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        786.59375,
+        925.109375,
+        924.953125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        252.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          252.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.87109375,
+        925.109375
+      ],
+      "vmhwm_mib_values": [
+        924.87109375,
+        925.109375,
+        924.953125
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 244.50408,
+      "median_of_run_means_tps": 233.723329,
+      "min_run_mean_tps": 84.122055,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        244.50408,
+        233.723329,
+        84.122055
+      ],
+      "runs": [
+        {
+          "avg_ts": 244.50408,
+          "case_id": "case-0012",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947236,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.040108,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 947236,
+          "samples_ns": [
+            144421990,
+            128091482,
+            127295384,
+            127972900,
+            128159287
+          ],
+          "samples_ts": [
+            221.573,
+            249.821,
+            251.384,
+            250.053,
+            249.689
+          ]
+        },
+        {
+          "avg_ts": 233.723329,
+          "case_id": "case-0006",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947204,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.333359,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 947204,
+          "samples_ns": [
+            158835900,
+            132338985,
+            131379529,
+            133588686,
+            132101930
+          ],
+          "samples_ts": [
+            201.466,
+            241.803,
+            243.569,
+            239.541,
+            242.237
+          ]
+        },
+        {
+          "avg_ts": 84.122055,
+          "case_id": "case-0001",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 133.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947696,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.600459,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 947668,
+          "samples_ns": [
+            446497624,
+            375303330,
+            362434218,
+            368037350,
+            361837796
+          ],
+          "samples_ts": [
+            71.6689,
+            85.2644,
+            88.2919,
+            86.9477,
+            88.4374
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.03515625,
+        925.00390625,
+        925.45703125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        133.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          133.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        925.00390625,
+        925.484375
+      ],
+      "vmhwm_mib_values": [
+        925.03515625,
+        925.00390625,
+        925.484375
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 191.119969,
+      "median_of_run_means_tps": 189.672829,
+      "min_run_mean_tps": 183.523932,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        189.672829,
+        183.523932,
+        191.119969
+      ],
+      "runs": [
+        {
+          "avg_ts": 189.672829,
+          "case_id": "case-0005",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 924.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   924.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1484420,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.327999,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1484420,
+          "samples_ns": [
+            180674183,
+            165584652,
+            163540272,
+            164347686,
+            170561603
+          ],
+          "samples_ts": [
+            177.114,
+            193.255,
+            195.67,
+            194.709,
+            187.615
+          ]
+        },
+        {
+          "avg_ts": 183.523932,
+          "case_id": "case-0011",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 924.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   924.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1484328,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.909449,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1484328,
+          "samples_ns": [
+            181584766,
+            172801790,
+            170863525,
+            171867162,
+            175116137
+          ],
+          "samples_ts": [
+            176.226,
+            185.183,
+            187.284,
+            186.19,
+            182.736
+          ]
+        },
+        {
+          "avg_ts": 191.119969,
+          "case_id": "case-0012",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 924.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   924.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 1484384,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.358674,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1484384,
+          "samples_ns": [
+            178100280,
+            165862396,
+            165149479,
+            164031878,
+            164823657
+          ],
+          "samples_ts": [
+            179.674,
+            192.931,
+            193.764,
+            195.084,
+            194.147
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        1449.62890625,
+        1449.5390625,
+        1449.59375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        924.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          924.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        1449.5390625,
+        1449.62890625
+      ],
+      "vmhwm_mib_values": [
+        1449.62890625,
+        1449.5390625,
+        1449.59375
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 195.484457,
+      "median_of_run_means_tps": 194.557263,
+      "min_run_mean_tps": 172.347712,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        195.484457,
+        194.557263,
+        172.347712
+      ],
+      "runs": [
+        {
+          "avg_ts": 195.484457,
+          "case_id": "case-0010",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 490.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   490.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1054148,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.283427,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1054148,
+          "samples_ns": [
+            173490392,
+            158642120,
+            160481460,
+            164885691,
+            161789122
+          ],
+          "samples_ts": [
+            184.448,
+            201.712,
+            199.4,
+            194.074,
+            197.788
+          ]
+        },
+        {
+          "avg_ts": 194.557263,
+          "case_id": "case-0004",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 490.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   490.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1054020,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.265248,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1054020,
+          "samples_ns": [
+            174627761,
+            162651776,
+            163294146,
+            161651602,
+            160902586
+          ],
+          "samples_ts": [
+            183.247,
+            196.739,
+            195.965,
+            197.957,
+            198.878
+          ]
+        },
+        {
+          "avg_ts": 172.347712,
+          "case_id": "case-0007",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 490.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   490.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1054064,
+          "mode": "decode",
+          "process_elapsed_seconds": 3.622797,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1054064,
+          "samples_ns": [
+            209329063,
+            164487214,
+            188447276,
+            195791073,
+            176720492
+          ],
+          "samples_ts": [
+            152.869,
+            194.544,
+            169.809,
+            163.44,
+            181.077
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        1029.44140625,
+        1029.31640625,
+        1029.359375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        490.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          490.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        1029.31640625,
+        1029.44140625
+      ],
+      "vmhwm_mib_values": [
+        1029.44140625,
+        1029.31640625,
+        1029.359375
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 195.061402,
+      "median_of_run_means_tps": 193.870616,
+      "min_run_mean_tps": 193.668965,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        193.870616,
+        193.668965,
+        195.061402
+      ],
+      "runs": [
+        {
+          "avg_ts": 193.870616,
+          "case_id": "case-0007",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 259.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   259.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947236,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.542618,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 947236,
+          "samples_ns": [
+            180444166,
+            161822851,
+            162374050,
+            164676249,
+            157737027
+          ],
+          "samples_ts": [
+            177.34,
+            197.747,
+            197.076,
+            194.321,
+            202.869
+          ]
+        },
+        {
+          "avg_ts": 193.668965,
+          "case_id": "case-0009",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 259.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   259.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947024,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.789293,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 947000,
+          "samples_ns": [
+            170299526,
+            158380441,
+            158235662,
+            162984492,
+            177948073
+          ],
+          "samples_ts": [
+            187.904,
+            202.045,
+            202.23,
+            196.338,
+            179.828
+          ]
+        },
+        {
+          "avg_ts": 195.061402,
+          "case_id": "case-0014",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 259.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   259.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947296,
+          "mode": "decode",
+          "process_elapsed_seconds": 2.920341,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 947296,
+          "samples_ns": [
+            174165440,
+            162526092,
+            162541946,
+            161583349,
+            160184427
+          ],
+          "samples_ts": [
+            183.733,
+            196.891,
+            196.872,
+            198.04,
+            199.77
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.03515625,
+        924.8046875,
+        925.09375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        259.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          259.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.828125,
+        925.09375
+      ],
+      "vmhwm_mib_values": [
+        925.03515625,
+        924.828125,
+        925.09375
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 129.778484,
+      "median_of_run_means_tps": 113.654628,
+      "min_run_mean_tps": 55.287196,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        129.778484,
+        55.287196,
+        113.654628
+      ],
+      "runs": [
+        {
+          "avg_ts": 129.778484,
+          "case_id": "case-0014",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1820.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1820.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 2412220,
+          "mode": "decode",
+          "process_elapsed_seconds": 6.815475,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 2412220,
+          "samples_ns": [
+            251472015,
+            239315929,
+            238921635,
+            240868537,
+            264158180
+          ],
+          "samples_ts": [
+            127.251,
+            133.714,
+            133.935,
+            132.853,
+            121.14
+          ]
+        },
+        {
+          "avg_ts": 55.287196,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1820.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1820.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 2412060,
+          "mode": "decode",
+          "process_elapsed_seconds": 10.916864,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 2412060,
+          "samples_ns": [
+            570441852,
+            567268269,
+            586175607,
+            585520471,
+            585169223
+          ],
+          "samples_ts": [
+            56.0969,
+            56.4107,
+            54.5911,
+            54.6522,
+            54.685
+          ]
+        },
+        {
+          "avg_ts": 113.654628,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1820.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1820.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 2412180,
+          "mode": "decode",
+          "process_elapsed_seconds": 9.842043,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 2412180,
+          "samples_ns": [
+            673433688,
+            250661927,
+            241462775,
+            250923064,
+            240531431
+          ],
+          "samples_ts": [
+            47.5177,
+            127.662,
+            132.526,
+            127.529,
+            133.039
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        2355.68359375,
+        2355.52734375,
+        2355.64453125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1820.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1820.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        2355.52734375,
+        2355.68359375
+      ],
+      "vmhwm_mib_values": [
+        2355.68359375,
+        2355.52734375,
+        2355.64453125
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 137.089554,
+      "median_of_run_means_tps": 136.815951,
+      "min_run_mean_tps": 129.95314,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        137.089554,
+        136.815951,
+        129.95314
+      ],
+      "runs": [
+        {
+          "avg_ts": 137.089554,
+          "case_id": "case-0004",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 966.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   966.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1551276,
+          "mode": "decode",
+          "process_elapsed_seconds": 5.482956,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1551276,
+          "samples_ns": [
+            258429691,
+            229913150,
+            228972979,
+            228069674,
+            224754592
+          ],
+          "samples_ts": [
+            123.825,
+            139.183,
+            139.754,
+            140.308,
+            142.378
+          ]
+        },
+        {
+          "avg_ts": 136.815951,
+          "case_id": "case-0007",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 966.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   966.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1551196,
+          "mode": "decode",
+          "process_elapsed_seconds": 5.404018,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1551196,
+          "samples_ns": [
+            240037783,
+            225970990,
+            227582619,
+            252463171,
+            225674936
+          ],
+          "samples_ts": [
+            133.312,
+            141.611,
+            140.608,
+            126.751,
+            141.797
+          ]
+        },
+        {
+          "avg_ts": 129.95314,
+          "case_id": "case-0005",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 966.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   966.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 1551528,
+          "mode": "decode",
+          "process_elapsed_seconds": 6.812874,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1551528,
+          "samples_ns": [
+            248562264,
+            237357645,
+            258186965,
+            229465021,
+            260561546
+          ],
+          "samples_ts": [
+            128.74,
+            134.818,
+            123.941,
+            139.455,
+            122.812
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        1514.91796875,
+        1514.83984375,
+        1515.1640625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        966.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          966.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        1514.83984375,
+        1515.1640625
+      ],
+      "vmhwm_mib_values": [
+        1514.91796875,
+        1514.83984375,
+        1515.1640625
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 142.290515,
+      "median_of_run_means_tps": 139.173227,
+      "min_run_mean_tps": 135.775179,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        139.173227,
+        142.290515,
+        135.775179
+      ],
+      "runs": [
+        {
+          "avg_ts": 139.173227,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 511.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   511.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1092632,
+          "mode": "decode",
+          "process_elapsed_seconds": 4.808749,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1092632,
+          "samples_ns": [
+            241811355,
+            221984197,
+            226351465,
+            237377976,
+            223466811
+          ],
+          "samples_ts": [
+            132.335,
+            144.154,
+            141.373,
+            134.806,
+            143.198
+          ]
+        },
+        {
+          "avg_ts": 142.290515,
+          "case_id": "case-0010",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 511.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   511.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1092764,
+          "mode": "decode",
+          "process_elapsed_seconds": 4.394656,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1092764,
+          "samples_ns": [
+            238968737,
+            222252565,
+            221765604,
+            220194874,
+            222313012
+          ],
+          "samples_ts": [
+            133.909,
+            143.98,
+            144.296,
+            145.326,
+            143.941
+          ]
+        },
+        {
+          "avg_ts": 135.775179,
+          "case_id": "case-0006",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 511.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   511.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1092616,
+          "mode": "decode",
+          "process_elapsed_seconds": 4.856826,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1092616,
+          "samples_ns": [
+            246009929,
+            229897054,
+            228086753,
+            246365009,
+            229520600
+          ],
+          "samples_ts": [
+            130.076,
+            139.193,
+            140.297,
+            129.889,
+            139.421
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        1067.0234375,
+        1067.15234375,
+        1067.0078125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        511.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          511.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        1067.0078125,
+        1067.15234375
+      ],
+      "vmhwm_mib_values": [
+        1067.0234375,
+        1067.15234375,
+        1067.0078125
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 83.581094,
+      "median_of_run_means_tps": 79.178773,
+      "min_run_mean_tps": 56.754522,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        83.581094,
+        79.178773,
+        56.754522
+      ],
+      "runs": [
+        {
+          "avg_ts": 83.581094,
+          "case_id": "case-0003",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3612.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3612.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 4265904,
+          "mode": "decode",
+          "process_elapsed_seconds": 12.508153,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 4265904,
+          "samples_ns": [
+            388463257,
+            377725136,
+            390466960,
+            379762463,
+            378270466
+          ],
+          "samples_ts": [
+            82.3759,
+            84.7177,
+            81.9532,
+            84.2632,
+            84.5956
+          ]
+        },
+        {
+          "avg_ts": 79.178773,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3612.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3612.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 4265912,
+          "mode": "decode",
+          "process_elapsed_seconds": 13.704025,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 4265912,
+          "samples_ns": [
+            455415925,
+            395980050,
+            394578633,
+            390701776,
+            391134913
+          ],
+          "samples_ts": [
+            70.2654,
+            80.8122,
+            81.0992,
+            81.9039,
+            81.8132
+          ]
+        },
+        {
+          "avg_ts": 56.754522,
+          "case_id": "case-0004",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3612.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3612.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 4266140,
+          "mode": "decode",
+          "process_elapsed_seconds": 27.063988,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 4266140,
+          "samples_ns": [
+            452753206,
+            552611672,
+            606245644,
+            630244078,
+            619804119
+          ],
+          "samples_ts": [
+            70.6787,
+            57.9068,
+            52.7839,
+            50.774,
+            51.6292
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        4165.921875,
+        4165.9296875,
+        4166.15234375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        3612.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          3612.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        4165.921875,
+        4166.15234375
+      ],
+      "vmhwm_mib_values": [
+        4165.921875,
+        4165.9296875,
+        4166.15234375
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 90.176402,
+      "median_of_run_means_tps": 90.055779,
+      "min_run_mean_tps": 88.107256,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        90.055779,
+        90.176402,
+        88.107256
+      ],
+      "runs": [
+        {
+          "avg_ts": 90.055779,
+          "case_id": "case-0001",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1918.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1918.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 2545676,
+          "mode": "decode",
+          "process_elapsed_seconds": 15.674967,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 2545676,
+          "samples_ns": [
+            392247336,
+            347420973,
+            346797334,
+            348749145,
+            345717854
+          ],
+          "samples_ts": [
+            81.5812,
+            92.1073,
+            92.2729,
+            91.7565,
+            92.561
+          ]
+        },
+        {
+          "avg_ts": 90.176402,
+          "case_id": "case-0003",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1918.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1918.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 2545748,
+          "mode": "decode",
+          "process_elapsed_seconds": 16.647787,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 2545748,
+          "samples_ns": [
+            357797091,
+            359807544,
+            354488980,
+            350190070,
+            352191456
+          ],
+          "samples_ts": [
+            89.4362,
+            88.9364,
+            90.2708,
+            91.3789,
+            90.8597
+          ]
+        },
+        {
+          "avg_ts": 88.107256,
+          "case_id": "case-0009",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1918.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1918.88 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 2545376,
+          "mode": "decode",
+          "process_elapsed_seconds": 12.092616,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 2545376,
+          "samples_ns": [
+            377490903,
+            365137431,
+            358049456,
+            359983640,
+            356102633
+          ],
+          "samples_ts": [
+            84.7703,
+            87.6382,
+            89.3731,
+            88.8929,
+            89.8617
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        2486.01171875,
+        2486.08203125,
+        2485.71875
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1918.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1918.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        2485.71875,
+        2486.08203125
+      ],
+      "vmhwm_mib_values": [
+        2486.01171875,
+        2486.08203125,
+        2485.71875
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "context_depth",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 90.729911,
+      "median_of_run_means_tps": 89.342046,
+      "min_run_mean_tps": 42.514389,
+      "mode": "decode",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        89.342046,
+        42.514389,
+        90.729911
+      ],
+      "runs": [
+        {
+          "avg_ts": 89.342046,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1015.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1015.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1628012,
+          "mode": "decode",
+          "process_elapsed_seconds": 9.723634,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-001",
+          "sampled_peak_vmrss_kib": 1628012,
+          "samples_ns": [
+            385153596,
+            346169620,
+            355994997,
+            357143842,
+            348973137
+          ],
+          "samples_ts": [
+            83.0837,
+            92.4402,
+            89.8889,
+            89.5998,
+            91.6976
+          ]
+        },
+        {
+          "avg_ts": 42.514389,
+          "case_id": "case-0001",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1015.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1015.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1628420,
+          "mode": "decode",
+          "process_elapsed_seconds": 18.082645,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-002",
+          "sampled_peak_vmrss_kib": 1628420,
+          "samples_ns": [
+            621033069,
+            779279319,
+            786863287,
+            784989883,
+            830119686
+          ],
+          "samples_ts": [
+            51.527,
+            41.0636,
+            40.6678,
+            40.7649,
+            38.5487
+          ]
+        },
+        {
+          "avg_ts": 90.729911,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1015.88,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1015.88 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 1628060,
+          "mode": "decode",
+          "process_elapsed_seconds": 9.620507,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "decode-003",
+          "sampled_peak_vmrss_kib": 1628060,
+          "samples_ns": [
+            353031761,
+            341764796,
+            354491007,
+            359133185,
+            355552388
+          ],
+          "samples_ts": [
+            90.6434,
+            93.6316,
+            90.2703,
+            89.1034,
+            90.0008
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        1589.85546875,
+        1590.25390625,
+        1589.90234375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1015.88
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1015.88
+        ]
+      },
+      "vmhwm_mib_range": [
+        1589.85546875,
+        1590.25390625
+      ],
+      "vmhwm_mib_values": [
+        1589.85546875,
+        1590.25390625,
+        1589.90234375
+      ]
+    },
+    {
+      "depth": 2048,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 17547.95947,
+      "median_of_run_means_tps": 17511.17972,
+      "min_run_mean_tps": 17185.106311,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        17185.106311,
+        17511.17972,
+        17547.95947
+      ],
+      "runs": [
+        {
+          "avg_ts": 17185.106311,
+          "case_id": "case-0015",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 224.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   224.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947176,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.714718,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947176,
+          "samples_ns": [
+            117848480,
+            120351587,
+            117364945,
+            125077241,
+            115662113
+          ],
+          "samples_ts": [
+            17378.2,
+            17016.8,
+            17449.8,
+            16373.9,
+            17706.7
+          ]
+        },
+        {
+          "avg_ts": 17511.17972,
+          "case_id": "case-0014",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 224.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   224.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947320,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.521448,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947320,
+          "samples_ns": [
+            117417091,
+            116192907,
+            117945865,
+            115603884,
+            117644509
+          ],
+          "samples_ts": [
+            17442.1,
+            17625.9,
+            17363.9,
+            17715.7,
+            17408.4
+          ]
+        },
+        {
+          "avg_ts": 17547.95947,
+          "case_id": "case-0008",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 224.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   224.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947316,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.48206,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947316,
+          "samples_ns": [
+            115025457,
+            117306191,
+            115829933,
+            118213359,
+            117224455
+          ],
+          "samples_ts": [
+            17804.8,
+            17458.6,
+            17681.1,
+            17324.6,
+            17470.8
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.9765625,
+        925.1171875,
+        925.11328125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        224.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          224.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.9765625,
+        925.1171875
+      ],
+      "vmhwm_mib_values": [
+        924.9765625,
+        925.1171875,
+        925.11328125
+      ]
+    },
+    {
+      "depth": 2048,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 15810.872047,
+      "median_of_run_means_tps": 15773.411304,
+      "min_run_mean_tps": 15686.07083,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        15773.411304,
+        15810.872047,
+        15686.07083
+      ],
+      "runs": [
+        {
+          "avg_ts": 15773.411304,
+          "case_id": "case-0008",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 119.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   119.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947328,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.568158,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947328,
+          "samples_ns": [
+            129005809,
+            130825688,
+            128864928,
+            132021672,
+            128544949
+          ],
+          "samples_ts": [
+            15875.3,
+            15654.4,
+            15892.6,
+            15512.6,
+            15932.2
+          ]
+        },
+        {
+          "avg_ts": 15810.872047,
+          "case_id": "case-0005",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 119.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   119.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947172,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.542731,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947172,
+          "samples_ns": [
+            131104295,
+            129201145,
+            128742750,
+            130231626,
+            128413832
+          ],
+          "samples_ts": [
+            15621.2,
+            15851.3,
+            15907.7,
+            15725.8,
+            15948.4
+          ]
+        },
+        {
+          "avg_ts": 15686.07083,
+          "case_id": "case-0010",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 119.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   119.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947064,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.685735,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947064,
+          "samples_ns": [
+            130703986,
+            131032746,
+            129343618,
+            131392479,
+            130354549
+          ],
+          "samples_ts": [
+            15669,
+            15629.7,
+            15833.8,
+            15586.9,
+            15711
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.125,
+        924.97265625,
+        924.8671875
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        119.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          119.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.8671875,
+        925.125
+      ],
+      "vmhwm_mib_values": [
+        925.125,
+        924.97265625,
+        924.8671875
+      ]
+    },
+    {
+      "depth": 2048,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 15969.638351,
+      "median_of_run_means_tps": 15715.793583,
+      "min_run_mean_tps": 15217.75328,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        15217.75328,
+        15969.638351,
+        15715.793583
+      ],
+      "runs": [
+        {
+          "avg_ts": 15217.75328,
+          "case_id": "case-0011",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 63.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    63.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947144,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.788907,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947116,
+          "samples_ns": [
+            127727903,
+            133469865,
+            151996297,
+            125982952,
+            136713668
+          ],
+          "samples_ts": [
+            16034.1,
+            15344.3,
+            13474,
+            16256.2,
+            14980.2
+          ]
+        },
+        {
+          "avg_ts": 15969.638351,
+          "case_id": "case-0015",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 63.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    63.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947232,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.513674,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947232,
+          "samples_ns": [
+            128085575,
+            127209905,
+            128814119,
+            128184724,
+            128937333
+          ],
+          "samples_ts": [
+            15989.3,
+            16099.4,
+            15898.9,
+            15976.9,
+            15883.7
+          ]
+        },
+        {
+          "avg_ts": 15715.793583,
+          "case_id": "case-0011",
+          "depth": 2048,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 63.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    63.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947232,
+          "mode": "prefill",
+          "process_elapsed_seconds": 1.57823,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947232,
+          "samples_ns": [
+            132478633,
+            127555560,
+            129288836,
+            129061436,
+            133374931
+          ],
+          "samples_ts": [
+            15459.1,
+            16055.7,
+            15840.5,
+            15868.4,
+            15355.2
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.91796875,
+        925.03125,
+        925.03125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        63.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          63.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.9453125,
+        925.03125
+      ],
+      "vmhwm_mib_values": [
+        924.9453125,
+        925.03125,
+        925.03125
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 15680.09676,
+      "median_of_run_means_tps": 15309.848304,
+      "min_run_mean_tps": 15223.199273,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        15223.199273,
+        15309.848304,
+        15680.09676
+      ],
+      "runs": [
+        {
+          "avg_ts": 15223.199273,
+          "case_id": "case-0006",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 448.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   448.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947208,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.43742,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947208,
+          "samples_ns": [
+            289919689,
+            261144077,
+            283985333,
+            257020272,
+            256909598
+          ],
+          "samples_ts": [
+            14128.1,
+            15684.8,
+            14423.3,
+            15936.5,
+            15943.4
+          ]
+        },
+        {
+          "avg_ts": 15309.848304,
+          "case_id": "case-0008",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 448.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   448.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947212,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.605394,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947212,
+          "samples_ns": [
+            270823767,
+            259598525,
+            268265564,
+            265629292,
+            273826689
+          ],
+          "samples_ts": [
+            15124.2,
+            15778.2,
+            15268.5,
+            15420,
+            14958.4
+          ]
+        },
+        {
+          "avg_ts": 15680.09676,
+          "case_id": "case-0003",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 448.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   448.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947164,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.250954,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947164,
+          "samples_ns": [
+            261043544,
+            259808499,
+            261379583,
+            262345173,
+            261550719
+          ],
+          "samples_ts": [
+            15690.9,
+            15765.5,
+            15670.7,
+            15613,
+            15660.4
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.0078125,
+        925.01171875,
+        924.96484375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        448.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          448.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.96484375,
+        925.01171875
+      ],
+      "vmhwm_mib_values": [
+        925.0078125,
+        925.01171875,
+        924.96484375
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 14200.955837,
+      "median_of_run_means_tps": 13923.103298,
+      "min_run_mean_tps": 13879.516849,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        14200.955837,
+        13879.516849,
+        13923.103298
+      ],
+      "runs": [
+        {
+          "avg_ts": 14200.955837,
+          "case_id": "case-0009",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 238.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   238.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947304,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.566886,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947304,
+          "samples_ns": [
+            287581032,
+            286243797,
+            290883505,
+            288486988,
+            289002166
+          ],
+          "samples_ts": [
+            14242.9,
+            14309.5,
+            14081.2,
+            14198.2,
+            14172.9
+          ]
+        },
+        {
+          "avg_ts": 13879.516849,
+          "case_id": "case-0012",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 238.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   238.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947160,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.809169,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947160,
+          "samples_ns": [
+            295877615,
+            292143096,
+            292085729,
+            295764633,
+            299823601
+          ],
+          "samples_ts": [
+            13843.6,
+            14020.5,
+            14023.3,
+            13848.8,
+            13661.4
+          ]
+        },
+        {
+          "avg_ts": 13923.103298,
+          "case_id": "case-0015",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 238.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   238.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947176,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.50341,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947176,
+          "samples_ns": [
+            295493093,
+            292971282,
+            295598153,
+            292154624,
+            294752064
+          ],
+          "samples_ts": [
+            13861.6,
+            13980.9,
+            13856.6,
+            14020,
+            13896.4
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.1015625,
+        924.9609375,
+        924.9765625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        238.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          238.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.9609375,
+        925.1015625
+      ],
+      "vmhwm_mib_values": [
+        925.1015625,
+        924.9609375,
+        924.9765625
+      ]
+    },
+    {
+      "depth": 4096,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 14473.062536,
+      "median_of_run_means_tps": 14394.986115,
+      "min_run_mean_tps": 13903.430913,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        14473.062536,
+        14394.986115,
+        13903.430913
+      ],
+      "runs": [
+        {
+          "avg_ts": 14473.062536,
+          "case_id": "case-0012",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 126.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   126.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947224,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.727406,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947224,
+          "samples_ns": [
+            281374546,
+            282277872,
+            282371630,
+            281842563,
+            287256444
+          ],
+          "samples_ts": [
+            14557.1,
+            14510.5,
+            14505.7,
+            14532.9,
+            14259
+          ]
+        },
+        {
+          "avg_ts": 14394.986115,
+          "case_id": "case-0006",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 126.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   126.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947176,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.401839,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947176,
+          "samples_ns": [
+            300638163,
+            279735372,
+            281145956,
+            281811773,
+            280457662
+          ],
+          "samples_ts": [
+            13624.4,
+            14642.4,
+            14568.9,
+            14534.5,
+            14604.7
+          ]
+        },
+        {
+          "avg_ts": 13903.430913,
+          "case_id": "case-0001",
+          "depth": 4096,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 126.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   126.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947228,
+          "mode": "prefill",
+          "process_elapsed_seconds": 2.548565,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947228,
+          "samples_ns": [
+            287406239,
+            289154838,
+            290981458,
+            325367910,
+            283758596
+          ],
+          "samples_ts": [
+            14251.6,
+            14165.4,
+            14076.5,
+            12588.8,
+            14434.8
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.0234375,
+        924.9765625,
+        925.02734375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        126.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          126.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.9765625,
+        925.02734375
+      ],
+      "vmhwm_mib_values": [
+        925.0234375,
+        924.9765625,
+        925.02734375
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 13201.141254,
+      "median_of_run_means_tps": 13056.415902,
+      "min_run_mean_tps": 12916.244724,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        13056.415902,
+        13201.141254,
+        12916.244724
+      ],
+      "runs": [
+        {
+          "avg_ts": 13056.415902,
+          "case_id": "case-0005",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 896.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   896.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947128,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.600547,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947128,
+          "samples_ns": [
+            623440289,
+            626145154,
+            625742935,
+            631974873,
+            629927016
+          ],
+          "samples_ts": [
+            13140,
+            13083.2,
+            13091.6,
+            12962.5,
+            13004.7
+          ]
+        },
+        {
+          "avg_ts": 13201.141254,
+          "case_id": "case-0011",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 896.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   896.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947296,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.442011,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947296,
+          "samples_ns": [
+            620027762,
+            620520933,
+            620893730,
+            620887885,
+            620432570
+          ],
+          "samples_ts": [
+            13212.3,
+            13201.8,
+            13193.9,
+            13194,
+            13203.7
+          ]
+        },
+        {
+          "avg_ts": 12916.244724,
+          "case_id": "case-0012",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 896.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   896.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947216,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.750297,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947216,
+          "samples_ns": [
+            636278734,
+            636510703,
+            634312835,
+            630464918,
+            633670933
+          ],
+          "samples_ts": [
+            12874.9,
+            12870.2,
+            12914.8,
+            12993.6,
+            12927.8
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.9296875,
+        925.09375,
+        925.015625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        896.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          896.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.9296875,
+        925.09375
+      ],
+      "vmhwm_mib_values": [
+        924.9296875,
+        925.09375,
+        925.015625
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 11713.003905,
+      "median_of_run_means_tps": 11475.687873,
+      "min_run_mean_tps": 11445.116221,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        11713.003905,
+        11475.687873,
+        11445.116221
+      ],
+      "runs": [
+        {
+          "avg_ts": 11713.003905,
+          "case_id": "case-0010",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947224,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.932114,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947224,
+          "samples_ns": [
+            700421997,
+            700759344,
+            699203211,
+            699178600,
+            697414766
+          ],
+          "samples_ts": [
+            11695.8,
+            11690.2,
+            11716.2,
+            11716.6,
+            11746.2
+          ]
+        },
+        {
+          "avg_ts": 11475.687873,
+          "case_id": "case-0004",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947124,
+          "mode": "prefill",
+          "process_elapsed_seconds": 5.331664,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947124,
+          "samples_ns": [
+            703873043,
+            707772619,
+            705020793,
+            716200336,
+            737487668
+          ],
+          "samples_ts": [
+            11638.5,
+            11574.3,
+            11619.5,
+            11438.1,
+            11108
+          ]
+        },
+        {
+          "avg_ts": 11445.116221,
+          "case_id": "case-0007",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 476.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947100,
+          "mode": "prefill",
+          "process_elapsed_seconds": 5.102386,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947100,
+          "samples_ns": [
+            717752923,
+            711997142,
+            712026865,
+            720385248,
+            716732885
+          ],
+          "samples_ts": [
+            11413.4,
+            11505.7,
+            11505.2,
+            11371.7,
+            11429.6
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.0234375,
+        924.92578125,
+        924.90234375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        476.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          476.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.90234375,
+        925.0234375
+      ],
+      "vmhwm_mib_values": [
+        925.0234375,
+        924.92578125,
+        924.90234375
+      ]
+    },
+    {
+      "depth": 8192,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 11934.773267,
+      "median_of_run_means_tps": 11885.671824,
+      "min_run_mean_tps": 11723.451314,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        11885.671824,
+        11934.773267,
+        11723.451314
+      ],
+      "runs": [
+        {
+          "avg_ts": 11885.671824,
+          "case_id": "case-0007",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947216,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.929142,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947216,
+          "samples_ns": [
+            698908871,
+            695903609,
+            683153676,
+            682323410,
+            686211859
+          ],
+          "samples_ts": [
+            11721.1,
+            11771.7,
+            11991.4,
+            12006,
+            11938
+          ]
+        },
+        {
+          "avg_ts": 11934.773267,
+          "case_id": "case-0009",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947248,
+          "mode": "prefill",
+          "process_elapsed_seconds": 4.811594,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947248,
+          "samples_ns": [
+            682988472,
+            688810846,
+            688290345,
+            687517971,
+            684418704
+          ],
+          "samples_ts": [
+            11994.3,
+            11893,
+            11902,
+            11915.3,
+            11969.3
+          ]
+        },
+        {
+          "avg_ts": 11723.451314,
+          "case_id": "case-0014",
+          "depth": 8192,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 252.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947204,
+          "mode": "prefill",
+          "process_elapsed_seconds": 5.004211,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947204,
+          "samples_ns": [
+            700241565,
+            695118683,
+            695755277,
+            698778469,
+            704032349
+          ],
+          "samples_ts": [
+            11698.8,
+            11785,
+            11774.3,
+            11723.3,
+            11635.8
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.015625,
+        925.046875,
+        925.00390625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        252.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          252.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        925.00390625,
+        925.046875
+      ],
+      "vmhwm_mib_values": [
+        925.015625,
+        925.046875,
+        925.00390625
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 9700.700616,
+      "median_of_run_means_tps": 9697.507527,
+      "min_run_mean_tps": 9499.439027,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        9697.507527,
+        9700.700616,
+        9499.439027
+      ],
+      "runs": [
+        {
+          "avg_ts": 9697.507527,
+          "case_id": "case-0014",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1792.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1792.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947060,
+          "mode": "prefill",
+          "process_elapsed_seconds": 11.161266,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 560860,
+          "samples_ns": [
+            1681959239,
+            1680051500,
+            1681242487,
+            1692784034,
+            1711921749
+          ],
+          "samples_ts": [
+            9741.02,
+            9752.08,
+            9745.17,
+            9678.73,
+            9570.53
+          ]
+        },
+        {
+          "avg_ts": 9700.700616,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1792.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1792.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947244,
+          "mode": "prefill",
+          "process_elapsed_seconds": 10.924794,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947244,
+          "samples_ns": [
+            1680903367,
+            1682357626,
+            1690654757,
+            1696951015,
+            1694002976
+          ],
+          "samples_ts": [
+            9747.14,
+            9738.71,
+            9690.92,
+            9654.96,
+            9671.77
+          ]
+        },
+        {
+          "avg_ts": 9499.439027,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1792.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1792.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947296,
+          "mode": "prefill",
+          "process_elapsed_seconds": 11.14108,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947296,
+          "samples_ns": [
+            1724083827,
+            1709480205,
+            1724199109,
+            1723911309,
+            1742306823
+          ],
+          "samples_ts": [
+            9503.02,
+            9584.2,
+            9502.38,
+            9503.97,
+            9403.63
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        547.71484375,
+        925.04296875,
+        925.09375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1792.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1792.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.86328125,
+        925.09375
+      ],
+      "vmhwm_mib_values": [
+        924.86328125,
+        925.04296875,
+        925.09375
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 8568.9702,
+      "median_of_run_means_tps": 8506.15462,
+      "min_run_mean_tps": 8482.226684,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        8506.15462,
+        8568.9702,
+        8482.226684
+      ],
+      "runs": [
+        {
+          "avg_ts": 8506.15462,
+          "case_id": "case-0004",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 952.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   952.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947008,
+          "mode": "prefill",
+          "process_elapsed_seconds": 12.430873,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 565016,
+          "samples_ns": [
+            1940733157,
+            1909021386,
+            1973341156,
+            1903016861,
+            1906438024
+          ],
+          "samples_ts": [
+            8442.17,
+            8582.41,
+            8302.67,
+            8609.49,
+            8594.04
+          ]
+        },
+        {
+          "avg_ts": 8568.9702,
+          "case_id": "case-0007",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 952.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   952.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947300,
+          "mode": "prefill",
+          "process_elapsed_seconds": 12.175768,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947300,
+          "samples_ns": [
+            1891960758,
+            1896518965,
+            1951105831,
+            1906475935,
+            1915157396
+          ],
+          "samples_ts": [
+            8659.8,
+            8638.99,
+            8397.29,
+            8593.87,
+            8554.91
+          ]
+        },
+        {
+          "avg_ts": 8482.226684,
+          "case_id": "case-0005",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 952.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   952.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947240,
+          "mode": "prefill",
+          "process_elapsed_seconds": 12.380457,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947240,
+          "samples_ns": [
+            1928076958,
+            1935738038,
+            1927209243,
+            1940262009,
+            1926631913
+          ],
+          "samples_ts": [
+            8497.59,
+            8463.96,
+            8501.41,
+            8444.22,
+            8503.96
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        551.7734375,
+        925.09765625,
+        925.0390625
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        952.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          952.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.8125,
+        925.09765625
+      ],
+      "vmhwm_mib_values": [
+        924.8125,
+        925.09765625,
+        925.0390625
+      ]
+    },
+    {
+      "depth": 16384,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 8829.471187,
+      "median_of_run_means_tps": 8702.63499,
+      "min_run_mean_tps": 8454.857984,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        8454.857984,
+        8829.471187,
+        8702.63499
+      ],
+      "runs": [
+        {
+          "avg_ts": 8454.857984,
+          "case_id": "case-0002",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 504.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   504.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947084,
+          "mode": "prefill",
+          "process_elapsed_seconds": 13.286114,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947084,
+          "samples_ns": [
+            1931844008,
+            1956182116,
+            1950673728,
+            1929640153,
+            1921217880
+          ],
+          "samples_ts": [
+            8481.02,
+            8375.5,
+            8399.15,
+            8490.7,
+            8527.92
+          ]
+        },
+        {
+          "avg_ts": 8829.471187,
+          "case_id": "case-0010",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 504.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   504.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947320,
+          "mode": "prefill",
+          "process_elapsed_seconds": 12.070655,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947320,
+          "samples_ns": [
+            1841514884,
+            1848129367,
+            1867975853,
+            1854214406,
+            1866468576
+          ],
+          "samples_ts": [
+            8897.02,
+            8865.18,
+            8770.99,
+            8836.09,
+            8778.07
+          ]
+        },
+        {
+          "avg_ts": 8702.63499,
+          "case_id": "case-0006",
+          "depth": 16384,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 504.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   504.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947280,
+          "mode": "prefill",
+          "process_elapsed_seconds": 12.102412,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947280,
+          "samples_ns": [
+            1883820176,
+            1876449174,
+            1878773154,
+            1884004762,
+            1890254461
+          ],
+          "samples_ts": [
+            8697.22,
+            8731.38,
+            8720.58,
+            8696.37,
+            8667.62
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.88671875,
+        925.1171875,
+        925.078125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        504.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          504.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.88671875,
+        925.1171875
+      ],
+      "vmhwm_mib_values": [
+        924.88671875,
+        925.1171875,
+        925.078125
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "f16",
+      "max_run_mean_tps": 6293.671156,
+      "median_of_run_means_tps": 6255.671097,
+      "min_run_mean_tps": 6206.839525,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        6293.671156,
+        6206.839525,
+        6255.671097
+      ],
+      "runs": [
+        {
+          "avg_ts": 6293.671156,
+          "case_id": "case-0003",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3584.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3584.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947180,
+          "mode": "prefill",
+          "process_elapsed_seconds": 32.869372,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947180,
+          "samples_ns": [
+            5306189046,
+            5253443880,
+            5174244555,
+            5156579738,
+            5145737891
+          ],
+          "samples_ts": [
+            6175.43,
+            6237.43,
+            6332.91,
+            6354.6,
+            6367.99
+          ]
+        },
+        {
+          "avg_ts": 6206.839525,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3584.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3584.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947216,
+          "mode": "prefill",
+          "process_elapsed_seconds": 32.545879,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947216,
+          "samples_ns": [
+            5226056324,
+            5312833914,
+            5334430702,
+            5271326828,
+            5253501830
+          ],
+          "samples_ts": [
+            6270.12,
+            6167.71,
+            6142.74,
+            6216.27,
+            6237.36
+          ]
+        },
+        {
+          "avg_ts": 6255.671097,
+          "case_id": "case-0004",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 3584.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3584.00 MiB"
+            }
+          ],
+          "kv_type": "f16",
+          "max_observed_vmhwm_kib": 947260,
+          "mode": "prefill",
+          "process_elapsed_seconds": 32.278537,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947260,
+          "samples_ns": [
+            5227182540,
+            5234729440,
+            5250934553,
+            5237132600,
+            5240713952
+          ],
+          "samples_ts": [
+            6268.77,
+            6259.73,
+            6240.41,
+            6256.86,
+            6252.58
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.98046875,
+        925.015625,
+        925.05859375
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        3584.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          3584.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.98046875,
+        925.05859375
+      ],
+      "vmhwm_mib_values": [
+        924.98046875,
+        925.015625,
+        925.05859375
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q8_0",
+      "max_run_mean_tps": 5672.770528,
+      "median_of_run_means_tps": 5591.211954,
+      "min_run_mean_tps": 5558.117373,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        5591.211954,
+        5672.770528,
+        5558.117373
+      ],
+      "runs": [
+        {
+          "avg_ts": 5591.211954,
+          "case_id": "case-0001",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1904.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1904.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947184,
+          "mode": "prefill",
+          "process_elapsed_seconds": 36.121778,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947184,
+          "samples_ns": [
+            5768941190,
+            5746324044,
+            5843848642,
+            5948609748,
+            6003903907
+          ],
+          "samples_ts": [
+            5680.07,
+            5702.43,
+            5607.26,
+            5508.51,
+            5457.78
+          ]
+        },
+        {
+          "avg_ts": 5672.770528,
+          "case_id": "case-0003",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1904.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1904.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947080,
+          "mode": "prefill",
+          "process_elapsed_seconds": 35.627598,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947080,
+          "samples_ns": [
+            5758384150,
+            5789941363,
+            5768910752,
+            5780165588,
+            5784540866
+          ],
+          "samples_ts": [
+            5690.49,
+            5659.47,
+            5680.1,
+            5669.04,
+            5664.75
+          ]
+        },
+        {
+          "avg_ts": 5558.117373,
+          "case_id": "case-0009",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1904.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1904.00 MiB"
+            }
+          ],
+          "kv_type": "q8_0",
+          "max_observed_vmhwm_kib": 947328,
+          "mode": "prefill",
+          "process_elapsed_seconds": 36.297304,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947328,
+          "samples_ns": [
+            6037525292,
+            5828953348,
+            5880773666,
+            5878839713,
+            5855966736
+          ],
+          "samples_ts": [
+            5427.39,
+            5621.59,
+            5572.06,
+            5573.89,
+            5595.66
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        924.984375,
+        924.8828125,
+        925.125
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1904.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1904.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        924.8828125,
+        925.125
+      ],
+      "vmhwm_mib_values": [
+        924.984375,
+        924.8828125,
+        925.125
+      ]
+    },
+    {
+      "depth": 32768,
+      "depth_semantics": "prompt_tokens",
+      "fresh_process_count": 3,
+      "gpu_process_memory_mib": [
+        null,
+        null,
+        null
+      ],
+      "gpu_process_scope": "matched benchmark child PID only; null does not mean zero; whole-device snapshots are separate",
+      "gpu_process_status": [
+        "pid_not_reported",
+        "pid_not_reported",
+        "pid_not_reported"
+      ],
+      "kv_type": "q4_0",
+      "max_run_mean_tps": 5825.823198,
+      "median_of_run_means_tps": 5825.779049,
+      "min_run_mean_tps": 5730.810218,
+      "mode": "prefill",
+      "process_memory_scope": "benchmark child only; sampled VmRSS and observed VmHWM, not a process-tree peak and not KV",
+      "run_means_tps": [
+        5825.779049,
+        5825.823198,
+        5730.810218
+      ],
+      "runs": [
+        {
+          "avg_ts": 5825.779049,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1008.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1008.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947300,
+          "mode": "prefill",
+          "process_elapsed_seconds": 34.484102,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-001",
+          "sampled_peak_vmrss_kib": 947300,
+          "samples_ns": [
+            5606887880,
+            5597457043,
+            5653399630,
+            5653077381,
+            5612957309
+          ],
+          "samples_ts": [
+            5844.24,
+            5854.09,
+            5796.16,
+            5796.49,
+            5837.92
+          ]
+        },
+        {
+          "avg_ts": 5825.823198,
+          "case_id": "case-0001",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1008.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1008.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947324,
+          "mode": "prefill",
+          "process_elapsed_seconds": 34.785639,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-002",
+          "sampled_peak_vmrss_kib": 947324,
+          "samples_ns": [
+            5612460888,
+            5657627161,
+            5621368543,
+            5613194058,
+            5618663942
+          ],
+          "samples_ts": [
+            5838.44,
+            5791.83,
+            5829.19,
+            5837.67,
+            5831.99
+          ]
+        },
+        {
+          "avg_ts": 5730.810218,
+          "case_id": "case-0013",
+          "depth": 32768,
+          "gpu_process_memory_mib": null,
+          "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+          "gpu_process_status": "pid_not_reported",
+          "kv_runtime_mib": [
+            {
+              "mib": 1008.0,
+              "source": "CUDA0",
+              "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1008.00 MiB"
+            }
+          ],
+          "kv_type": "q4_0",
+          "max_observed_vmhwm_kib": 947244,
+          "mode": "prefill",
+          "process_elapsed_seconds": 35.057061,
+          "process_scope": "benchmark child PID only; not a process-tree peak",
+          "run_path": "prefill-003",
+          "sampled_peak_vmrss_kib": 947244,
+          "samples_ns": [
+            5710002001,
+            5719011617,
+            5703418965,
+            5728336307,
+            5728643907
+          ],
+          "samples_ts": [
+            5738.7,
+            5729.66,
+            5745.33,
+            5720.33,
+            5720.03
+          ]
+        }
+      ],
+      "sampled_vmrss_mib": [
+        925.09765625,
+        925.12109375,
+        925.04296875
+      ],
+      "samples_per_process": 5,
+      "unique_kv_allocation_mib": [
+        1008.0
+      ],
+      "unique_kv_allocation_mib_by_source": {
+        "CUDA0": [
+          1008.0
+        ]
+      },
+      "vmhwm_mib_range": [
+        925.04296875,
+        925.12109375
+      ],
+      "vmhwm_mib_values": [
+        925.09765625,
+        925.12109375,
+        925.04296875
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "Three fresh-process means are summarized by their median and min/max; no confidence interval is calculated.",
+    "Each fresh process retains its five llama-bench samples in samples_ts and samples_ns.",
+    "Process memory values are child-only samples; GPU process memory requires a matching child PID.",
+    "GPU-wide snapshots are not process memory; none of these memory figures are KV-specific unless labeled as KV allocation.",
+    "This script does not evaluate model quality; consult independent PPL and retrieval records.",
+    "Q4 throughput comparisons in this M1 report are diagnostic only, not a recommendation; no mobile conclusion is drawn."
+  ],
+  "matrix_path": "/opt/edgellm/results/matrix-20261003-001",
+  "run_count": 6,
+  "runs": [
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:30:26.447643Z",
+      "finished_at": "2026-10-03T03:31:47.031962Z",
+      "mode": "decode",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "decode-001",
+      "seed": 20261003,
+      "ubatch": 512
+    },
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:31:47.145561Z",
+      "finished_at": "2026-10-03T03:33:23.160994Z",
+      "mode": "decode",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "decode-002",
+      "seed": 20261004,
+      "ubatch": 512
+    },
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:33:23.326833Z",
+      "finished_at": "2026-10-03T03:35:02.180830Z",
+      "mode": "decode",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "decode-003",
+      "seed": 20261005,
+      "ubatch": 512
+    },
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:35:02.383162Z",
+      "finished_at": "2026-10-03T03:37:53.326332Z",
+      "mode": "prefill",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "prefill-001",
+      "seed": 20261003,
+      "ubatch": 512
+    },
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:37:53.558762Z",
+      "finished_at": "2026-10-03T03:40:41.905586Z",
+      "mode": "prefill",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "prefill-002",
+      "seed": 20261004,
+      "ubatch": 512
+    },
+    {
+      "batch": 512,
+      "created_at": "2026-10-03T03:40:42.014413Z",
+      "finished_at": "2026-10-03T03:43:31.016851Z",
+      "mode": "prefill",
+      "repetitions": 5,
+      "require_backend": "cuda",
+      "run_path": "prefill-003",
+      "seed": 20261005,
+      "ubatch": 512
+    }
+  ],
+  "schema_version": 1
+}

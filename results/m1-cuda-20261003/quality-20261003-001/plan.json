@@ -1,0 +1,101 @@
+{
+  "case_order": [
+    "f16",
+    "q8_0",
+    "q4_0"
+  ],
+  "cases": [
+    {
+      "argv": [
+        "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+        "-m",
+        "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+        "-f",
+        "/opt/edgellm/datasets/wiki.test.raw",
+        "-c",
+        "2048",
+        "--chunks",
+        "8",
+        "-ctk",
+        "f16",
+        "-ctv",
+        "f16",
+        "-fa",
+        "on",
+        "-ngl",
+        "99",
+        "-t",
+        "4",
+        "-b",
+        "512",
+        "-ub",
+        "512"
+      ],
+      "case_id": "case-01-f16",
+      "cwd": "/opt/edgellm/external/llama.cpp",
+      "kv_type": "f16"
+    },
+    {
+      "argv": [
+        "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+        "-m",
+        "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+        "-f",
+        "/opt/edgellm/datasets/wiki.test.raw",
+        "-c",
+        "2048",
+        "--chunks",
+        "8",
+        "-ctk",
+        "q8_0",
+        "-ctv",
+        "q8_0",
+        "-fa",
+        "on",
+        "-ngl",
+        "99",
+        "-t",
+        "4",
+        "-b",
+        "512",
+        "-ub",
+        "512"
+      ],
+      "case_id": "case-02-q8_0",
+      "cwd": "/opt/edgellm/external/llama.cpp",
+      "kv_type": "q8_0"
+    },
+    {
+      "argv": [
+        "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+        "-m",
+        "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+        "-f",
+        "/opt/edgellm/datasets/wiki.test.raw",
+        "-c",
+        "2048",
+        "--chunks",
+        "8",
+        "-ctk",
+        "q4_0",
+        "-ctv",
+        "q4_0",
+        "-fa",
+        "on",
+        "-ngl",
+        "99",
+        "-t",
+        "4",
+        "-b",
+        "512",
+        "-ub",
+        "512"
+      ],
+      "case_id": "case-03-q4_0",
+      "cwd": "/opt/edgellm/external/llama.cpp",
+      "kv_type": "q4_0"
+    }
+  ],
+  "lock_sha256": "4843fc81de1b3a30ff3d4c1ee1dc69465106113cf3d45b2c8b848bb86c70ee9a",
+  "schema_version": 1
+}

@@ -15,7 +15,10 @@ Memory-Efficient LLM Inference on Resource-Constrained Devices
 - 实验规划、源码地图、质量门槛、决策记录与跨系统交接均在仓库内。
 - 已完成六种配置的真实 CPU smoke，每种三次重复；保存了两组原始记录。512 token 深度的 KV allocation 从 F16 的84.00 MiB降到Q8的44.62、Q4的23.62 MiB，吞吐波动较大，尚不能证明提速。见 [实测报告](results/cpu-smoke-20261002-003/report.md)。
 - 已验证状态、运行数据和失败记录以 [HANDOFF.md](HANDOFF.md) 为准。
-- GitHub 全新克隆的测试、49份证据校验与锁定源码拉取已通过；[Ubuntu/Windows 四组 CI](https://github.com/Tao20060602/edgellm/actions/runs/37031818499) 全部通过。下一步由 [Issue #1](https://github.com/Tao20060602/edgellm/issues/1) 跟踪。
+- 已完成0.6B CUDA基线：90个正式配置进程、450次内部重复，分开测prefill/decode与真实warm TTFT。32K depth的KV allocation：F16 3612 MiB、Q8 1918.88、Q4 1015.88；Q8 prefill约慢9%–12%，decode有明显波动，不宣称稳定提速。
+- 检索screen为F16/Q8各9/9、Q4 2/9，Q4性能只作诊断。Profiler确认量化单token路径与大query的FP16转换路径不同。详见 [M1实测报告](docs/M1_REPORT.md)。
+- 实测发现请求禁用prompt reuse仍保留默认8GiB RAM缓存；显式关闭后F16 server进程VmHWM从约8.5GiB降到930MiB，题目和阈值不变。这是配置效果，尚不是自研kernel优化。
+- [跨系统M1复现命令](docs/M1_RUNBOOK.md)与[4B候选预算](docs/DENSE_MODEL_PLAN.md)已记录。4B、手机和自研优化仍待验证；当前CI见 [GitHub Actions](https://github.com/Tao20060602/edgellm/actions)。
 
 ## 从另一台系统接手
 

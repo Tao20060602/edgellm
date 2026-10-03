@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-03T03:25:32.356660Z",
+  "completed_formats": [],
+  "error": "missing full CUDA offload/KV allocation proof"
+}

@@ -1,0 +1,117 @@
+{
+  "argv": [
+    "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+    "-m",
+    "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+    "-f",
+    "/opt/edgellm/datasets/wiki.test.raw",
+    "-c",
+    "2048",
+    "--chunks",
+    "8",
+    "-ctk",
+    "q4_0",
+    "-ctv",
+    "q4_0",
+    "-fa",
+    "on",
+    "-ngl",
+    "99",
+    "-t",
+    "4",
+    "-b",
+    "512",
+    "-ub",
+    "512",
+    "-v"
+  ],
+  "case_id": "case-03-q4_0",
+  "cwd": "/opt/edgellm/external/llama.cpp",
+  "finished_at": "2026-10-03T04:02:26.100201Z",
+  "kv_type": "q4_0",
+  "parsed": {
+    "actual_cuda_kv_buffers": [
+      {
+        "backend": "CUDA0",
+        "mib": 63.0,
+        "source_line": "CUDA0 KV buffer size =    63.00 MiB"
+      }
+    ],
+    "actual_ppl_context_kv_types": {
+      "key": "q4_0",
+      "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+      "value": "q4_0"
+    },
+    "batch_tokens": 512,
+    "chunk_count": 8,
+    "context_tokens": 2048,
+    "cuda_device_count_logs": [],
+    "cuda_runtime_evidence": [
+      "all_requested_model_layers_offloaded",
+      "nonzero_materialized_cuda_kv_buffer"
+    ],
+    "gpu_layer_offload": {
+      "offloaded": 29,
+      "requested": 99,
+      "summaries": [
+        {
+          "offloaded": 29,
+          "phase": "fit_probe",
+          "source_line": "offloaded 29/29 layers to GPU",
+          "total": 29
+        },
+        {
+          "offloaded": 29,
+          "phase": "ppl_context",
+          "source_line": "offloaded 29/29 layers to GPU",
+          "total": 29
+        }
+      ],
+      "total": 29
+    },
+    "input_token_count": null,
+    "input_token_count_status": "not_reported_by_pinned_upstream",
+    "ppl": 48.3775,
+    "ppl_source_stream": "stderr",
+    "runtime_kv_buffer_sizes": [
+      {
+        "backend": "CUDA0",
+        "mib": 0.0,
+        "source_line": "CUDA0 KV buffer size =     0.00 MiB"
+      },
+      {
+        "backend": "CUDA0",
+        "mib": 63.0,
+        "source_line": "CUDA0 KV buffer size =    63.00 MiB"
+      }
+    ],
+    "runtime_kv_types": [
+      {
+        "key": "q4_0",
+        "phase": "fit_probe",
+        "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+        "value": "q4_0"
+      },
+      {
+        "key": "q4_0",
+        "phase": "ppl_context",
+        "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+        "value": "q4_0"
+      }
+    ],
+    "runtime_log_stream": "stderr",
+    "scored_next_token_targets": 8184,
+    "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
+    "uncertainty_absolute": 2.01248
+  },
+  "return_code": 0,
+  "schema_version": 1,
+  "started_at": "2026-10-03T04:02:21.105580Z",
+  "status": "success",
+  "stderr_bytes": 682066,
+  "stderr_path": "cases/case-03-q4_0.stderr.bin",
+  "stderr_sha256": "bdca1bbaf92dadc487ea8b6d3f55ac4247243e67f61ebca26a93b97c5e8ba89a",
+  "stdout_bytes": 103,
+  "stdout_path": "cases/case-03-q4_0.stdout.bin",
+  "stdout_sha256": "e582c7a4dc8b103008955f6d2041ef2fa54faf75b40a7940bbe49fb5db81e337"
+}

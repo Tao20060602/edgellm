@@ -2,19 +2,23 @@
 
 第一目标是一个能测、能解释、能迁移的实验系统。最终想优化什么，必须由测量决定。
 
-## M0 - Bring-up（当前）
+## M0 - Bring-up（完成）
 
 锁定 upstream/model；构建 CPU；F16/Q8/Q4 KV 实际 smoke；保存原始输出与 provenance；通过 runner 的失败/超时测试；fresh clone 后能跑测试并找到所有恢复命令。这里的跑通不能称为 runtime 优化。
 
-## M1 - Matched baseline（下一步）
+## M1a - Small-model matched baseline（完成；见 M1_REPORT）
 
 1. 在目标系统构建 CUDA 或实际可用 backend，确认设备、编译选项和真实 offload 日志。
 2. 固定 Qwen3-0.6B Q8 权重、batch/ubatch/thread/offload，先扫已填充 KV 深度 2048/4096/8192/16384/32768。每个深度比较三种 KV；只有通过质量门槛的配置进入最终选择。
-3. 增加 prefill 测量、热服务请求 TTFT、模型/计算 buffer/KV/RSS/VRAM 的独立记录。当前 runner 只测合成 decode。
+3. 增加 prefill 测量、热服务请求 TTFT、模型/计算 buffer/KV/RSS/VRAM 的独立记录。现已实现分开的prefill/decode、uncached warm TTFT和process-memory监控；WSL无法提供的进程显存保留null。
 4. 增加固定短文本 perplexity 数据（与 hash）和长上下文 retrieval 数据。先写阈值再看结果；报告相对 F16 的误差/失败率、实际 token 数和长度范围。短题 sanity 不替代质量。
-5. 固定一个 dense 3B/4B 模型，通过官方 config 的 context 能力与 VRAM预算后再扩展；避免一开始下载整套 F16/Q8/Q4。
+5. Dense模型扩展归入独立的M1b，不能把0.6B结果当作4B结论。
 
 门槛：至少 3 组独立 fresh-process A/B；内部重复至少 5 次用于正式性能；随机/交错顺序避免温度漂移；使用相同输入和有效 context；报告原始分布而非最好值。CPU只验证低成本路径，32K CPU 实验需先估计时长。
+
+## M1b - Dense 4B expansion（计划，未下载/实测）
+
+候选revision、文件hash、模型dimension与保守context预算见DENSE_MODEL_PLAN。新增独立实验锁和质量协议，先短context bring-up再扩大。现有runner默认锁仍为0.6B，需要显式支持多实验锁，不能绕过hash验证。
 
 ## M2 - Profiler-led selection
 

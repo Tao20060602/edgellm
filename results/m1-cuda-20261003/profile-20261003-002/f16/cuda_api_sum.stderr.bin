@@ -1,0 +1,7 @@
+
+WARNING: Existing SQLite export found: /opt/edgellm/results/profile-20261003-002/f16/capture.sqlite
+         File is older than input file: /opt/edgellm/results/profile-20261003-002/f16/capture.nsys-rep
+         Use --force-export=true to update export file.
+
+usage: nsys stats [<args>] <input-file>
+Try 'nsys stats --help' for more information.

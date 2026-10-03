@@ -1,5 +1,36 @@
 # Work log
 
+## 2026-10-03 - M1a small-model CUDA baseline
+
+User said to continue. Reused two Luna max agents with separate ownership: benchmark/matrix aggregation and quality/dataset parsing. Root handled CUDA builds, actual sequential GPU experiments, server streaming, profiling, reports and GitHub handoff. No paid compute, model expansion or phone connection.
+
+### Protocol and implementation
+
+Published protocol before reading GPU/quality results at commit e9182b0. Quality lock and initial harness were published at7397142 before PPL. WikiText archive/member immutable hashes verified; no dataset text committed. Built locked source forSM86/CUDA12.8 with existing tools, targets llama-bench/perplexity/server; server needs MTMD enabled by its CMake. Full offload and actual K/V allocation checked rather than relying on CLI flags.
+
+Scripts save new directories and preserve invalid execution separately from threshold failures. Added 100ms PID host-memory sampling, raw repetition samples, three shuffled sweeps for each of prefill/decode, warm native-completion SSE TTFT, original retrieval prompts and graph-node Nsight traces. All large trace binaries remain local; public copies contain CSVs, commands and original trace hashes. Structured hostname fields alone are redacted with original/public hash receipts.
+
+### Problems kept in the record
+
+1. quality-001 expected a total token-count log that this version does not output; PPL itself completed but the run was invalidated. Input token count now remainsnull, scored targets derive from actual chunks and pinned source. Default verbosity also omitted runtime proof; enabledverbose.
+2. quality-002's verbose logs contained two initializations: common_params_fit creates a no-allocation sizing context, then the real context. Parser's one-offload assumption failed. Source verified; new parser retains consistent full-offload records and validates the final materialized context's KV type/nonzero CUDA allocation. Device-count banner also absent; it is not fabricated.
+3. server-001 lacked placement logs; verbose fixed this. Complete server-002 then revealed that request cache_prompt=false still leaves global8192MiB RAM prompt snapshots enabled. Added --cache-ram0 (CLI spelling: `--cache-ram 0`) for server-003, kept requests/thresholds unchanged, reran all cases. Host VmHWM drops markedly; retrieval result remains identical.
+4. profile-001 default graph-level tracing omitted CUDA graph replay nodes. profile-002 collected nodes but stats stopped on SQLite export timestamp checks. profile-003 explicitly refreshes the derived export in its new owned directory and completes. profile-004 adds an exploratory Q8 trace after the performance data; it is not a new confirmatory performance trial.
+
+The intended quality-first workflow was interrupted by parser errors: the retrieval screen completed before the formal matrix, then the final corrected PPL screen completed afterward. Thresholds/prompts were unchanged throughout; all Q4 performance is diagnostic, not selection of a quality-equivalent configuration. This order is recorded rather than silently presented as a clean first attempt.
+
+### Results and limits
+
+90 formal case processes/450 internal repeats completed. Q8 KV allocation is46.875% smaller thanF16, but prefill is9-12% slower and decode has large outliers. No stable speedup claim. Final PPL F16=15.2486±0.53842, Q8=15.2275±0.53733, Q4=48.3775±2.01248. Q8 passes its2% threshold; Q4 exceeds10% by a large margin. F16/Q8 retrieval9/9, Q4 2/9, both cache-on and cache-off. Full data and context scopes in M1_REPORT.
+
+The state-snapshot mechanism in llama-bench contributes host memory and D2H/H2D outside timed decode. Server RAM snapshots contribute separate host memory unless disabled. CUDA single-token attention reads compressed KV internally, while large-query attention still materializesF16. Quantized types additionally use defaultHadamard rotation. Whole-process kernel shares cannot establish a decode bottleneck; conversion accounts for only3.5-3.7% of that whole-process kernel time.
+
+M1a is a0.6B desktop baseline. Independent4B identity/context/memory plan is prepared but not downloaded or measured. ARM/Android validation and a self-written optimization remain pending. Next task: phase-specific profiling of quality-passing Q8 prefill, plus reference/rotation/numerical triage for Q4 before proposing a patch.
+
+### Verification
+
+Linux full suite has22 tests, with real fake-subprocess execution. Quality parser additionally parsed preserved real F16 logs offline; source identifies thefitprobe. Ubuntu/Windows × Python3.11/3.13 CI checks portable tools, not native Windows inference. Final GitHub round-trip/evidence verification is recorded in HANDOFF after publication.
+
 ## 2026-10-02 - Repository bring-up
 
 User authorized researching similar GitHub projects, planning and starting EdgeLLM, creating a GitHub repository and recording work so another system can resume without local/chat memory. User selected public visibility, requested Luna max subagents, and confirmed Xiaomi 13 12 GB / 256 GB.

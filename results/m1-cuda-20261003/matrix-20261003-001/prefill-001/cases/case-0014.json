@@ -1,0 +1,1667 @@
+{
+  "argv": [
+    "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-bench",
+    "-m",
+    "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+    "-p",
+    "16384",
+    "-n",
+    "0",
+    "-d",
+    "0",
+    "-b",
+    "512",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "on",
+    "-ngl",
+    "99",
+    "-t",
+    "4",
+    "-r",
+    "5",
+    "-v",
+    "-o",
+    "json"
+  ],
+  "avg_ts": 9697.507527,
+  "case_id": "case-0014",
+  "cuda0_kv_allocation_mib": 1792.0,
+  "cuda_device_info": {
+    "compute_capability": "8.6",
+    "index": 0,
+    "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "source": "stderr",
+    "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+  },
+  "cwd": "/opt/edgellm/external/llama.cpp",
+  "depth": 16384,
+  "elapsed_seconds": 11.161266,
+  "finished_at": "2026-10-03T03:37:51.408480Z",
+  "gpu_device_snapshots": {
+    "after": {
+      "captured_at": "2026-10-03T03:37:51.337304Z",
+      "command": [
+        "/usr/lib/wsl/lib/nvidia-smi",
+        "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+        "--format=csv,noheader,nounits"
+      ],
+      "devices": [
+        {
+          "index": "0",
+          "memory_total_mib": "16384",
+          "memory_used_mib": "292",
+          "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+          "power_w": "90.22",
+          "temperature_c": "65",
+          "utilization_percent": "1"
+        }
+      ],
+      "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+      "status": "sampled"
+    },
+    "before": {
+      "captured_at": "2026-10-03T03:37:40.083699Z",
+      "command": [
+        "/usr/lib/wsl/lib/nvidia-smi",
+        "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+        "--format=csv,noheader,nounits"
+      ],
+      "devices": [
+        {
+          "index": "0",
+          "memory_total_mib": "16384",
+          "memory_used_mib": "292",
+          "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+          "power_w": "94.06",
+          "temperature_c": "69",
+          "utilization_percent": "1"
+        }
+      ],
+      "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+      "status": "sampled"
+    }
+  },
+  "kv_runtime_mib": [
+    {
+      "mib": 1792.0,
+      "source": "stderr",
+      "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1792.00 MiB"
+    }
+  ],
+  "kv_type": "f16",
+  "memory_monitor": {
+    "gpu_process_samples": [
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.000981,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.175991Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.191576,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.366715Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.342042,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.517216Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.49071,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.665828Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.638868,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.813935Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.78613,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:40.961288Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 0.947637,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.122739Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.089244,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.264400Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.236319,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.411478Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.385649,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.560723Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.530761,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.705833Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.679157,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:41.854232Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.824987,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.000069Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 1.967319,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.142446Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.106983,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.282061Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.256984,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.432119Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.402334,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.577415Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.556852,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.731922Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.700811,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:42.875881Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 2.846587,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.021690Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.013856,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.188932Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.162883,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.338019Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.324448,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.499575Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.480208,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.655301Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.620242,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.795370Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.764292,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:43.939393Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 3.902423,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.077528Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.037204,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.212270Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.174855,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.349923Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.314886,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.489969Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.460386,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.635463Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.606621,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.781689Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.752337,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:44.927446Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 4.890994,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.066072Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.030588,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.205679Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.167174,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.342261Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.312549,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.487621Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.45419,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.629303Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.599835,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.774940Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.738357,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:45.913505Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 5.873107,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.048175Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.027749,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.202811Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.166926,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.342129Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.324272,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.499373Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.466556,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.641657Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.604134,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.779235Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.755195,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:46.930335Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 6.891967,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.067038Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.028874,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.204002Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.16501,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.340095Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.306766,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.481907Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.445517,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.620599Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.597015,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.772174Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.763866,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:47.938987Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 7.912104,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.087246Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.075791,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.250927Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.226009,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.401255Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.401271,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.576394Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.554624,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.729707Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.710234,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:48.885371Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 8.858855,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.033999Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.019446,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.194546Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.186993,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.362174Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.373665,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.548795Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.542808,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.717874Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.709193,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:49.884295Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 9.86555,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.040738Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.040787,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.215954Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.218772,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.393978Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.396552,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.571753Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.593847,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.770565Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.790412,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:50.965812Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      },
+      {
+        "command": [
+          "/usr/lib/wsl/lib/nvidia-smi",
+          "--query-compute-apps=pid,used_gpu_memory",
+          "--format=csv,noheader,nounits"
+        ],
+        "elapsed_seconds": 10.979827,
+        "reason": "nvidia-smi did not report the benchmark child PID",
+        "sampled_at": "2026-10-03T03:37:51.155034Z",
+        "status": "pid_not_reported",
+        "used_gpu_memory_mib": null
+      }
+    ],
+    "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+    "gpu_process_status": "pid_not_reported",
+    "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+    "max_observed_vmhwm_kib": 947060,
+    "process_samples": [
+      {
+        "elapsed_seconds": 0.000981,
+        "rss_kib": 1684,
+        "sampled_at": "2026-10-03T03:37:40.175846Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 1684
+      },
+      {
+        "elapsed_seconds": 0.191576,
+        "rss_kib": 194520,
+        "sampled_at": "2026-10-03T03:37:40.366448Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 194520
+      },
+      {
+        "elapsed_seconds": 0.342042,
+        "rss_kib": 289492,
+        "sampled_at": "2026-10-03T03:37:40.516912Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 289492
+      },
+      {
+        "elapsed_seconds": 0.49071,
+        "rss_kib": 321956,
+        "sampled_at": "2026-10-03T03:37:40.665584Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 321956
+      },
+      {
+        "elapsed_seconds": 0.638868,
+        "rss_kib": 480400,
+        "sampled_at": "2026-10-03T03:37:40.813737Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 0.78613,
+        "rss_kib": 558744,
+        "sampled_at": "2026-10-03T03:37:40.961000Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 0.947637,
+        "rss_kib": 559496,
+        "sampled_at": "2026-10-03T03:37:41.122507Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.089244,
+        "rss_kib": 559896,
+        "sampled_at": "2026-10-03T03:37:41.264115Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.236319,
+        "rss_kib": 560040,
+        "sampled_at": "2026-10-03T03:37:41.411193Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.385649,
+        "rss_kib": 560188,
+        "sampled_at": "2026-10-03T03:37:41.560518Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.530761,
+        "rss_kib": 560284,
+        "sampled_at": "2026-10-03T03:37:41.705630Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.679157,
+        "rss_kib": 560428,
+        "sampled_at": "2026-10-03T03:37:41.854026Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.824987,
+        "rss_kib": 560524,
+        "sampled_at": "2026-10-03T03:37:41.999857Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 1.967319,
+        "rss_kib": 560620,
+        "sampled_at": "2026-10-03T03:37:42.142188Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.106983,
+        "rss_kib": 560716,
+        "sampled_at": "2026-10-03T03:37:42.281853Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.256984,
+        "rss_kib": 560812,
+        "sampled_at": "2026-10-03T03:37:42.431856Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.402334,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:42.577203Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.556852,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:42.731720Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.700811,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:42.875680Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 2.846587,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.021456Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.013856,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.188726Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.162883,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.337753Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.324448,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.499317Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.480208,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.655078Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.620242,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.795113Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.764292,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:43.939164Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 3.902423,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.077295Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.037204,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.212071Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.174855,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.349724Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.314886,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.489756Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.460386,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.635255Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.606621,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.781489Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.752337,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:44.927209Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 4.890994,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.065864Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.030588,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.205457Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.167174,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.342043Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.312549,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.487418Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.45419,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.629063Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.599835,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.774707Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.738357,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:45.913235Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 5.873107,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.047976Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.027749,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.202618Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.166926,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.341797Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.324272,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.499144Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.466556,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.641427Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.604134,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.779003Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.755195,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:46.930065Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 6.891967,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.066835Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.028874,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.203744Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.16501,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.339881Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.306766,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.481635Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.445517,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.620387Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.597015,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.771887Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.763866,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:47.938736Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 7.912104,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.086974Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.075791,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.250662Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.226009,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.400881Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.401271,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.576141Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.554624,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.729493Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.710234,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:48.885103Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 8.858855,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.033725Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.019446,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.194316Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.186993,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.361869Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.373665,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.548534Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.542808,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.717677Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.709193,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:49.884062Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 9.86555,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.040420Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.040787,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.215658Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.218772,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.393644Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.396552,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.571426Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.593847,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.768721Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.790412,
+        "rss_kib": 560860,
+        "sampled_at": "2026-10-03T03:37:50.965283Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      },
+      {
+        "elapsed_seconds": 10.979827,
+        "rss_kib": 373920,
+        "sampled_at": "2026-10-03T03:37:51.154700Z",
+        "source": "/proc/16241/status",
+        "status": "sampled",
+        "vmhwm_kib": 947060
+      }
+    ],
+    "process_scope": "benchmark child PID only; not a process-tree peak",
+    "process_source": "/proc/<pid>/status",
+    "process_status": "sampled",
+    "requested": true,
+    "sample_interval_ms": 100,
+    "sampled_peak_gpu_process_memory_mib": null,
+    "sampled_peak_vmrss_kib": 560860
+  },
+  "mode": "prefill",
+  "offloaded_layers": [
+    {
+      "offloaded": 29,
+      "total": 29
+    }
+  ],
+  "peak_rss_kib": null,
+  "process_elapsed_seconds": 11.161266,
+  "process_finished_at": "2026-10-03T03:37:51.336066Z",
+  "process_started_at": "2026-10-03T03:37:40.174842Z",
+  "prompt_tokens": 16384,
+  "result": {
+    "avg_ns": 1689591801,
+    "avg_ts": 9697.507527,
+    "backends": "CUDA",
+    "build_commit": "46ca246",
+    "build_number": 1,
+    "cpu_info": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz",
+    "cpu_mask": "0x0",
+    "cpu_strict": false,
+    "devices": "auto",
+    "embeddings": false,
+    "fit_min_ctx": 0,
+    "fit_target": 0,
+    "flash_attn": 1,
+    "gpu_info": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "lazy_mode": "auto",
+    "load_mode": "auto",
+    "main_gpu": 0,
+    "model_filename": "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+    "model_n_params": 596049920,
+    "model_size": 633495552,
+    "model_type": "qwen3 0.6B Q8_0",
+    "n_batch": 512,
+    "n_cpu_moe": 0,
+    "n_depth": 0,
+    "n_gen": 0,
+    "n_gpu_layers": 99,
+    "n_prompt": 16384,
+    "n_threads": 4,
+    "n_ubatch": 512,
+    "no_host": false,
+    "no_kv_offload": false,
+    "no_op_offload": 0,
+    "poll": 50,
+    "repack": true,
+    "samples_ns": [
+      1681959239,
+      1680051500,
+      1681242487,
+      1692784034,
+      1711921749
+    ],
+    "samples_ts": [
+      9741.02,
+      9752.08,
+      9745.17,
+      9678.73,
+      9570.53
+    ],
+    "split_mode": "layer",
+    "stddev_ns": 13489021,
+    "stddev_ts": 76.843172,
+    "tensor_buft_overrides": "none",
+    "tensor_split": "0.00",
+    "test_time": "2026-10-03T03:37:40Z",
+    "type_k": "f16",
+    "type_v": "f16"
+  },
+  "return_code": 0,
+  "schema_version": 1,
+  "selected_settings": {
+    "backends": "CUDA",
+    "flash_attn": 1,
+    "n_batch": 512,
+    "n_depth": 0,
+    "n_gen": 0,
+    "n_gpu_layers": 99,
+    "n_prompt": 16384,
+    "n_threads": 4,
+    "n_ubatch": 512,
+    "type_k": "f16",
+    "type_v": "f16"
+  },
+  "started_at": "2026-10-03T03:37:40.081441Z",
+  "status": "success",
+  "stddev_ts": 76.843172,
+  "stderr_bytes": 196012,
+  "stderr_path": "cases/case-0014.stderr.bin",
+  "stdout_bytes": 1307,
+  "stdout_path": "cases/case-0014.stdout.bin"
+}

@@ -23,3 +23,19 @@ Original host was live-checked: RTX 3080 Laptop, 16 GiB VRAM; WSL Linux; Intel i
 ## D005 - GitHub is sufficient to resume
 
 HANDOFF states completed work, exact next command, pending questions and evidence limits. WORKLOG records failed paths as well as successful work. Raw records live under results/ with provenance; generated local runs default to ignored results/local/. Promote selected small records with `git add -f`, review for sensitive paths, and link a run report. No model weights or machine-only dependency can be necessary for resuming.
+
+## D006 - 2026-10-03: Keep negative quality and noisy performance results
+
+M1 thresholds/prompts were published before inference. Q4 retrieval failed the gate (2/9 versus F16/Q8 9/9), including the rerun with RAM cache explicitly disabled. Preserve its throughput as diagnostic, not a quality-equivalent recommendation. Keep slow matrix runs and all internal samples; do not retrofit outlier exclusions or claim stable speedup from three means on an unlocked laptop GPU.
+
+## D007 - Distinguish request reuse, RAM snapshots and benchmark state
+
+`cache_prompt=false` leaves upstream's default 8192MiB server RAM cache enabled. M1 server-002 demonstrates this; server-003 adds `--cache-ram 0`, verifies the log, and repeats unchanged prompts/thresholds. Record both configurations separately. Also distinguish llama-bench's host context-state snapshot from actual service memory. Host VmHWM, sampled RSS, KV buffer allocation and whole-device VRAM are different metrics.
+
+## D008 - Target a phase and preserve profiler limits
+
+F16 and quantized KV follow different default rotation/attention paths. Trace CUDA graph nodes so replay is visible. The whole-process trace supports dispatch observation, not a decode-only time share. Quantized decode already reads compressed KV inside attention; observed large-query attention still has separate K/V-to-F16 conversion. The next task measures that Q8 prefill path before selecting a patch. Q4 numerical failure needs independent diagnosis, not a faster invalid configuration.
+
+## D009 - Keep dense expansion separate
+
+The current measured model is 0.6B. The official 4B revision/file hash and conservative context/memory budget are documented but not downloaded or verified locally. Add separate experiment locks and new quality evidence before expanding. Desktop results never establish Xiaomi13 performance; no paid compute is authorized.

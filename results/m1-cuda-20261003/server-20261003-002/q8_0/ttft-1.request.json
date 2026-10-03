@@ -1,0 +1,15 @@
+{
+  "case_id": "ttft-1",
+  "prompt_file": "ttft-1.prompt.txt.gz",
+  "prompt_sha256": "b2529fe6ef6577025bd8db85118e0b7ddf796c8235848b4babfda50f95ee5c5f",
+  "request_parameters": {
+    "cache_prompt": false,
+    "id_slot": 0,
+    "n_predict": 64,
+    "return_tokens": true,
+    "seed": 20261003,
+    "stream": true,
+    "temperature": 0
+  },
+  "started_at": "2026-10-03T03:26:16.896125Z"
+}

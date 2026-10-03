@@ -1,0 +1,15 @@
+{
+  "case_id": "retrieval-4",
+  "prompt_file": "retrieval-4.prompt.txt.gz",
+  "prompt_sha256": "d656d2d27a440ac28e43944d9402ccf00ca4ba55db4beaea6194132deb7471eb",
+  "request_parameters": {
+    "cache_prompt": false,
+    "id_slot": 0,
+    "n_predict": 64,
+    "return_tokens": true,
+    "seed": 20261003,
+    "stream": true,
+    "temperature": 0
+  },
+  "started_at": "2026-10-03T03:26:19.591399Z"
+}

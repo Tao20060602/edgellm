@@ -1,0 +1,8 @@
+{
+  "case_id": "case-01-f16",
+  "failed_at": "2026-10-03T03:24:50.993423Z",
+  "reason": "token_count_parse_error: expected one input token count, found 0",
+  "schema_version": 1,
+  "stage": "case",
+  "status": "invalid_execution"
+}

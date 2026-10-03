@@ -1,0 +1,41 @@
+{
+  "argv": [
+    "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-server",
+    "-m",
+    "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+    "-c",
+    "33792",
+    "-ngl",
+    "99",
+    "-fa",
+    "on",
+    "-ctk",
+    "q8_0",
+    "-ctv",
+    "q8_0",
+    "-b",
+    "512",
+    "-ub",
+    "512",
+    "-t",
+    "4",
+    "-np",
+    "1",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "46249",
+    "--no-context-shift",
+    "--chat-template-kwargs",
+    "{\"enable_thinking\":false}",
+    "--reasoning-budget",
+    "0"
+  ],
+  "cwd": "/opt/edgellm/external/llama.cpp",
+  "device_before": {
+    "at": "2026-10-03T03:25:31.080493Z",
+    "returncode": 0,
+    "scope": "whole device snapshot, not process peak",
+    "stdout": "NVIDIA GeForce RTX 3080 Laptop GPU, 221 MiB, 43, 14.80 W, 3 %\n"
+  }
+}

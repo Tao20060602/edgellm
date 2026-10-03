@@ -1,0 +1,53 @@
+test_cuda_stderr_parsers_capture_device_kv_and_full_offload (test_bench.BenchHarnessTests.test_cuda_stderr_parsers_capture_device_kv_and_full_offload) ... ok
+test_dry_run_does_not_require_binary_or_model_and_marks_plan_only (test_bench.BenchHarnessTests.test_dry_run_does_not_require_binary_or_model_and_marks_plan_only) ... ok
+test_existing_output_path_is_rejected_without_modifying_it (test_bench.BenchHarnessTests.test_existing_output_path_is_rejected_without_modifying_it) ... output path already exists; refusing to overwrite: /tmp/tmp8go1nvmc/already-there
+ok
+test_invalid_json_fails_closed_and_preserves_stderr (test_bench.BenchHarnessTests.test_invalid_json_fails_closed_and_preserves_stderr) ... benchmark failed during case: invalid_json: Expecting value: line 1 column 1 (char 0)
+ok
+test_opposite_mode_fields_and_cpu_backend_fallback_are_rejected (test_bench.BenchHarnessTests.test_opposite_mode_fields_and_cpu_backend_fallback_are_rejected) ... benchmark failed during case: field_mismatch: n_prompt expected integer 0, got 16
+benchmark failed during case: field_mismatch: n_prompt expected integer 16, got 0
+benchmark failed during case: backend_mismatch: CUDA required, got 'CPU'
+benchmark failed during case: cuda_evidence_missing: no positive CUDA0 KV allocation found in stderr
+ok
+test_prefill_command_and_result_use_prompt_tokens (test_bench.BenchHarnessTests.test_prefill_command_and_result_use_prompt_tokens) ... ok
+test_proc_memory_parser_preserves_missing_values_and_scope (test_bench.BenchHarnessTests.test_proc_memory_parser_preserves_missing_values_and_scope) ... ok
+test_success_preserves_raw_output_provenance_and_exact_command (test_bench.BenchHarnessTests.test_success_preserves_raw_output_provenance_and_exact_command) ... ok
+test_timeout_fails_closed_and_keeps_partial_raw_output (test_bench.BenchHarnessTests.test_timeout_fails_closed_and_keeps_partial_raw_output) ... benchmark failed during case: timeout_after_seconds: 1
+ok
+test_wrong_result_fields_and_nonpositive_rate_fail_closed (test_bench.BenchHarnessTests.test_wrong_result_fields_and_nonpositive_rate_fail_closed) ... benchmark failed during case: field_mismatch: n_depth expected integer 0, got 1
+benchmark failed during case: field_mismatch: flash_attn expected integer 1, got -1
+benchmark failed during case: field_mismatch: avg_ts expected finite positive number, got 0
+benchmark failed during case: sample_count_mismatch: samples_ts expected 2, got 1
+ok
+test_duplicate_member_is_rejected (test_fetch_dataset.FetchDatasetTests.test_duplicate_member_is_rejected) ... /usr/lib/python3.12/zipfile/__init__.py:1620: UserWarning: Duplicate name: 'wikitext-2-raw/wiki.test.raw'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+ok
+test_member_hash_or_length_mismatch_is_rejected (test_fetch_dataset.FetchDatasetTests.test_member_hash_or_length_mismatch_is_rejected) ... ok
+test_reads_only_named_member_and_verifies_its_bytes (test_fetch_dataset.FetchDatasetTests.test_reads_only_named_member_and_verifies_its_bytes) ... ok
+test_existing_output_path_is_rejected_without_modification (test_quality.QualityHarnessTests.test_existing_output_path_is_rejected_without_modification) ... output path already exists; refusing to overwrite: /tmp/tmp5bprxr5i/existing
+ok
+test_missing_result_or_chunk_mismatch_fails_closed_and_preserves_case_logs (test_quality.QualityHarnessTests.test_missing_result_or_chunk_mismatch_fails_closed_and_preserves_case_logs) ... quality run invalid during case: ppl_parse_error: expected exactly one Final estimate, found 0
+quality run invalid during case: field_mismatch: chunks expected 8, got 7
+quality run invalid during case: non_finite_or_invalid_ppl: ppl=nan, uncertainty=0.02
+quality run invalid during case: field_mismatch: requested PPL-context K/V type f16/f16, runtime reported ('q8_0', 'q8_0')
+quality run invalid during case: offload_mismatch: initialization summaries disagree: [(28, 29), (29, 29)]
+quality run invalid during case: actual_cuda_kv_buffer_missing_or_empty: final PPL context has no materialized CUDA KV buffer
+ok
+test_success_retains_exact_plan_raw_stream_hashes_and_runtime_evidence (test_quality.QualityHarnessTests.test_success_retains_exact_plan_raw_stream_hashes_and_runtime_evidence) ... ok
+test_threshold_miss_is_a_complete_negative_evaluation_not_invalid_execution (test_quality.QualityHarnessTests.test_threshold_miss_is_a_complete_negative_evaluation_not_invalid_execution) ... quality gate failed; complete summary retained: /tmp/tmpc38eoug8/threshold
+ok
+test_timeout_keeps_partial_stdout_and_stderr_and_stops_after_first_case (test_quality.QualityHarnessTests.test_timeout_keeps_partial_stdout_and_stderr_and_stops_after_first_case) ... quality run invalid during case: timeout_after_seconds: 1
+ok
+test_changed_model_dirty_or_wrong_upstream_rejected (test_server_eval.StreamingTests.test_changed_model_dirty_or_wrong_upstream_rejected) ... ok
+test_gate_requires_adequate_baseline_and_identical_inputs (test_server_eval.StreamingTests.test_gate_requires_adequate_baseline_and_identical_inputs) ... ok
+test_incomplete_cached_and_truncated_streams_rejected (test_server_eval.StreamingTests.test_incomplete_cached_and_truncated_streams_rejected) ... ok
+test_ttft_ignores_keepalive_and_empty_events (test_server_eval.StreamingTests.test_ttft_ignores_keepalive_and_empty_events) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.454s
+
+OK
+planning-only manifest written: /tmp/tmpn3j8ikfm/plan-only
+benchmark completed: /tmp/tmpawo7e6qf/prefill
+benchmark completed: /tmp/tmpq0q24i_m/run
+quality gate passed: /tmp/tmpe2vksue8/success

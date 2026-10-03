@@ -1,0 +1,177 @@
+{
+  "at": "2026-10-03T04:03:39.748267Z",
+  "excluded": [
+    {
+      "bytes": 1055017,
+      "sha256": "d4aaa7277781e677817f1575e6cc476b6602961941c5523270643afc95f19ba3",
+      "source": "/opt/edgellm/results/profile-20261003-001/q4_0/capture.nsys-rep"
+    },
+    {
+      "bytes": 3117056,
+      "sha256": "8eb5193e2e4b6837910f7ecea0ff1e7d9e86fbefb4e4959322ad7a3b82bb6ed5",
+      "source": "/opt/edgellm/results/profile-20261003-001/q4_0/capture.sqlite"
+    },
+    {
+      "bytes": 868928,
+      "sha256": "a477ba0f5f275b664ddd69e155a583869b5aa018729de28fe5f44771c5070370",
+      "source": "/opt/edgellm/results/profile-20261003-001/f16/capture.nsys-rep"
+    },
+    {
+      "bytes": 2580480,
+      "sha256": "190691bf083b675762f36246c11ea90fc7d750c8bb726f4b8342ec812a0b6dca",
+      "source": "/opt/edgellm/results/profile-20261003-001/f16/capture.sqlite"
+    },
+    {
+      "bytes": 1415228,
+      "sha256": "39a14fc99b6a8401db6465c76a86fe120e4c227042795afd15f9ef192b08758d",
+      "source": "/opt/edgellm/results/profile-20261003-002/f16/capture.nsys-rep"
+    },
+    {
+      "bytes": 4325376,
+      "sha256": "33ba86e33b4ffd120c01584b7f8ad4fe6c03b11e7f87f8b6b35fb6660ad3339c",
+      "source": "/opt/edgellm/results/profile-20261003-002/f16/capture.sqlite"
+    },
+    {
+      "bytes": 1759055,
+      "sha256": "f2de288717fb72a9ef0e68ba75e423c072c832380ec7dcf30dcefb7519711523",
+      "source": "/opt/edgellm/results/profile-20261003-003/q4_0/capture.nsys-rep"
+    },
+    {
+      "bytes": 5206016,
+      "sha256": "bcbddcfa211cb19fdef55e3fa611925b86ae0bc0a38d3064eea34b0959a2a444",
+      "source": "/opt/edgellm/results/profile-20261003-003/q4_0/capture.sqlite"
+    },
+    {
+      "bytes": 1404870,
+      "sha256": "87ca0c5e3c078e5813d1f09139d7f98cd4b624ce9ce9d7bad924d562a44edf7f",
+      "source": "/opt/edgellm/results/profile-20261003-003/f16/capture.nsys-rep"
+    },
+    {
+      "bytes": 4329472,
+      "sha256": "3e7800cfaf23af0e2c289b67b9f1cd358d91580ca89b3a041230bdb838f7fa0a",
+      "source": "/opt/edgellm/results/profile-20261003-003/f16/capture.sqlite"
+    },
+    {
+      "bytes": 1761672,
+      "sha256": "6b70f8595a44fbd874b55f19edea130ad265cca8315626c7e1b99edbdbee33d0",
+      "source": "/opt/edgellm/results/profile-20261003-004/q8_0/capture.nsys-rep"
+    },
+    {
+      "bytes": 5337088,
+      "sha256": "9a574e7d93b933109acc374a49cf7eef75e0d0bc37de4dfad373da21e1772e7d",
+      "source": "/opt/edgellm/results/profile-20261003-004/q8_0/capture.sqlite"
+    }
+  ],
+  "redactions": [
+    {
+      "file": "cuda-bringup-20261003-001/metadata.json",
+      "original_sha256": "52914a302653c4e1e30da0360a5f13e1f05ee77548833ada33119c03370c9a2e",
+      "public_sha256": "9a5774cc7097ecf043abfb0399a67f58e1f210c5602b0ad629d677efd1776597"
+    },
+    {
+      "file": "matrix-20261003-001/decode-001/metadata.json",
+      "original_sha256": "9c4ec106f95513d83257083ba9b0169064d48e5601ecb98329895d8d39440564",
+      "public_sha256": "7107377da4487e2d8a59a38bbca440c5984cb9775168d00611b5179c913f330d"
+    },
+    {
+      "file": "matrix-20261003-001/decode-002/metadata.json",
+      "original_sha256": "071bd4e44487f646d5ee2bb24b22139a4b55c74ac39a65afccc90e6d2a4216e4",
+      "public_sha256": "9fd4583770062216d034ec2d8816dafb404606697f24d67a7cb6d09e38ae8ce3"
+    },
+    {
+      "file": "matrix-20261003-001/decode-003/metadata.json",
+      "original_sha256": "b0789cfac6f2c912b4c9c2d6c3c6f2414616afcb4380c9ef4967127e7a8f09be",
+      "public_sha256": "17175cee09060470cd0a15404197d816ff75df09317520c4a1274871c8dbd4ed"
+    },
+    {
+      "file": "matrix-20261003-001/prefill-001/metadata.json",
+      "original_sha256": "e088250ae0dad2cdbfa7e9955513bbe2eb750c4749a63de860c15ccaa437f986",
+      "public_sha256": "4589b5ab59e85ae3a51540cce0a1bc0495ee76bddedc35e8afd8336da04d8556"
+    },
+    {
+      "file": "matrix-20261003-001/prefill-002/metadata.json",
+      "original_sha256": "8737968f5169247aece06beef6d60a1f6ca1b083fd6b61531ff27fdef36985e7",
+      "public_sha256": "c8c98d0def92a6ca3a451b48373726e70aa2bfdf63f2e0dd23c008a4377524ef"
+    },
+    {
+      "file": "matrix-20261003-001/prefill-003/metadata.json",
+      "original_sha256": "ee300ea682f93b4ea21433a98b00d2764a5e15360cf8e00370439c580c5528a0",
+      "public_sha256": "06a35022fb40ea496124e77a9493c50288161918fee5a6592e3a46ad4de81510"
+    },
+    {
+      "file": "quality-20261003-001/metadata.json",
+      "original_sha256": "416e26a37ad4edabff26cc5e56596a0c432910d330219d1ae299c6e53c267c90",
+      "public_sha256": "52171e2f03781acbb3a2364d29f01da0925506cede06056483e11ce6463b90e4"
+    },
+    {
+      "file": "quality-20261003-002/metadata.json",
+      "original_sha256": "ce4bd5369e08d13509321458d74b72301585bafbb453835e3c88fc73a9807f03",
+      "public_sha256": "5e1265b45982b889836c79d3f65d90669a6ce6997f64ebd5fa11d3b01d8d9d50"
+    },
+    {
+      "file": "quality-20261003-003/metadata.json",
+      "original_sha256": "1d3112ec14a6f57f9587ad9b71219642a66b7aee233d25e1cbf7575fd098f2db",
+      "public_sha256": "015f9e774118b0e9f63c094c8c3c17ee2e0403e960a133f88f1a1894d0cd96e6"
+    }
+  ],
+  "runs": [
+    {
+      "public_directory": "cuda-bringup-20261003-001",
+      "source": "/opt/edgellm/results/cuda-bringup-20261003-001"
+    },
+    {
+      "public_directory": "matrix-20261003-001",
+      "source": "/opt/edgellm/results/matrix-20261003-001"
+    },
+    {
+      "public_directory": "aggregate-20261003-001",
+      "source": "/opt/edgellm/results/aggregate-20261003-001"
+    },
+    {
+      "public_directory": "quality-20261003-001",
+      "source": "/opt/edgellm/results/quality-20261003-001"
+    },
+    {
+      "public_directory": "quality-20261003-002",
+      "source": "/opt/edgellm/results/quality-20261003-002"
+    },
+    {
+      "public_directory": "quality-20261003-003",
+      "source": "/opt/edgellm/results/quality-20261003-003"
+    },
+    {
+      "public_directory": "server-20261003-001",
+      "source": "/opt/edgellm/results/server-20261003-001"
+    },
+    {
+      "public_directory": "server-20261003-002",
+      "source": "/opt/edgellm/results/server-20261003-002"
+    },
+    {
+      "public_directory": "server-20261003-003",
+      "source": "/opt/edgellm/results/server-20261003-003"
+    },
+    {
+      "public_directory": "profile-20261003-001",
+      "source": "/opt/edgellm/results/profile-20261003-001"
+    },
+    {
+      "public_directory": "profile-20261003-002",
+      "source": "/opt/edgellm/results/profile-20261003-002"
+    },
+    {
+      "public_directory": "profile-20261003-003",
+      "source": "/opt/edgellm/results/profile-20261003-003"
+    },
+    {
+      "public_directory": "profile-20261003-004",
+      "source": "/opt/edgellm/results/profile-20261003-004"
+    },
+    {
+      "public_directory": "build-20261003",
+      "source": "/opt/edgellm/results/build-20261003"
+    }
+  ],
+  "scope": "only metadata hostname redacted; raw streams unchanged; profiler trace files excluded",
+  "script_sha256": "4929a09ce9e14a7e3a6f385778d75b417dc2caaf9233cd2a2df761f652d961d0"
+}

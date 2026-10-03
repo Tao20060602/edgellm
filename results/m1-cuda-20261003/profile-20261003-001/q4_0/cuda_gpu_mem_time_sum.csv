@@ -1,0 +1,11 @@
+
+NOTICE: Existing SQLite export found: /opt/edgellm/results/profile-20261003-001/q4_0/capture.sqlite
+        It is assumed file was previously exported from: /opt/edgellm/results/profile-20261003-001/q4_0/capture.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [/opt/edgellm/results/profile-20261003-001/q4_0/capture.sqlite] with [/opt/nvidia/nsight-systems/2026.5.1/target-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+69.8,81161765,702,115615.0,2768.0,479,22871817,871035.4,[CUDA memcpy Host-to-Device]
+29.3,34128654,105,325034.8,468925.0,52032,1016731,262612.8,[CUDA memcpy Device-to-Host]
+0.9,1009499,1,1009499.0,1009499.0,1009499,1009499,0.0,[CUDA memset]
+

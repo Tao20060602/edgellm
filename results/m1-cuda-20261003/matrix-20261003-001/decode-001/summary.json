@@ -1,0 +1,1591 @@
+{
+  "batch": 512,
+  "completed_at": "2026-10-03T03:31:47.031962Z",
+  "measurement_count": 15,
+  "measurements": [
+    {
+      "avg_ts": 90.055779,
+      "case_file": "cases/case-0001.json",
+      "case_id": "case-0001",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 32768,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:30:43.672159Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "311",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "74.69",
+              "temperature_c": "59",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:30:27.938347Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "9944",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "103.74",
+              "temperature_c": "59",
+              "utilization_percent": "81"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 1918.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1918.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 108,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 2545676,
+        "process_sample_count": 108,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 2545676
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 15.674967,
+      "process_finished_at": "2026-10-03T03:30:43.671348Z",
+      "process_started_at": "2026-10-03T03:30:27.996387Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 32768,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 4.746364
+    },
+    {
+      "avg_ts": 139.173227,
+      "case_file": "cases/case-0002.json",
+      "case_id": "case-0002",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 16384,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:30:48.621343Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "81.62",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:30:43.750770Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "311",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "67.93",
+              "temperature_c": "59",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 511.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   511.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 31,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1092632,
+        "process_sample_count": 31,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1092632
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 4.808749,
+      "process_finished_at": "2026-10-03T03:30:48.620545Z",
+      "process_started_at": "2026-10-03T03:30:43.811805Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 16384,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 5.284158
+    },
+    {
+      "avg_ts": 83.581094,
+      "case_file": "cases/case-0003.json",
+      "case_id": "case-0003",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 32768,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:01.294337Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "68.19",
+              "temperature_c": "57",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:30:48.713039Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "76.42",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 3612.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  3612.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "memory_monitor": {
+        "gpu_process_sample_count": 85,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 4265904,
+        "process_sample_count": 85,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 4265904
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 12.508153,
+      "process_finished_at": "2026-10-03T03:31:01.293405Z",
+      "process_started_at": "2026-10-03T03:30:48.785262Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 32768,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 1.312343
+    },
+    {
+      "avg_ts": 137.089554,
+      "case_file": "cases/case-0004.json",
+      "case_id": "case-0004",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 16384,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:06.897675Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "78.58",
+              "temperature_c": "59",
+              "utilization_percent": "7"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:01.359278Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "67.73",
+              "temperature_c": "57",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 966.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   966.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 36,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1551276,
+        "process_sample_count": 36,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1551276
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 5.482956,
+      "process_finished_at": "2026-10-03T03:31:06.896896Z",
+      "process_started_at": "2026-10-03T03:31:01.413944Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 16384,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 7.512646
+    },
+    {
+      "avg_ts": 189.672829,
+      "case_file": "cases/case-0005.json",
+      "case_id": "case-0005",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 8192,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:10.357774Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "75.42",
+              "temperature_c": "59",
+              "utilization_percent": "33"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:06.973464Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "72.66",
+              "temperature_c": "59",
+              "utilization_percent": "7"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 924.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   924.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "memory_monitor": {
+        "gpu_process_sample_count": 23,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1484420,
+        "process_sample_count": 23,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1484420
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 3.327999,
+      "process_finished_at": "2026-10-03T03:31:10.357059Z",
+      "process_started_at": "2026-10-03T03:31:07.029075Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 8192,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 7.682971
+    },
+    {
+      "avg_ts": 244.485703,
+      "case_file": "cases/case-0006.json",
+      "case_id": "case-0006",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 4096,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:12.791042Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "80.15",
+              "temperature_c": "57",
+              "utilization_percent": "16"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:10.427633Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "74.76",
+              "temperature_c": "59",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 476.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   476.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "memory_monitor": {
+        "gpu_process_sample_count": 16,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1020640,
+        "process_sample_count": 16,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1020640
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.293527,
+      "process_finished_at": "2026-10-03T03:31:12.790126Z",
+      "process_started_at": "2026-10-03T03:31:10.496604Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 4096,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 5.940403
+    },
+    {
+      "avg_ts": 193.870616,
+      "case_file": "cases/case-0007.json",
+      "case_id": "case-0007",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 8192,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:15.457418Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "88.49",
+              "temperature_c": "60",
+              "utilization_percent": "26"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:12.858254Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "74.89",
+              "temperature_c": "57",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 259.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   259.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 17,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947236,
+        "process_sample_count": 17,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 947236
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.542618,
+      "process_finished_at": "2026-10-03T03:31:15.456547Z",
+      "process_started_at": "2026-10-03T03:31:12.913946Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 8192,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 9.743393
+    },
+    {
+      "avg_ts": 252.791464,
+      "case_file": "cases/case-0008.json",
+      "case_id": "case-0008",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 2048,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:17.270689Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "84.07",
+              "temperature_c": "58",
+              "utilization_percent": "28"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:15.525359Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "82.49",
+              "temperature_c": "60",
+              "utilization_percent": "26"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 133.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 11,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947268,
+        "process_sample_count": 11,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 947268
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 1.68718,
+      "process_finished_at": "2026-10-03T03:31:17.269936Z",
+      "process_started_at": "2026-10-03T03:31:15.582767Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 2048,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 15.93017
+    },
+    {
+      "avg_ts": 244.211193,
+      "case_file": "cases/case-0009.json",
+      "case_id": "case-0009",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 4096,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:19.558516Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "81.68",
+              "temperature_c": "60",
+              "utilization_percent": "63"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:17.376944Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "76.21",
+              "temperature_c": "58",
+              "utilization_percent": "0"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 252.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 14,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947068,
+        "process_sample_count": 14,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 805472
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.084309,
+      "process_finished_at": "2026-10-03T03:31:19.557957Z",
+      "process_started_at": "2026-10-03T03:31:17.473654Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 4096,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 10.502625
+    },
+    {
+      "avg_ts": 195.484457,
+      "case_file": "cases/case-0010.json",
+      "case_id": "case-0010",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 8192,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:23.061684Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "71.02",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:19.646124Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "79.10",
+              "temperature_c": "60",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 490.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   490.88 MiB"
+        }
+      ],
+      "kv_type": "q8_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 22,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1054148,
+        "process_sample_count": 22,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1054148
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 3.283427,
+      "process_finished_at": "2026-10-03T03:31:23.061014Z",
+      "process_started_at": "2026-10-03T03:31:19.777558Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 8192,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q8_0",
+        "type_v": "q8_0"
+      },
+      "stddev_ts": 6.767709
+    },
+    {
+      "avg_ts": 272.493657,
+      "case_file": "cases/case-0011.json",
+      "case_id": "case-0011",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 2048,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:25.260726Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "83.03",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:23.144703Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "64.74",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 70.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =    70.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 12,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947176,
+        "process_sample_count": 12,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 947176
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.045626,
+      "process_finished_at": "2026-10-03T03:31:25.259887Z",
+      "process_started_at": "2026-10-03T03:31:23.214270Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 2048,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 25.590569
+    },
+    {
+      "avg_ts": 244.50408,
+      "case_file": "cases/case-0012.json",
+      "case_id": "case-0012",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 4096,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:27.436397Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "89.10",
+              "temperature_c": "60",
+              "utilization_percent": "16"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:25.336006Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "82.10",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 133.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   133.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 14,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947236,
+        "process_sample_count": 14,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 947236
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.040108,
+      "process_finished_at": "2026-10-03T03:31:27.435753Z",
+      "process_started_at": "2026-10-03T03:31:25.395663Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 4096,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 12.836668
+    },
+    {
+      "avg_ts": 89.342046,
+      "case_file": "cases/case-0013.json",
+      "case_id": "case-0013",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 32768,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:37.296638Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "322",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "83.98",
+              "temperature_c": "59",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:27.513459Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "314",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "82.80",
+              "temperature_c": "60",
+              "utilization_percent": "16"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 1015.88,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1015.88 MiB"
+        }
+      ],
+      "kv_type": "q4_0",
+      "memory_monitor": {
+        "gpu_process_sample_count": 64,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 1628012,
+        "process_sample_count": 64,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 1628012
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 9.723634,
+      "process_finished_at": "2026-10-03T03:31:37.295788Z",
+      "process_started_at": "2026-10-03T03:31:27.572130Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 32768,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "q4_0",
+        "type_v": "q4_0"
+      },
+      "stddev_ts": 3.697273
+    },
+    {
+      "avg_ts": 129.778484,
+      "case_file": "cases/case-0014.json",
+      "case_id": "case-0014",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 16384,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:44.234715Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "8409",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "75.27",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:37.369428Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "329",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "77.55",
+              "temperature_c": "59",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 1820.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =  1820.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "memory_monitor": {
+        "gpu_process_sample_count": 48,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 2412220,
+        "process_sample_count": 48,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 2412220
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 6.815475,
+      "process_finished_at": "2026-10-03T03:31:44.233825Z",
+      "process_started_at": "2026-10-03T03:31:37.418368Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 16384,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 5.550684
+    },
+    {
+      "avg_ts": 111.211561,
+      "case_file": "cases/case-0015.json",
+      "case_id": "case-0015",
+      "cuda_device_info": {
+        "compute_capability": "8.6",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+        "source": "stderr",
+        "source_line": "  Device 0: NVIDIA GeForce RTX 3080 Laptop GPU, compute capability 8.6, VMM: yes, VRAM: 16383 MiB"
+      },
+      "depth": 2048,
+      "gpu_device_snapshots": {
+        "after": {
+          "captured_at": "2026-10-03T03:31:46.989555Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "10313",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "112.89",
+              "temperature_c": "63",
+              "utilization_percent": "100"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        },
+        "before": {
+          "captured_at": "2026-10-03T03:31:44.276089Z",
+          "command": [
+            "/usr/lib/wsl/lib/nvidia-smi",
+            "--query-gpu=index,name,temperature.gpu,power.draw,utilization.gpu,memory.used,memory.total",
+            "--format=csv,noheader,nounits"
+          ],
+          "devices": [
+            {
+              "index": "0",
+              "memory_total_mib": "16384",
+              "memory_used_mib": "8409",
+              "name": "NVIDIA GeForce RTX 3080 Laptop GPU",
+              "power_w": "75.27",
+              "temperature_c": "58",
+              "utilization_percent": "1"
+            }
+          ],
+          "scope": "all devices visible to nvidia-smi; whole-device snapshot, not process memory",
+          "status": "sampled"
+        }
+      },
+      "kv_runtime_mib": [
+        {
+          "mib": 252.0,
+          "source": "stderr",
+          "source_line": "llama_kv_cache:      CUDA0 KV buffer size =   252.00 MiB"
+        }
+      ],
+      "kv_type": "f16",
+      "memory_monitor": {
+        "gpu_process_sample_count": 20,
+        "gpu_process_scope": "matched benchmark child PID rows only; never whole-device memory",
+        "gpu_process_status": "pid_not_reported",
+        "interpretation": "Sampled process metrics are not full process-tree peaks and are not KV-specific.",
+        "max_observed_vmhwm_kib": 947644,
+        "process_sample_count": 20,
+        "process_scope": "benchmark child PID only; not a process-tree peak",
+        "process_source": "/proc/<pid>/status",
+        "process_status": "sampled",
+        "requested": true,
+        "sample_interval_ms": 100,
+        "sampled_peak_gpu_process_memory_mib": null,
+        "sampled_peak_vmrss_kib": 947644
+      },
+      "mode": "decode",
+      "offloaded_layers": [
+        {
+          "offloaded": 29,
+          "total": 29
+        }
+      ],
+      "process_elapsed_seconds": 2.678499,
+      "process_finished_at": "2026-10-03T03:31:46.989018Z",
+      "process_started_at": "2026-10-03T03:31:44.310536Z",
+      "prompt_tokens": null,
+      "selected_settings": {
+        "backends": "CUDA",
+        "flash_attn": 1,
+        "n_batch": 512,
+        "n_depth": 2048,
+        "n_gen": 32,
+        "n_gpu_layers": 99,
+        "n_prompt": 0,
+        "n_threads": 4,
+        "n_ubatch": 512,
+        "type_k": "f16",
+        "type_v": "f16"
+      },
+      "stddev_ts": 23.620935
+    }
+  ],
+  "mode": "decode",
+  "monitor_memory": true,
+  "planning_only": false,
+  "require_backend": "cuda",
+  "sample_interval_ms": 100,
+  "schema_version": 1,
+  "seed": 20261003,
+  "status": "success",
+  "ubatch": 512
+}

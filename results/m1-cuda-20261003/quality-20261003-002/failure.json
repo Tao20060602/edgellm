@@ -1,0 +1,8 @@
+{
+  "case_id": "case-01-f16",
+  "failed_at": "2026-10-03T03:43:39.989042Z",
+  "reason": "offload_parse_error: expected one model layer offload summary, found 2",
+  "schema_version": 1,
+  "stage": "case",
+  "status": "invalid_execution"
+}

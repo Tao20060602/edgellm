@@ -1,0 +1,260 @@
+{
+  "baseline": {
+    "kv_type": "f16/f16",
+    "ppl": 15.2486,
+    "uncertainty_absolute": 0.53842
+  },
+  "cases": [
+    {
+      "actual_cuda_kv_buffers": [
+        {
+          "backend": "CUDA0",
+          "mib": 224.0,
+          "source_line": "CUDA0 KV buffer size =   224.00 MiB"
+        }
+      ],
+      "actual_ppl_context_kv_types": {
+        "key": "f16",
+        "source_line": "K (f16):  112.00 MiB, V (f16)",
+        "value": "f16"
+      },
+      "case_file": "cases/case-01-f16.json",
+      "case_id": "case-01-f16",
+      "chunk_count": 8,
+      "cuda_runtime_evidence": [
+        "all_requested_model_layers_offloaded",
+        "nonzero_materialized_cuda_kv_buffer"
+      ],
+      "gpu_layer_offload": {
+        "offloaded": 29,
+        "requested": 99,
+        "summaries": [
+          {
+            "offloaded": 29,
+            "phase": "fit_probe",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          },
+          {
+            "offloaded": 29,
+            "phase": "ppl_context",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          }
+        ],
+        "total": 29
+      },
+      "input_token_count": null,
+      "input_token_count_status": "not_reported_by_pinned_upstream",
+      "kv_type": "f16",
+      "ppl": 15.2486,
+      "runtime_kv_buffer_sizes": [
+        {
+          "backend": "CUDA0",
+          "mib": 0.0,
+          "source_line": "CUDA0 KV buffer size =     0.00 MiB"
+        },
+        {
+          "backend": "CUDA0",
+          "mib": 224.0,
+          "source_line": "CUDA0 KV buffer size =   224.00 MiB"
+        }
+      ],
+      "runtime_kv_types": [
+        {
+          "key": "f16",
+          "phase": "fit_probe",
+          "source_line": "K (f16):  112.00 MiB, V (f16)",
+          "value": "f16"
+        },
+        {
+          "key": "f16",
+          "phase": "ppl_context",
+          "source_line": "K (f16):  112.00 MiB, V (f16)",
+          "value": "f16"
+        }
+      ],
+      "scored_next_token_targets": 8184,
+      "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
+      "stderr_sha256": "d492d2c2397a0743cd610fb3059cdff4de06d94ba64317d94babc017c0ac5924",
+      "stdout_sha256": "5254f36c74ff5267b449746ef7b8ad5c07b61ec90c6ceb70f7f95fb532f7bc0a",
+      "uncertainty_absolute": 0.53842
+    },
+    {
+      "actual_cuda_kv_buffers": [
+        {
+          "backend": "CUDA0",
+          "mib": 119.0,
+          "source_line": "CUDA0 KV buffer size =   119.00 MiB"
+        }
+      ],
+      "actual_ppl_context_kv_types": {
+        "key": "q8_0",
+        "source_line": "K (q8_0):   59.50 MiB, V (q8_0)",
+        "value": "q8_0"
+      },
+      "case_file": "cases/case-02-q8_0.json",
+      "case_id": "case-02-q8_0",
+      "chunk_count": 8,
+      "cuda_runtime_evidence": [
+        "all_requested_model_layers_offloaded",
+        "nonzero_materialized_cuda_kv_buffer"
+      ],
+      "gpu_layer_offload": {
+        "offloaded": 29,
+        "requested": 99,
+        "summaries": [
+          {
+            "offloaded": 29,
+            "phase": "fit_probe",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          },
+          {
+            "offloaded": 29,
+            "phase": "ppl_context",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          }
+        ],
+        "total": 29
+      },
+      "input_token_count": null,
+      "input_token_count_status": "not_reported_by_pinned_upstream",
+      "kv_type": "q8_0",
+      "ppl": 15.2275,
+      "runtime_kv_buffer_sizes": [
+        {
+          "backend": "CUDA0",
+          "mib": 0.0,
+          "source_line": "CUDA0 KV buffer size =     0.00 MiB"
+        },
+        {
+          "backend": "CUDA0",
+          "mib": 119.0,
+          "source_line": "CUDA0 KV buffer size =   119.00 MiB"
+        }
+      ],
+      "runtime_kv_types": [
+        {
+          "key": "q8_0",
+          "phase": "fit_probe",
+          "source_line": "K (q8_0):   59.50 MiB, V (q8_0)",
+          "value": "q8_0"
+        },
+        {
+          "key": "q8_0",
+          "phase": "ppl_context",
+          "source_line": "K (q8_0):   59.50 MiB, V (q8_0)",
+          "value": "q8_0"
+        }
+      ],
+      "scored_next_token_targets": 8184,
+      "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
+      "stderr_sha256": "4c27336bd8b73da52109eb431edbebbda41fc4f947c58f9273029e01e9d1ec50",
+      "stdout_sha256": "9304ba47b688b9c395346593aca2e9d0081f265533b652c3730da935196db7d4",
+      "uncertainty_absolute": 0.53733
+    },
+    {
+      "actual_cuda_kv_buffers": [
+        {
+          "backend": "CUDA0",
+          "mib": 63.0,
+          "source_line": "CUDA0 KV buffer size =    63.00 MiB"
+        }
+      ],
+      "actual_ppl_context_kv_types": {
+        "key": "q4_0",
+        "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+        "value": "q4_0"
+      },
+      "case_file": "cases/case-03-q4_0.json",
+      "case_id": "case-03-q4_0",
+      "chunk_count": 8,
+      "cuda_runtime_evidence": [
+        "all_requested_model_layers_offloaded",
+        "nonzero_materialized_cuda_kv_buffer"
+      ],
+      "gpu_layer_offload": {
+        "offloaded": 29,
+        "requested": 99,
+        "summaries": [
+          {
+            "offloaded": 29,
+            "phase": "fit_probe",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          },
+          {
+            "offloaded": 29,
+            "phase": "ppl_context",
+            "source_line": "offloaded 29/29 layers to GPU",
+            "total": 29
+          }
+        ],
+        "total": 29
+      },
+      "input_token_count": null,
+      "input_token_count_status": "not_reported_by_pinned_upstream",
+      "kv_type": "q4_0",
+      "ppl": 48.3775,
+      "runtime_kv_buffer_sizes": [
+        {
+          "backend": "CUDA0",
+          "mib": 0.0,
+          "source_line": "CUDA0 KV buffer size =     0.00 MiB"
+        },
+        {
+          "backend": "CUDA0",
+          "mib": 63.0,
+          "source_line": "CUDA0 KV buffer size =    63.00 MiB"
+        }
+      ],
+      "runtime_kv_types": [
+        {
+          "key": "q4_0",
+          "phase": "fit_probe",
+          "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+          "value": "q4_0"
+        },
+        {
+          "key": "q4_0",
+          "phase": "ppl_context",
+          "source_line": "K (q4_0):   31.50 MiB, V (q4_0)",
+          "value": "q4_0"
+        }
+      ],
+      "scored_next_token_targets": 8184,
+      "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
+      "stderr_sha256": "bdca1bbaf92dadc487ea8b6d3f55ac4247243e67f61ebca26a93b97c5e8ba89a",
+      "stdout_sha256": "e582c7a4dc8b103008955f6d2041ef2fa54faf75b40a7940bbe49fb5db81e337",
+      "uncertainty_absolute": 2.01248
+    }
+  ],
+  "completed_at": "2026-10-03T04:02:26.167125Z",
+  "gate": {
+    "q4_0": {
+      "maximum_percent": 10.0,
+      "passed": false,
+      "relative_ppl_increase_percent": 217.2586335794761,
+      "uncertainty_absolute": 2.01248
+    },
+    "q8_0": {
+      "maximum_percent": 2.0,
+      "passed": true,
+      "relative_ppl_increase_percent": -0.13837335886573987,
+      "uncertainty_absolute": 0.53733
+    }
+  },
+  "measurement_scope": {
+    "chunk_count": 8,
+    "context_tokens": 2048,
+    "dataset_coverage": "only first configured context chunks; not full test-set or 32K quality",
+    "input_token_count": null,
+    "input_token_count_status": "not_reported_by_pinned_upstream",
+    "scored_next_token_targets": 8184,
+    "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log"
+  },
+  "schema_version": 1,
+  "status": "evaluation_failed"
+}

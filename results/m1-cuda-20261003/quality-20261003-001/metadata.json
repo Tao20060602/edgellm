@@ -1,0 +1,353 @@
+{
+  "completed_cases": [
+    "case-01-f16"
+  ],
+  "created_at": "2026-10-03T03:24:44.654136Z",
+  "environment": {
+    "hostname": "redacted",
+    "machine": "x86_64",
+    "os_name": "posix",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "system": "Linux"
+  },
+  "failure": {
+    "case_id": "case-01-f16",
+    "reason": "token_count_parse_error: expected one input token count, found 0",
+    "stage": "case"
+  },
+  "finished_at": "2026-10-03T03:24:50.993423Z",
+  "limitations": [
+    "The gate evaluates only the first configured context chunks from Wikitext-2; it is not a full-set or long-context quality result.",
+    "The same-run f16/f16 comparison is a point-estimate gate; reported PPL uncertainty is retained but not folded into the threshold.",
+    "No logits-dump file is requested or written."
+  ],
+  "provenance": {
+    "binary": {
+      "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+      "sha256": "0dddd49ad0ed0ef46a449e60ad2d6ebf737b34e28910f5d6860c6515e8ae2c9e"
+    },
+    "build": {
+      "path": "/opt/edgellm/external/llama.cpp/build-cuda/CMakeCache.txt",
+      "selected_settings": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "GGML_ACCELERATE": "ON",
+        "GGML_ALL_WARNINGS_3RD_PARTY": "OFF",
+        "GGML_AMX_BF16": "OFF",
+        "GGML_AMX_INT8": "OFF",
+        "GGML_AMX_TILE": "OFF",
+        "GGML_AVAILABLE_BACKENDS": "ggml-cpu;ggml-cuda",
+        "GGML_AVX": "OFF",
+        "GGML_AVX2": "OFF",
+        "GGML_AVX512": "OFF",
+        "GGML_AVX512_BF16": "OFF",
+        "GGML_AVX512_VBMI": "OFF",
+        "GGML_AVX512_VNNI": "OFF",
+        "GGML_AVX_VNNI": "OFF",
+        "GGML_BACKEND_DIR": "",
+        "GGML_BACKEND_DL": "OFF",
+        "GGML_BIN_INSTALL_DIR": "bin",
+        "GGML_BLAS": "OFF",
+        "GGML_BLAS_VENDOR": "Generic",
+        "GGML_BMI2": "OFF",
+        "GGML_BUILD_EXAMPLES": "OFF",
+        "GGML_BUILD_TESTS": "OFF",
+        "GGML_CCACHE": "ON",
+        "GGML_CCACHE_FOUND": "GGML_CCACHE_FOUND-NOTFOUND",
+        "GGML_CPU": "ON",
+        "GGML_CPU_ALL_VARIANTS": "OFF",
+        "GGML_CPU_ARM_ARCH": "",
+        "GGML_CPU_HBM": "OFF",
+        "GGML_CPU_KLEIDIAI": "OFF",
+        "GGML_CPU_POWERPC_CPUTYPE": "",
+        "GGML_CPU_REPACK": "ON",
+        "GGML_CUDA": "ON",
+        "GGML_CUDA_CCCL_VERSION": "",
+        "GGML_CUDA_COMPRESSION_MODE": "size",
+        "GGML_CUDA_COMPRESSION_MODE-STRINGS": "none;speed;balance;size",
+        "GGML_CUDA_FA": "ON",
+        "GGML_CUDA_FA_ALL_QUANTS": "OFF",
+        "GGML_CUDA_FA_QUANTS": "q4_0-q4_0;q8_0-q8_0;f16-f16;bf16-bf16",
+        "GGML_CUDA_FORCE_CUBLAS": "OFF",
+        "GGML_CUDA_FORCE_MMQ": "OFF",
+        "GGML_CUDA_GRAPHS": "ON",
+        "GGML_CUDA_NCCL": "ON",
+        "GGML_CUDA_NO_PEER_COPY": "OFF",
+        "GGML_CUDA_NO_VMM": "OFF",
+        "GGML_ET": "OFF",
+        "GGML_ET_SYSEMU": "OFF",
+        "GGML_F16C": "OFF",
+        "GGML_FMA": "OFF",
+        "GGML_GPROF": "OFF",
+        "GGML_HEXAGON": "OFF",
+        "GGML_HIP": "OFF",
+        "GGML_HIP_EXPORT_METRICS": "OFF",
+        "GGML_HIP_GRAPHS": "ON",
+        "GGML_HIP_MMQ_MFMA": "ON",
+        "GGML_HIP_NO_VMM": "ON",
+        "GGML_HIP_RCCL": "OFF",
+        "GGML_INCLUDE_INSTALL_DIR": "include",
+        "GGML_LASX": "ON",
+        "GGML_LIB_INSTALL_DIR": "lib",
+        "GGML_LLAMAFILE": "ON",
+        "GGML_LSX": "ON",
+        "GGML_LTO": "OFF",
+        "GGML_METAL": "OFF",
+        "GGML_METAL_EMBED_LIBRARY": "OFF",
+        "GGML_METAL_MACOSX_VERSION_MIN": "",
+        "GGML_METAL_NDEBUG": "OFF",
+        "GGML_METAL_SHADER_DEBUG": "OFF",
+        "GGML_METAL_STD": "",
+        "GGML_METAL_TARGET_OS": "macos",
+        "GGML_MUSA": "OFF",
+        "GGML_MUSA_GRAPHS": "OFF",
+        "GGML_MUSA_MUDNN_COPY": "OFF",
+        "GGML_NATIVE": "ON",
+        "GGML_OPENCL": "OFF",
+        "GGML_OPENCL_EMBED_KERNELS": "ON",
+        "GGML_OPENCL_PROFILING": "OFF",
+        "GGML_OPENCL_TARGET_VERSION": "300",
+        "GGML_OPENCL_USE_ADRENO_KERNELS": "ON",
+        "GGML_OPENMP": "ON",
+        "GGML_OPENMP_ENABLED": "ON",
+        "GGML_OPENMP_FETCH": "OFF",
+        "GGML_OPENVINO": "OFF",
+        "GGML_RPC": "OFF",
+        "GGML_RVV": "ON",
+        "GGML_RV_ZFH": "ON",
+        "GGML_RV_ZICBOP": "ON",
+        "GGML_RV_ZIHINTPAUSE": "ON",
+        "GGML_RV_ZVFBFWMA": "OFF",
+        "GGML_RV_ZVFH": "ON",
+        "GGML_SANITIZE_ADDRESS": "OFF",
+        "GGML_SANITIZE_THREAD": "OFF",
+        "GGML_SANITIZE_UNDEFINED": "OFF",
+        "GGML_SCCACHE_FOUND": "GGML_SCCACHE_FOUND-NOTFOUND",
+        "GGML_SCHED_MAX_COPIES": "4",
+        "GGML_SCHED_NO_REALLOC": "OFF",
+        "GGML_SSE42": "OFF",
+        "GGML_STATIC": "OFF",
+        "GGML_SYCL": "OFF",
+        "GGML_SYCL_DEVICE_ARCH": "",
+        "GGML_SYCL_DNN": "ON",
+        "GGML_SYCL_F16": "OFF",
+        "GGML_SYCL_GRAPH": "ON",
+        "GGML_SYCL_HOST_MEM_FALLBACK": "ON",
+        "GGML_SYCL_SUPPORT_LEVEL_ZERO_API": "ON",
+        "GGML_SYCL_TARGET": "INTEL",
+        "GGML_VIRTGPU": "OFF",
+        "GGML_VIRTGPU_BACKEND": "OFF",
+        "GGML_VULKAN": "OFF",
+        "GGML_VULKAN_CHECK_RESULTS": "OFF",
+        "GGML_VULKAN_DEBUG": "OFF",
+        "GGML_VULKAN_MEMORY_DEBUG": "OFF",
+        "GGML_VULKAN_RUN_TESTS": "OFF",
+        "GGML_VULKAN_SHADERS_GEN_TOOLCHAIN": "",
+        "GGML_VULKAN_SHADER_DEBUG_INFO": "OFF",
+        "GGML_VULKAN_VALIDATE": "OFF",
+        "GGML_VXE": "ON",
+        "GGML_WEBGPU": "OFF",
+        "GGML_WEBGPU_CPU_PROFILE": "OFF",
+        "GGML_WEBGPU_DEBUG": "OFF",
+        "GGML_WEBGPU_GPU_PROFILE": "OFF",
+        "GGML_WEBGPU_JSPI": "ON",
+        "GGML_XTHEADVECTOR": "OFF",
+        "GGML_ZDNN": "OFF",
+        "GGML_ZENDNN": "OFF",
+        "LLAMA_ALL_WARNINGS": "ON",
+        "LLAMA_ALL_WARNINGS_3RD_PARTY": "OFF",
+        "LLAMA_BIN_INSTALL_DIR": "bin",
+        "LLAMA_BUILD_APP": "ON",
+        "LLAMA_BUILD_COMMON": "ON",
+        "LLAMA_BUILD_EXAMPLES": "OFF",
+        "LLAMA_BUILD_IS_DEV": "ON",
+        "LLAMA_BUILD_MTMD": "ON",
+        "LLAMA_BUILD_SERVER": "ON",
+        "LLAMA_BUILD_TESTS": "OFF",
+        "LLAMA_BUILD_TOOLS": "ON",
+        "LLAMA_BUILD_UI": "OFF",
+        "LLAMA_FATAL_WARNINGS": "OFF",
+        "LLAMA_INCLUDE_INSTALL_DIR": "include",
+        "LLAMA_LIB_INSTALL_DIR": "lib",
+        "LLAMA_LLGUIDANCE": "OFF",
+        "LLAMA_OPENSSL": "ON",
+        "LLAMA_SANITIZE_ADDRESS": "OFF",
+        "LLAMA_SANITIZE_THREAD": "OFF",
+        "LLAMA_SANITIZE_UNDEFINED": "OFF",
+        "LLAMA_SUBPROCESS": "ON",
+        "LLAMA_TESTS_INSTALL": "ON",
+        "LLAMA_TOOLS_INSTALL": "ON",
+        "LLAMA_UI_GZIP": "ON",
+        "LLAMA_UI_HF_BUCKET": "ggml-org/llama-ui",
+        "LLAMA_USE_PREBUILT_UI": "ON",
+        "LLAMA_USE_SYSTEM_GGML": "OFF",
+        "LLAMA_WASM_MEM64": "ON"
+      },
+      "sha256": "7127e95ab051d309ea49a3185c81ad4e8861b1a133e24c3bf30347ff776dae05"
+    },
+    "build_artifacts": {
+      "shared_libraries": [
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-base.so.0.25.3",
+          "sha256": "518e9688b067ae77ddba0335fa98d096c4e961b0b7602b487663a25a52e1af6e"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-base.so.0.25.3",
+          "sha256": "518e9688b067ae77ddba0335fa98d096c4e961b0b7602b487663a25a52e1af6e"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-base.so.0.25.3",
+          "sha256": "518e9688b067ae77ddba0335fa98d096c4e961b0b7602b487663a25a52e1af6e"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cpu.so.0.25.3",
+          "sha256": "da81411bb8d3ced1b1edc0ff468c85e058078000dc5bb3c114713e7ae9d0f649"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cpu.so.0.25.3",
+          "sha256": "da81411bb8d3ced1b1edc0ff468c85e058078000dc5bb3c114713e7ae9d0f649"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cpu.so.0.25.3",
+          "sha256": "da81411bb8d3ced1b1edc0ff468c85e058078000dc5bb3c114713e7ae9d0f649"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cuda.so.0.25.3",
+          "sha256": "5f48ccca0fae9fea8c6a2e4991d9ac4ee3947bfee36e11df6db4032e93b40f69"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cuda.so.0.25.3",
+          "sha256": "5f48ccca0fae9fea8c6a2e4991d9ac4ee3947bfee36e11df6db4032e93b40f69"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml-cuda.so.0.25.3",
+          "sha256": "5f48ccca0fae9fea8c6a2e4991d9ac4ee3947bfee36e11df6db4032e93b40f69"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml.so.0.25.3",
+          "sha256": "31783b9ecf08dac943a5f381ea8a06a171616c82ba46fe5132e62419a6d6872b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml.so.0.25.3",
+          "sha256": "31783b9ecf08dac943a5f381ea8a06a171616c82ba46fe5132e62419a6d6872b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libggml.so.0.25.3",
+          "sha256": "31783b9ecf08dac943a5f381ea8a06a171616c82ba46fe5132e62419a6d6872b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-bench-impl.so",
+          "sha256": "65cf4e6a18120cfcd20111377f9de8d480e681a84f8f6094048d81e3da173f8b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-common.so.0.5.0",
+          "sha256": "9aa29192df2fa7db76cd1535133deaa3b293504b0a5b624780e68b128b58d7cc"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-common.so.0.5.0",
+          "sha256": "9aa29192df2fa7db76cd1535133deaa3b293504b0a5b624780e68b128b58d7cc"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-common.so.0.5.0",
+          "sha256": "9aa29192df2fa7db76cd1535133deaa3b293504b0a5b624780e68b128b58d7cc"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-perplexity-impl.so",
+          "sha256": "bda94f10cf5829d48cf03735b3d085c9cf139da4f64ca3254b4456680a2c15d9"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama-server-impl.so",
+          "sha256": "6264c7ff5bfedf5e68400669c802c95a584f62fba6343904d77bcbcc6925bc97"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama.so.0.5.0",
+          "sha256": "12360814a7bf5054c16c46bcb87ed4d6f4ff39f75b885173dcc888bb094b44d0"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama.so.0.5.0",
+          "sha256": "12360814a7bf5054c16c46bcb87ed4d6f4ff39f75b885173dcc888bb094b44d0"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libllama.so.0.5.0",
+          "sha256": "12360814a7bf5054c16c46bcb87ed4d6f4ff39f75b885173dcc888bb094b44d0"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libmtmd.so.0.5.0",
+          "sha256": "ab25df38727e402211a7d3a5582e52a8265a030adc1f8bb948c235cd00a7d93b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libmtmd.so.0.5.0",
+          "sha256": "ab25df38727e402211a7d3a5582e52a8265a030adc1f8bb948c235cd00a7d93b"
+        },
+        {
+          "path": "/opt/edgellm/external/llama.cpp/build-cuda/bin/libmtmd.so.0.5.0",
+          "sha256": "ab25df38727e402211a7d3a5582e52a8265a030adc1f8bb948c235cd00a7d93b"
+        }
+      ]
+    },
+    "dataset": {
+      "bytes": 1290590,
+      "lock": {
+        "archive_bytes": 4721645,
+        "archive_name": "wikitext-2-raw-v1.zip",
+        "archive_sha256": "ef7edb566e3e2b2d31b29c1fdb0c89a4cc683597484c3dc2517919c615435a11",
+        "archive_url": "https://huggingface.co/datasets/ggml-org/ci/resolve/927b3642933080f1b0e811e2f916e14c292992f9/wikitext-2-raw-v1.zip",
+        "member": "wikitext-2-raw/wiki.test.raw",
+        "member_bytes": 1290590,
+        "member_sha256": "173c87a53759e0201f33e0ccf978e510c2042d7f2cb78229d9a50d79b9e7dd08",
+        "repository": "ggml-org/ci",
+        "revision": "927b3642933080f1b0e811e2f916e14c292992f9",
+        "source_script": "llama.cpp/scripts/get-wikitext-2.sh"
+      },
+      "path": "/opt/edgellm/datasets/wiki.test.raw",
+      "sha256": "173c87a53759e0201f33e0ccf978e510c2042d7f2cb78229d9a50d79b9e7dd08"
+    },
+    "harness": {
+      "fetch_script": {
+        "path": "/mnt/d/codex/2026-10-02/server-inference-kernel-edge-runtime-llama/work/edgellm/scripts/fetch_dataset.py",
+        "sha256": "521cb01177f1d44f032dc8bab0481f8cbffc609e116b482e915f2056d84aa5c9"
+      },
+      "model_lock_sha256": "127417012caa2965b944c5b27d1b9414b93f456bf085d047e305de38e2d6bb1c",
+      "quality_lock_sha256": "4843fc81de1b3a30ff3d4c1ee1dc69465106113cf3d45b2c8b848bb86c70ee9a",
+      "quality_script": {
+        "path": "/mnt/d/codex/2026-10-02/server-inference-kernel-edge-runtime-llama/work/edgellm/scripts/quality.py",
+        "sha256": "c1dcd58dd4cb3972ef72878865a92c0026c4bf5de8ef6316093ba2c19b577d3f"
+      },
+      "upstream_lock_sha256": "a394ef034549e6ea3c908157c91637ff822276e4ece20d24b3e9e0940c3da0e8"
+    },
+    "model": {
+      "lock": {
+        "filename": "Qwen3-0.6B-Q8_0.gguf",
+        "purpose": "Small dense-attention bring-up model; keep weights fixed in KV experiments.",
+        "repo_id": "Qwen/Qwen3-0.6B-GGUF",
+        "revision": "23749fefcc72300e3a2ad315e1317431b06b590a",
+        "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031",
+        "size_bytes": 639446688,
+        "source": "https://huggingface.co/Qwen/Qwen3-0.6B-GGUF/tree/23749fefcc72300e3a2ad315e1317431b06b590a",
+        "weight_type": "Q8_0"
+      },
+      "path": "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+      "sha256": "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
+    },
+    "upstream": {
+      "dirty": false,
+      "git_sha": "46ca246de9bb1c35269722a6240d37d9dfd79cad",
+      "path": "/opt/edgellm/external/llama.cpp"
+    }
+  },
+  "requested": {
+    "binary": "/opt/edgellm/external/llama.cpp/build-cuda/bin/llama-perplexity",
+    "chunks": 8,
+    "context_tokens": 2048,
+    "dataset": "/opt/edgellm/datasets/wiki.test.raw",
+    "gpu_layers": 99,
+    "model": "/opt/edgellm/models/Qwen3-0.6B-Q8_0.gguf",
+    "output": "/opt/edgellm/results/quality-20261003-001",
+    "threads": 4,
+    "timeout_seconds_per_case": 300,
+    "upstream": "/opt/edgellm/external/llama.cpp"
+  },
+  "schema_version": 1,
+  "started_at": "2026-10-03T03:24:45.574420Z",
+  "status": "invalid_execution"
+}

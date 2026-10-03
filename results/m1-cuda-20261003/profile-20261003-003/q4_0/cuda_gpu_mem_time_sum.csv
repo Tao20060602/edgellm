@@ -1,0 +1,7 @@
+Generating SQLite file /opt/edgellm/results/profile-20261003-003/q4_0/capture.sqlite from /opt/edgellm/results/profile-20261003-003/q4_0/capture.nsys-rep
+Processing [/opt/edgellm/results/profile-20261003-003/q4_0/capture.sqlite] with [/opt/nvidia/nsight-systems/2026.5.1/target-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+72.9,95268074,702,135709.5,3488.0,480,28146555,1071126.0,[CUDA memcpy Host-to-Device]
+26.6,34764102,105,331086.7,483137.0,49856,900194,266728.1,[CUDA memcpy Device-to-Host]
+0.5,656961,1,656961.0,656961.0,656961,656961,0.0,[CUDA memset]
+

@@ -1,0 +1,15 @@
+{
+  "failed_at": "2026-10-03T04:02:26.167125Z",
+  "reason": "one or more predeclared relative PPL thresholds were exceeded",
+  "schema_version": 1,
+  "stage": "quality_threshold",
+  "status": "evaluation_failed",
+  "threshold_failures": {
+    "q4_0": {
+      "maximum_percent": 10.0,
+      "passed": false,
+      "relative_ppl_increase_percent": 217.2586335794761,
+      "uncertainty_absolute": 2.01248
+    }
+  }
+}
