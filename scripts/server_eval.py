@@ -182,7 +182,7 @@ def main():
                 sock.bind(("127.0.0.1", 0))
                 port = sock.getsockname()[1]
             base = f"http://127.0.0.1:{port}"
-            argv = [str(args.binary), "-m", str(args.model), "-c", str(args.ctx), "-ngl", "99", "-fa", "on",
+            argv = [str(args.binary), "-v", "-m", str(args.model), "-c", str(args.ctx), "-ngl", "99", "-fa", "on",
                     "-ctk", kv, "-ctv", kv, "-b", "512", "-ub", "512", "-t", "4", "-np", "1",
                     "--host", "127.0.0.1", "--port", str(port), "--no-context-shift",
                     "--chat-template-kwargs", '{"enable_thinking":false}', "--reasoning-budget", "0"]
