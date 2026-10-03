@@ -299,8 +299,8 @@ def aggregate(matrix: Path) -> dict[str, Any]:
             "Each fresh process retains its five llama-bench samples in samples_ts and samples_ns.",
             "Process memory values are child-only samples; GPU process memory requires a matching child PID.",
             "GPU-wide snapshots are not process memory; none of these memory figures are KV-specific unless labeled as KV allocation.",
-            "Caller-provided quality context: F16 and Q8 retrieval passed 9/9; Q4 passed 2/9.",
-            "Q4 throughput comparisons are diagnostic only and are not a recommendation; no mobile conclusion is drawn.",
+            "This script does not evaluate model quality; consult independent PPL and retrieval records.",
+            "Q4 throughput comparisons in this M1 report are diagnostic only, not a recommendation; no mobile conclusion is drawn.",
         ],
     }
 
@@ -347,7 +347,7 @@ def render_markdown(stats: dict[str, Any]) -> str:
         "",
         "- VmRSS and VmHWM are sampled for the benchmark child PID. VmHWM is shown in MiB after converting the recorded KiB value by 1024; neither metric is a process-tree peak or KV-specific measurement.",
         "- GPU child memory is matched by PID. `null` means the child PID was not reported or sampling was unsupported; whole-device before/after snapshots remain separate case evidence.",
-        "- Caller-provided quality context: F16 and Q8 retrieval passed 9/9; Q4 passed 2/9. Treat Q4 throughput comparisons as diagnostic only, not a recommendation. No mobile conclusion is drawn.",
+        "- This script does not evaluate model quality; consult independent PPL and retrieval records. Q4 throughput comparisons in this M1 report are diagnostic only, not a recommendation. No mobile conclusion is drawn.",
         "",
     ])
     return "\n".join(lines)
