@@ -22,6 +22,8 @@ decode benchmark 在已经填充 32768 token 后生成 32 token。实际日志�
 
 这是 **KV buffer allocation**，不是 GPU 进程峰值，也不是手机总内存。模型 buffer、计算 buffer、CUDA context、CPU mapped pages 都另有开销。原始日志会分别报告 CPU_Mapped/CUDA0 model buffer 和 CUDA0/CUDA_Host compute buffer；不要把这些值机械相加后宣称进程物理峰值。
 
+另一个实验工具自身的开销：锁定 [llama-bench.cpp](https://github.com/ggml-org/llama.cpp/blob/46ca246de9bb1c35269722a6240d37d9dfd79cad/tools/llama-bench/llama-bench.cpp#L2446) 在填充 depth 后把 context state 序列化到 CPU `std::vector<uint8_t>`，后续重复恢复这份 state。它发生在 decode 的计时开始之前，但会增加整个 benchmark 进程的 RSS。由此得到的 VmHWM包含工具的KV state备份，不能当成真实服务的host-memory需求；server自己的VmHWM另有记录。Profiler的D2H/H2D也可能包含这类快照搬运，不能直接叫作在线offload瓶颈。
+
 本次还发现一个容易漏掉的执行差异：锁定 upstream 会为符合 dimension 条件的量化 KV 默认开启正交 Walsh-Hadamard rotation。真实 Q8/Q4 日志中的 `attn_rot_k=1, attn_rot_v=1`，F16 中为 0。源码在 [llama-kv-cache.cpp](https://github.com/ggml-org/llama.cpp/blob/46ca246de9bb1c35269722a6240d37d9dfd79cad/src/llama-kv-cache.cpp#L315)，环境变量 `LLAMA_ATTN_ROT_DISABLE` 可以改变它。
 
 因此本次是在比较各类型的默认 runtime 路径：存储大小、量化误差、rotation、attention dispatch 都可能变化。不能将所有速度差异直接归因于“反量化贵”，更不能凭质量失败断言是 kernel bug。下一阶段需要分开观察执行阶段，并单独固定 rotation 做诊断。原基线不回填环境字段；原始日志保留了实际 rotation 状态，运行期间没有人为设置这些 override。

@@ -12,6 +12,7 @@ def main():
     for name in ("binary", "model", "upstream", "out"):
         parser.add_argument("--" + name, required=True, type=Path)
     parser.add_argument("--nsys", default="nsys")
+    parser.add_argument("--kv-types", nargs="+", choices=("f16", "q8_0", "q4_0"), default=["f16", "q4_0"])
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     metadata = {"status": "running", "started_at": utc_now(),
@@ -25,7 +26,7 @@ def main():
                 "cases": []}
     write_json(args.out / "metadata.json", metadata)
     try:
-        for kv in ("f16", "q4_0"):
+        for kv in args.kv_types:
             out = args.out / kv
             out.mkdir()
             argv = [args.nsys, "profile", "--trace=cuda,nvtx", "--cuda-graph-trace=node", "--sample=none", "--cpuctxsw=none",
