@@ -8,6 +8,13 @@ import server_eval
 
 
 class StreamingTests(unittest.TestCase):
+    def test_changed_model_dirty_or_wrong_upstream_rejected(self):
+        metadata = {"source_sha": "upstream", "source_dirty": False, "model_sha256": "model"}
+        server_eval.validate_identities(metadata, {"commit": "upstream"}, {"sha256": "model"})
+        for change in ({"source_sha": "other"}, {"source_dirty": True}, {"model_sha256": "other"}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                server_eval.validate_identities(dict(metadata, **change), {"commit": "upstream"}, {"sha256": "model"})
+
     def test_ttft_ignores_keepalive_and_empty_events(self):
         rows = [b": ping\n", b"data: {\"content\":\"\"}\n",
                 b'data: {"content":"731942"}\n',

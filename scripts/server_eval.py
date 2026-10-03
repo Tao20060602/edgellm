@@ -19,6 +19,13 @@ from bench import sha256_file, run_git, cmake_cache_info, shared_library_info, u
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def validate_identities(metadata, upstream_lock, model_lock):
+    if metadata["source_sha"] != upstream_lock["commit"] or metadata["source_dirty"]:
+        raise ValueError("server evaluation requires the clean locked upstream")
+    if metadata["model_sha256"] != model_lock["sha256"]:
+        raise ValueError("server evaluation model hash differs from lock")
+
+
 def http_json(base, route, payload=None, timeout=60):
     data = json.dumps(payload).encode() if payload is not None else None
     req = urllib.request.Request(base + route, data=data, headers={"Content-Type": "application/json"})
@@ -175,6 +182,8 @@ def main():
     all_results = {}
     proc = None
     try:
+        validate_identities(metadata, json.loads((ROOT / "locks/upstream.json").read_text()),
+                            json.loads((ROOT / "locks/model.json").read_text()))
         for kv in formats:
             kv_dir = args.out / kv
             kv_dir.mkdir()
