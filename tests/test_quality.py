@@ -43,11 +43,16 @@ if mode == "wrong_chunks":
     chunks = 7
 else:
     chunks = int(option("--chunks"))
-log_kv = "q8_0" if mode == "wrong_kv" else kv
+actual_kv = "q8_0" if mode == "wrong_kv" else kv
+probe_offload = 28 if mode == "inconsistent_offload" else 29
+actual_buffer = 0.0 if mode == "zero_actual_kv" else 224.0
 print("llama_model_loader: loaded model", file=sys.stderr)
-print("ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8192 MiB)", file=sys.stderr)
+print("llama_model_load: offloaded %d/29 layers to GPU" % probe_offload, file=sys.stderr)
+print("llama_kv_cache:      CUDA0 KV buffer size =     0.00 MiB", file=sys.stderr)
+print("llama_kv_cache: size = 224.00 MiB, K (f16): 112.00 MiB, V (f16): 112.00 MiB", file=sys.stderr)
 print("llama_model_load: offloaded 29/29 layers to GPU", file=sys.stderr)
-print("llama_kv_cache: size = 20.00 MiB (  256 cells,  28 layers,  1/1 seqs), K (%s): 10.00 MiB, V (%s): 10.00 MiB" % (log_kv, log_kv), file=sys.stderr)
+print("llama_kv_cache:      CUDA0 KV buffer size = %8.2f MiB" % actual_buffer, file=sys.stderr)
+print("llama_kv_cache: size = 224.00 MiB, K (%s): 112.00 MiB, V (%s): 112.00 MiB" % (actual_kv, actual_kv), file=sys.stderr)
 print("perplexity: calculating perplexity over %d chunks, n_ctx=2048, batch_size=512, n_seq=1" % chunks, file=sys.stderr)
 print("Final estimate: PPL = %s +/- 0.02000" % ppl_text, file=sys.stderr)
 '''
@@ -85,12 +90,17 @@ class QualityHarnessTests(unittest.TestCase):
         if mode == "threshold" and kv == "q8_0":
             ppl = 10.3
         chunks = 7 if mode == "wrong_chunks" else 8
-        log_kv = "q8_0" if mode == "wrong_kv" else kv
+        actual_kv = "q8_0" if mode == "wrong_kv" else kv
+        probe_offload = 28 if mode == "inconsistent_offload" else 29
+        actual_buffer = 0.0 if mode == "zero_actual_kv" else 224.0
         ppl_text = "nan" if mode == "nonfinite" else f"{ppl:.4f}"
         logs = (
-            "ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8192 MiB)\n"
+            f"llama_model_load: offloaded {probe_offload}/29 layers to GPU\n"
+            "llama_kv_cache:      CUDA0 KV buffer size = 0.00 MiB\n"
+            "llama_kv_cache: size = 224.00 MiB, K (f16): 112.00 MiB, V (f16): 112.00 MiB\n"
             "llama_model_load: offloaded 29/29 layers to GPU\n"
-            f"llama_kv_cache: size = 20.00 MiB, K ({log_kv}): 10.00 MiB, V ({log_kv}): 10.00 MiB\n"
+            f"llama_kv_cache:      CUDA0 KV buffer size = {actual_buffer:.2f} MiB\n"
+            f"llama_kv_cache: size = 224.00 MiB, K ({actual_kv}): 112.00 MiB, V ({actual_kv}): 112.00 MiB\n"
             f"perplexity: calculating perplexity over {chunks} chunks, n_ctx=2048, batch_size=512, n_seq=1\n"
             f"Final estimate: PPL = {ppl_text} +/- 0.02000\n"
         )
@@ -153,6 +163,15 @@ class QualityHarnessTests(unittest.TestCase):
         self.assertEqual(case["parsed"]["input_token_count_status"], "not_reported_by_pinned_upstream")
         self.assertEqual(case["parsed"]["chunk_count"], 8)
         self.assertEqual(case["parsed"]["gpu_layer_offload"]["offloaded"], 29)
+        self.assertEqual(len(case["parsed"]["gpu_layer_offload"]["summaries"]), 2)
+        self.assertEqual(case["parsed"]["gpu_layer_offload"]["summaries"][-1]["phase"], "ppl_context")
+        self.assertEqual(len(case["parsed"]["runtime_kv_types"]), 2)
+        self.assertEqual(case["parsed"]["runtime_kv_types"][0]["phase"], "fit_probe")
+        self.assertEqual(case["parsed"]["actual_ppl_context_kv_types"]["key"], "f16")
+        self.assertEqual(case["parsed"]["runtime_kv_buffer_sizes"][0]["mib"], 0.0)
+        self.assertEqual(case["parsed"]["actual_cuda_kv_buffers"][0]["mib"], 224.0)
+        self.assertEqual(case["parsed"]["cuda_device_count_logs"], [])
+        self.assertEqual(case["parsed"]["cuda_runtime_evidence"], ["all_requested_model_layers_offloaded", "nonzero_materialized_cuda_kv_buffer"])
         self.assertEqual(case["parsed"]["runtime_kv_types"][0]["key"], "f16")
         self.assertEqual(case["parsed"]["ppl_source_stream"], "stderr")
         self.assertEqual(case["stdout_sha256"], quality.bench.sha256_file(output / case["stdout_path"]))
@@ -171,7 +190,7 @@ class QualityHarnessTests(unittest.TestCase):
         self.assertEqual(len(summary["cases"]), 3)
 
     def test_missing_result_or_chunk_mismatch_fails_closed_and_preserves_case_logs(self):
-        for mode in ("badparse", "wrong_chunks", "nonfinite", "wrong_kv"):
+        for mode in ("badparse", "wrong_chunks", "nonfinite", "wrong_kv", "inconsistent_offload", "zero_actual_kv"):
             with self.subTest(mode=mode):
                 output = self.root / mode
                 self.assertEqual(self.run_harness(output, mode=mode), 1)
@@ -185,7 +204,11 @@ class QualityHarnessTests(unittest.TestCase):
                 if mode == "nonfinite":
                     self.assertIn("non_finite_or_invalid_ppl", case["failure_reason"])
                 if mode == "wrong_kv":
-                    self.assertIn("runtime reported", case["failure_reason"])
+                    self.assertIn("PPL-context K/V type", case["failure_reason"])
+                if mode == "inconsistent_offload":
+                    self.assertIn("offload_mismatch", case["failure_reason"])
+                if mode == "zero_actual_kv":
+                    self.assertIn("actual_cuda_kv_buffer_missing_or_empty", case["failure_reason"])
                 self.assertFalse((output / "summary.json").exists())
 
     def test_timeout_keeps_partial_stdout_and_stderr_and_stops_after_first_case(self):

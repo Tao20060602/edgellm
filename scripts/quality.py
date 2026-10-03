@@ -35,6 +35,7 @@ CHUNK_RE = re.compile(
 CUDA_RE = re.compile(r"\bfound\s+(\d+)\s+CUDA\s+devices\b", re.IGNORECASE)
 OFFLOAD_RE = re.compile(r"\boffloaded\s+(\d+)\s*/\s*(\d+)\s+layers\s+to\s+GPU\b", re.IGNORECASE)
 KV_TYPES_RE = re.compile(r"\bK\s*\(\s*([a-zA-Z0-9_]+)\s*\).*?\bV\s*\(\s*([a-zA-Z0-9_]+)\s*\)", re.IGNORECASE)
+KV_BUFFER_RE = re.compile(r"\b([a-zA-Z0-9_]+)\s+KV buffer size\s*=\s*(\d+(?:\.\d+)?)\s*MiB\b", re.IGNORECASE)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -199,10 +200,14 @@ def parse_runtime(stdout: bytes, stderr: bytes, args: argparse.Namespace, kv_typ
     if not math.isfinite(ppl) or ppl <= 0 or not math.isfinite(uncertainty) or uncertainty < 0:
         return None, f"non_finite_or_invalid_ppl: ppl={ppl!r}, uncertainty={uncertainty!r}"
 
-    chunk_matches = list(CHUNK_RE.finditer(combined))
-    if len(chunk_matches) != 1:
-        return None, f"chunk_count_parse_error: expected one chunks/context/batch log, found {len(chunk_matches)}"
-    actual_chunks, actual_ctx, actual_batch = (int(value) for value in chunk_matches[0].groups())
+    chunk_streams = []
+    for stream_name, stream_text in (("stdout", out_text), ("stderr", err_text)):
+        for match in CHUNK_RE.finditer(stream_text):
+            chunk_streams.append((stream_name, stream_text, match))
+    if len(chunk_streams) != 1:
+        return None, f"chunk_count_parse_error: expected one chunks/context/batch log, found {len(chunk_streams)}"
+    runtime_stream_name, runtime_text, chunk_match = chunk_streams[0]
+    actual_chunks, actual_ctx, actual_batch = (int(value) for value in chunk_match.groups())
     if actual_chunks != args.chunks:
         return None, f"field_mismatch: chunks expected {args.chunks}, got {actual_chunks}"
     if actual_ctx != args.ctx:
@@ -210,25 +215,66 @@ def parse_runtime(stdout: bytes, stderr: bytes, args: argparse.Namespace, kv_typ
     if actual_batch != 512:
         return None, f"field_mismatch: batch expected 512, got {actual_batch}"
 
-    kv_pairs = [(match.group(1).lower(), match.group(2).lower(), match.group(0)) for match in KV_TYPES_RE.finditer(combined)]
-    if not kv_pairs:
+    # `common_init_from_params` may emit a temporary `--fit` probe followed
+    # by the materialized model/context. Only the last pre-evaluation cache
+    # type belongs to the context used by perplexity; retain earlier probes.
+    pre_eval = runtime_text[:chunk_match.start()]
+    kv_matches = list(KV_TYPES_RE.finditer(pre_eval))
+    if not kv_matches:
         return None, "kv_type_parse_error: no runtime K/V cache type log found"
-    if any(key_type != kv_type or value_type != kv_type for key_type, value_type, _ in kv_pairs):
-        found = [(key_type, value_type) for key_type, value_type, _ in kv_pairs]
-        return None, f"field_mismatch: requested K/V type {kv_type}/{kv_type}, runtime reported {found}"
+    kv_pairs = []
+    for index, match in enumerate(kv_matches):
+        kv_pairs.append({
+            "key": match.group(1).lower(),
+            "value": match.group(2).lower(),
+            "source_line": match.group(0)[:500],
+            "phase": "ppl_context" if index == len(kv_matches) - 1 else "fit_probe",
+        })
+    actual_kv = kv_pairs[-1]
+    if actual_kv["key"] != kv_type or actual_kv["value"] != kv_type:
+        found = (actual_kv["key"], actual_kv["value"])
+        return None, f"field_mismatch: requested PPL-context K/V type {kv_type}/{kv_type}, runtime reported {found}"
 
-    cuda_device_matches = [int(match.group(1)) for match in CUDA_RE.finditer(combined)]
-    offload_matches = [(int(match.group(1)), int(match.group(2))) for match in OFFLOAD_RE.finditer(combined)]
-    if len(offload_matches) != 1:
-        return None, f"offload_parse_error: expected one model layer offload summary, found {len(offload_matches)}"
-    offloaded, total_layers = offload_matches[0]
+    cuda_device_matches = [int(match.group(1)) for match in CUDA_RE.finditer(pre_eval)]
+    offload_matches = list(OFFLOAD_RE.finditer(pre_eval))
+    if not offload_matches:
+        return None, "offload_parse_error: no model layer offload summary found before PPL evaluation"
+    offload_pairs = [(int(match.group(1)), int(match.group(2))) for match in offload_matches]
+    if len(set(offload_pairs)) != 1:
+        return None, f"offload_mismatch: initialization summaries disagree: {offload_pairs}"
+    offloaded, total_layers = offload_pairs[-1]
+    offload_records = [
+        {
+            "offloaded": current,
+            "total": total,
+            "phase": "ppl_context" if index == len(offload_pairs) - 1 else "fit_probe",
+            "source_line": match.group(0)[:500],
+        }
+        for index, (match, (current, total)) in enumerate(zip(offload_matches, offload_pairs))
+    ]
     if args.gpu_layers > 0:
-        if not cuda_device_matches or max(cuda_device_matches) < 1:
-            return None, "cuda_runtime_missing: no CUDA device discovery log found"
         if offloaded != min(args.gpu_layers, total_layers):
             return None, f"field_mismatch: requested {args.gpu_layers} GPU layers, runtime offloaded {offloaded}/{total_layers}"
     elif offloaded != 0:
         return None, f"field_mismatch: requested CPU-only, runtime offloaded {offloaded}/{total_layers} layers"
+
+    kv_buffer_matches = list(KV_BUFFER_RE.finditer(pre_eval))
+    kv_buffer_records = [
+        {"backend": match.group(1), "mib": float(match.group(2)), "source_line": match.group(0)[:500]}
+        for match in kv_buffer_matches
+    ]
+    latest_cuda_buffers: dict[str, dict[str, Any]] = {}
+    for record in kv_buffer_records:
+        if record["backend"].upper().startswith("CUDA"):
+            latest_cuda_buffers[record["backend"]] = record
+    actual_cuda_buffers = list(latest_cuda_buffers.values())
+    if args.gpu_layers > 0 and (not actual_cuda_buffers or sum(record["mib"] for record in actual_cuda_buffers) <= 0):
+        return None, "actual_cuda_kv_buffer_missing_or_empty: final PPL context has no materialized CUDA KV buffer"
+    cuda_runtime_evidence = []
+    if args.gpu_layers > 0:
+        cuda_runtime_evidence = ["all_requested_model_layers_offloaded", "nonzero_materialized_cuda_kv_buffer"]
+        if cuda_device_matches:
+            cuda_runtime_evidence.append("cuda_device_discovery_log")
 
     # The pinned upstream log reports the actual chunk count, but not the full
     # tokenized input length or scored-target count. In perplexity.cpp, each
@@ -245,9 +291,19 @@ def parse_runtime(stdout: bytes, stderr: bytes, args: argparse.Namespace, kv_typ
         "batch_tokens": actual_batch,
         "scored_next_token_targets": scored_tokens,
         "scored_token_count_basis": "derived from pinned perplexity.cpp count += n_ctx - first - 1 for each completed chunk, where first = n_ctx/2; chunk_count is parsed from this run's log",
-        "runtime_kv_types": [{"key": key_type, "value": value_type, "source_line": line[:500]} for key_type, value_type, line in kv_pairs],
+        "runtime_log_stream": runtime_stream_name,
+        "runtime_kv_types": kv_pairs,
+        "actual_ppl_context_kv_types": {"key": actual_kv["key"], "value": actual_kv["value"], "source_line": actual_kv["source_line"]},
+        "runtime_kv_buffer_sizes": kv_buffer_records,
+        "actual_cuda_kv_buffers": actual_cuda_buffers,
         "cuda_device_count_logs": cuda_device_matches,
-        "gpu_layer_offload": {"offloaded": offloaded, "total": total_layers, "requested": args.gpu_layers},
+        "cuda_runtime_evidence": cuda_runtime_evidence,
+        "gpu_layer_offload": {
+            "offloaded": offloaded,
+            "total": total_layers,
+            "requested": args.gpu_layers,
+            "summaries": offload_records,
+        },
     }, None
 
 
@@ -363,6 +419,10 @@ def make_summary(cases: list[dict[str, Any]], lock: dict[str, Any]) -> dict[str,
                 "scored_next_token_targets": case["parsed"]["scored_next_token_targets"],
                 "scored_token_count_basis": case["parsed"]["scored_token_count_basis"],
                 "runtime_kv_types": case["parsed"]["runtime_kv_types"],
+                "actual_ppl_context_kv_types": case["parsed"]["actual_ppl_context_kv_types"],
+                "runtime_kv_buffer_sizes": case["parsed"]["runtime_kv_buffer_sizes"],
+                "actual_cuda_kv_buffers": case["parsed"]["actual_cuda_kv_buffers"],
+                "cuda_runtime_evidence": case["parsed"]["cuda_runtime_evidence"],
                 "gpu_layer_offload": case["parsed"]["gpu_layer_offload"],
                 "stdout_sha256": case["stdout_sha256"],
                 "stderr_sha256": case["stderr_sha256"],
